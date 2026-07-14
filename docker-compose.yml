@@ -1,0 +1,10 @@
+services:
+  frontend:
+    container_name: sbsi-frontend
+    build:
+      context: .
+    ports:
+      - "${FRONTEND_PORT:-5174}:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules

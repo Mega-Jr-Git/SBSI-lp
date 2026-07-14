@@ -1,0 +1,29 @@
+# Node
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build and caches
+build/
+coverage/
+.coverage
+htmlcov/
+.cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Docker
+docker-data/
