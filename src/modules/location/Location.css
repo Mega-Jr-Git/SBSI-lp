@@ -1,0 +1,141 @@
+.location_container {
+  background-color: var(--sbsi-white);
+  padding: 6.875rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.location_tag {
+  color: var(--sbsi-orange);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 138%;
+  letter-spacing: 15%;
+  border: 1px solid var(--sbsi-orange);
+  padding: 0.1rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.location_title {
+  color: var(--sbsi-black);
+  font-family: var(--font-inter);
+  font-weight: 800;
+  font-style: bold;
+  font-size: 3.75rem;
+  line-height: 138%;
+  letter-spacing: -3%;
+  margin-bottom: 1.25rem;
+}
+
+.location_dot {
+  color: var(--sbsi-orange-light);
+  font-weight: 800;
+  font-style: bold;
+  font-size: 2.25rem;
+  line-height: 138%;
+  letter-spacing: -3%;
+}
+
+.location_description {
+  color: var(--sbsi-black);
+  font-family: var(--font-inter);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 138%;
+  letter-spacing: 1%;
+  text-align: center;
+  max-width: 56rem;
+  margin-bottom: 2rem;
+}
+
+.location_buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-inter);
+}
+
+.location_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1.5px solid var(--sbsi-orange);
+  color: var(--sbsi-orange);
+  width: 10.313rem;
+  height: 2.875rem;
+  border-radius: 1.875rem;
+  padding: 0.625rem;
+  font-weight: 600;
+  font-style: bold;
+  font-size: 1.125rem;
+  line-height: 95%;
+  letter-spacing: -3%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.location_button:hover {
+  background-color: var(--sbsi-orange);
+  color: var(--sbsi-white);
+}
+
+.location_mapContainer {
+  width: 100%;
+  max-width: 69.938rem;
+  height: 33.375rem;
+  border-radius: 1.875rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.location_mapFrame {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 48rem) {
+  .location_container {
+    padding: 3rem 1.5rem;
+  }
+
+  .location_tag {
+    font-size: 0.8rem;
+  }
+
+  .location_title {
+    font-size: 2rem;
+  }
+
+  .location_description {
+    font-size: 0.875rem;
+  }
+
+  .location_buttonGroup {
+    flex-direction: column;
+    width: 100%;
+    max-width: 17.5rem;
+    gap: 0.75rem;
+  }
+
+  .location_button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .location_mapContainer {
+    height: 18.75rem;
+    border-radius: 1rem;
+  }
+}

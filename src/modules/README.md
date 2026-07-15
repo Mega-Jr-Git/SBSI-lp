@@ -2,15 +2,11 @@
 
 Esta pasta contem os modulos (secoes) da landing page.
 
-## Modulos ativos
+## Módulos ativos
 
-Nenhum modulo foi criado ainda. Esta pasta comeca vazia de proposito: cada
-secao (home, sobre, programacao, submissao de trabalhos, organizacao,
-patrocinadores etc.) deve ser criada do zero por quem for implementa-la.
+Abaixo estão listados os módulos de seção já implementados no projeto:
 
-Ao criar o primeiro modulo, liste-o aqui:
-
-- `<slug>`: descricao curta de uma linha.
+- `location`: Apresenta o local físico do evento (UFMS, Campo Grande), oferecendo rotas de navegação direta, busca de hotéis e um mapa interativo integrado.
 
 ## Padrao obrigatorio
 

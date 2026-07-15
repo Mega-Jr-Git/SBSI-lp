@@ -1,3 +1,4 @@
+import { LocationSection } from "../modules/location/LocationSection";
 import SiteFooter from "../shared/layout/SiteFooter";
 import SiteHeader from "../shared/layout/SiteHeader";
 
@@ -8,6 +9,7 @@ export default function App() {
 
       <main className="page-content">
         {/* Nenhum modulo criado ainda. Siga docs/coding-standards.md para adicionar uma secao. */}
+        <LocationSection />
       </main>
 
       <SiteFooter />
