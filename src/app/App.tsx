@@ -1,5 +1,7 @@
 import SiteFooter from "../shared/layout/SiteFooter";
 import SiteHeader from "../shared/layout/SiteHeader";
+import AboutSection from "../modules/about/AboutSection";
+import SectionPlaceholder from "../shared/components/SectionPlaceholder";
 
 export default function App() {
   return (
@@ -7,7 +9,8 @@ export default function App() {
       <SiteHeader />
 
       <main className="page-content">
-        {/* Nenhum modulo criado ainda. Siga docs/coding-standards.md para adicionar uma secao. */}
+        <AboutSection />
+        <SectionPlaceholder id="proxima-secao" title="Próxima Seção" description="Espaço reservado para a próxima seção." />
       </main>
 
       <SiteFooter />

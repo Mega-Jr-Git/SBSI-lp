@@ -4,13 +4,9 @@ Esta pasta contem os modulos (secoes) da landing page.
 
 ## Modulos ativos
 
-Nenhum modulo foi criado ainda. Esta pasta comeca vazia de proposito: cada
-secao (home, sobre, programacao, submissao de trabalhos, organizacao,
-patrocinadores etc.) deve ser criada do zero por quem for implementa-la.
-
 Ao criar o primeiro modulo, liste-o aqui:
 
-- `<slug>`: descricao curta de uma linha.
+- `about`: Informações institucionais sobre o SBSI.
 
 ## Padrao obrigatorio
 
