@@ -24,7 +24,7 @@
 .about-section__media {
   flex: 1.5; 
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -35,7 +35,7 @@
   max-width: none;
   object-fit: contain;
   transform: scale(1.4) translateY(20px); 
-  transform-origin: right center;
+  transform-origin: center;
 }
 
 .about-section__content {
