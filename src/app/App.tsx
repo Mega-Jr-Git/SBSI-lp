@@ -1,6 +1,6 @@
-import { LocationSection } from "../modules/location/LocationSection";
-import SiteFooter from "../shared/layout/SiteFooter";
 import SiteHeader from "../shared/layout/SiteHeader";
+import LocationSection from "../modules/location/LocationSection";
+import SiteFooter from "../shared/layout/SiteFooter";
 
 export default function App() {
   return (
@@ -8,7 +8,6 @@ export default function App() {
       <SiteHeader />
 
       <main className="page-content">
-        {/* Nenhum modulo criado ainda. Siga docs/coding-standards.md para adicionar uma secao. */}
         <LocationSection />
       </main>
 

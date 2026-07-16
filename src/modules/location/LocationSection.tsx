@@ -1,24 +1,24 @@
 import "./Location.css";
 import { MAP_DIRECTIONS_URL, MAP_EMBED_URL, HOTELS_URL } from "./location.data";
 
-export function LocationSection() {
+export default function LocationSection() {
   return (
-    <section id="local" className="location_container">
-      <div className="location_content">
-        <span className="location_tag">LOCAL DO EVENTO</span>
-        <h2 className="location_title">
-          Campo Grande <span className="location_dot">•</span> 2027
+    <section id="local" className="location-section">
+      <div className="location-section__content">
+        <span className="location-section__tag">LOCAL DO EVENTO</span>
+        <h2 className="location-section__title">
+          Campo Grande <span className="location-section__dot">•</span> 2027
         </h2>
-        <p className="location_description">
+        <p className="location-section__description">
           O evento será realizado em um estado de grande relevância agropecuária
           e industrial, próximo a rotas de integração com países vizinhos,
           oferecendo aos participantes não apenas uma infraestrutura adequada
           para o simpósio, mas também a oportunidade de conhecer uma cidade com
           rica diversidade cultural e paisagens marcantes do bioma Cerrado.
         </p>
-        <div className="location_buttonGroup">
+        <div className="location-section__buttonGroup">
           <a
-            className="location_button"
+            className="location-section__button"
             href={MAP_DIRECTIONS_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -26,7 +26,7 @@ export function LocationSection() {
             Como chegar
           </a>
           <a
-            className="location_button"
+            className="location-section__button"
             href={HOTELS_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -34,7 +34,7 @@ export function LocationSection() {
             Ver hotéis
           </a>
         </div>
-        <div className="location_mapContainer">
+        <div className="location-section__mapContainer">
           <iframe
             src={MAP_EMBED_URL}
             width="100%"
@@ -44,7 +44,7 @@ export function LocationSection() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Mapa de Campo Grande"
-            className="location_mapFrame"
+            className="location-section__mapFrame"
           />
         </div>
       </div>
