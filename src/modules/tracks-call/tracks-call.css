@@ -1,0 +1,118 @@
+.tracks-call-section {
+  width: 100%;
+  padding: 5rem 1.5rem;
+  background-color: var(--color-background-light);
+}
+
+.tracks-call-section__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tracks-call-section__title {
+  color: var(--color-text-dark);
+  font-size: clamp(2.2rem, 2.5vw, 3.5rem);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.tracks-call-section__title--highlight {
+  color: var(--sbsi-orange);
+}
+
+.tracks-call-section__description {
+  color: var(--color-text-dark);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 400;
+}
+
+.tracks-call-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 1.5rem;
+  margin: 5rem auto;
+  padding: 3rem 0 0.6rem;
+  background-color: var(--color-background-base);
+  max-width: min(90%, 1200px);
+  border: 1px solid var(--color-background-base);
+  border-radius: 1.5rem;
+}
+
+.tracks-call-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tracks-call-card__title {
+  color: var(--color-text-dark);
+  font-size: clamp(1rem, 2vw, 1.6rem);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.tracks-call-card__description {
+  flex: 1;
+  color: var(--color-text-dark);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 400;
+}
+
+.tracks-call-card__data {
+  color: var(--color-text-dark);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  white-space: nowrap;
+}
+
+.tracks-call-card__button, .tracks-call-card__coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-text-dark);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  margin: 1rem 0;
+  background-color: var(--sbsi-orange);
+  border: 1px solid var(--sbsi-orange);
+  border-radius: 2rem;
+  padding: 0.5rem clamp(1rem, 2vw, 3rem);
+}
+
+.tracks-call-card__button:hover {
+  background-color: var(--sbsi-orange-light);
+  border-color: var(--sbsi-orange-light);
+}
+
+@media (max-width: 768px) {
+  .tracks-call-grid {
+    max-width: 95%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .tracks-call-section {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tracks-call-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 0.5rem;
+  }
+
+  .tracks-call-card {
+    margin-bottom: 1rem;
+  }
+}

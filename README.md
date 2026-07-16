@@ -100,6 +100,7 @@ make clean           # Remove container, volumes e orfaos
 ## Secoes atuais
 
 - `sobre` (`src/modules/about`): Informações institucionais sobre o SBSI.
+- `tracks-call` — seção de chamada para as trilhas.
 
 ## Como criar uma nova secao
 
