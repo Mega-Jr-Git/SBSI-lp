@@ -1,9 +1,7 @@
 import "./about.css";
-import logoSbsi from "./assets/SBSI 2027.svg";
+import logoSbsi from "./assets/sbsi-2027.svg";
 
-type AboutSectionProps = {};
-
-export default function AboutSection({}: AboutSectionProps) {
+export default function AboutSection() {
   return (
     <section id="sobre" className="about-section">
       <div className="about-section__inner">
