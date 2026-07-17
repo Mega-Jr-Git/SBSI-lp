@@ -1,7 +1,7 @@
-import SiteFooter from "../shared/layout/SiteFooter";
 import SiteHeader from "../shared/layout/SiteHeader";
 import AboutSection from "../modules/about/AboutSection";
-import SectionPlaceholder from "../shared/components/SectionPlaceholder";
+import LocationSection from "../modules/location/LocationSection";
+import SiteFooter from "../shared/layout/SiteFooter";
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
 
       <main className="page-content">
         <AboutSection />
-        <SectionPlaceholder id="proxima-secao" title="Próxima Seção" description="Espaço reservado para a próxima seção." />
+        <LocationSection />
       </main>
 
       <SiteFooter />
