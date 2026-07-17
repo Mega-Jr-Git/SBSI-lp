@@ -2,7 +2,12 @@
 
 :root {
   --font-display: "Space Grotesk", Arial, Helvetica, sans-serif;
-
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+  --font-inter: "Inter", Arial, Helvetica, sans-serif;
+  --sbsi-white: #ffffff;
+  --sbsi-black: #000000;
+  --sbsi-orange: #f26402;
+  --sbsi-orange-light: #fa9b28;
   font-family: var(--font-display);
   color: #fff;
   background: #fff;
