@@ -99,10 +99,7 @@ make clean           # Remove container, volumes e orfaos
 
 ## Secoes atuais
 
-Nenhuma secao foi criada ainda. Este repositorio comeca so com o esqueleto —
-cada secao (home, sobre, programacao, submissao de trabalhos, organizacao,
-patrocinadores etc.) e criada do zero pelo time seguindo o passo a passo
-abaixo.
+- `sobre` (`src/modules/about`): Informações institucionais sobre o SBSI.
 
 ## Como criar uma nova secao
 

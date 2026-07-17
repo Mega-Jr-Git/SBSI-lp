@@ -6,6 +6,7 @@ Esta pasta contem os modulos (secoes) da landing page.
 
 Abaixo estão listados os módulos de seção já implementados no projeto:
 
+- `about`: Informações institucionais sobre o SBSI.
 - `location`: Apresenta o local físico do evento (UFMS, Campo Grande), oferecendo rotas de navegação direta, busca de hotéis e um mapa interativo integrado.
 
 ## Padrao obrigatorio
