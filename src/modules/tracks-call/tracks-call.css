@@ -82,14 +82,15 @@
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   margin: 1rem 0;
   background-color: var(--sbsi-orange);
-  border: 1px solid var(--sbsi-orange);
+  border: 2px solid var(--sbsi-orange);
   border-radius: 2rem;
   padding: 0.5rem clamp(1rem, 2vw, 3rem);
 }
 
 .tracks-call-card__button:hover {
-  background-color: var(--sbsi-orange-light);
-  border-color: var(--sbsi-orange-light);
+  background-color: transparent;
+  border-color: var(--sbsi-orange-dark);
+  color: var(--sbsi-orange-dark);
 }
 
 @media (max-width: 768px) {
