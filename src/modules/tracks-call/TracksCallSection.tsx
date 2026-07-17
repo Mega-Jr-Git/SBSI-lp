@@ -3,7 +3,6 @@ import TracksCallCard from "./TracksCallCard";
 import "./tracks-call.css";
 
 export default function TracksCallSection() {
-
   return (
     <section id="chamada-trilhas" className="tracks-call-section">
       <div className="tracks-call-section__card">
@@ -13,7 +12,7 @@ export default function TracksCallSection() {
         </p>
       </div>
 
-      <div className="tracks-call-grid">
+      <div className="tracks-call-section__grid">
         {tracks.map((track) => (
           <TracksCallCard key={track.title} track={track} />
         ))}

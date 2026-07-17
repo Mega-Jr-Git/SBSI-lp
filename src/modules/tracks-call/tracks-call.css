@@ -1,7 +1,7 @@
 .tracks-call-section {
   width: 100%;
   padding: 5rem 1.5rem;
-  background-color: var(--color-background-light);
+  background-color: var(--color-background-warm);
 }
 
 .tracks-call-section__card {
@@ -32,7 +32,7 @@
   font-weight: 400;
 }
 
-.tracks-call-grid {
+.tracks-call-section__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
@@ -41,7 +41,6 @@
   padding: 3rem 0 0.6rem;
   background-color: var(--color-background-base);
   max-width: min(90%, 1200px);
-  border: 1px solid var(--color-background-base);
   border-radius: 1.5rem;
 }
 
@@ -94,7 +93,7 @@
 }
 
 @media (max-width: 768px) {
-  .tracks-call-grid {
+  .tracks-call-section__grid {
     max-width: 95%;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -106,7 +105,7 @@
 }
 
 @media (max-width: 480px) {
-  .tracks-call-grid {
+  .tracks-call-section__grid {
     grid-template-columns: 1fr;
     max-width: 100%;
     gap: 0.5rem;
