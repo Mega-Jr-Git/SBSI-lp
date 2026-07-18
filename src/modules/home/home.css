@@ -1,0 +1,192 @@
+.home-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to bottom, var(--sbsi-hero-overlay-start), var(--sbsi-hero-overlay-end) 150%), url("./assets/paisagem-hero.JPG");
+  background-size: cover;
+  background-position: center;
+  color: var(--sbsi-white);
+  padding: 4rem 1.5rem;
+  overflow: hidden;
+}
+
+.home-section__content {
+  width: 100%;
+  max-width: 800px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.home-section__location {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .home-section__location {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.home-section__main-title {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (min-width: 768px) {
+  .home-section__main-title {
+    font-size: 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-section__main-title {
+    font-size: 7.5rem;
+    line-height: 0.9;
+  }
+}
+
+.home-section__main-title-line {
+  display: block;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.home-section__main-title-highlight {
+  background: linear-gradient(to top, var(--sbsi-orange-dark), var(--sbsi-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--sbsi-orange);
+}
+
+.home-section__quote {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 1rem auto 0;
+  max-width: 90%;
+}
+
+@media (min-width: 768px) {
+  .home-section__quote {
+    font-size: 1.125rem;
+    max-width: 75%;
+  }
+}
+
+.home-section__countdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .home-section__countdown {
+    gap: 2.25rem;
+  }
+}
+
+.home-section__countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.home-section__countdown-value {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 95%;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 768px) {
+  .home-section__countdown-value {
+    font-size: 4.5rem;
+  }
+}
+
+.home-section__countdown-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .home-section__countdown-label {
+    font-size: 0.875rem;
+  }
+}
+
+.home-section__countdown-separator {
+  width: 1px;
+  height: 4rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 768px) {
+  .home-section__countdown-separator {
+    height: 6rem;
+  }
+}
+
+.home-section__mega-logo-link {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 50;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .home-section__mega-logo-link {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+.home-section__mega-logo {
+  width: 2.5rem;
+  height: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.home-section__mega-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .home-section__mega-logo {
+    width: 3.5rem;
+  }
+}

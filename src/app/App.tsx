@@ -1,4 +1,5 @@
 import SiteHeader from "../shared/layout/SiteHeader";
+import HomeSection from "../modules/home/HomeSection";
 import AboutSection from "../modules/about/AboutSection";
 import LocationSection from "../modules/location/LocationSection";
 import TracksCallSection from "../modules/tracks-call/TracksCallSection";
@@ -10,6 +11,7 @@ export default function App() {
       <SiteHeader />
 
       <main className="page-content">
+        <HomeSection />
         <AboutSection />
         <TracksCallSection />
         <LocationSection />
