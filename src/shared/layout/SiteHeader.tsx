@@ -21,7 +21,7 @@ type Language = {
 
 const navItems: NavItem[] = [
   { labelKey: "sobre", targetId: "sobre" },
-  { labelKey: "trilhas", targetId: "trilhas" },
+  { labelKey: "trilhas", targetId: "chamada-trilhas" },
   { labelKey: "local", targetId: "local" },
 ];
 
