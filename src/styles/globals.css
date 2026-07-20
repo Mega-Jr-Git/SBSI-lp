@@ -8,11 +8,13 @@
   --sbsi-black: #000000;
   --sbsi-orange: #fe9505;
   --sbsi-orange-light: #fa9b28;
+  --sbsi-orange-dark: #F26402;
   --sbsi-brown: #1a120b;
   --sbsi-brown-rgb: 26, 18, 11;
   --sbsi-orange-rgb: 254, 149, 5;
   --color-text-dark: #2a2a2a;
   --color-background-base: #ffffff;
+  --color-background-warm: #F7EFE3;
 
   font-family: var(--font-display);
   color: #fff;
