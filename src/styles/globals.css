@@ -12,6 +12,8 @@
   --color-text-dark: #2a2a2a;
   --color-background-base: #ffffff;
   --color-background-warm: #F7EFE3;
+  --sbsi-hero-overlay-start: rgba(0, 0, 0, 0.6);
+  --sbsi-hero-overlay-end: rgba(0, 0, 0, 0.95);
 
   font-family: var(--font-display);
   color: #fff;

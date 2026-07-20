@@ -1,11 +1,45 @@
+import { useState, useEffect } from "react";
 import "./home.css";
 
 import megaLogo from "./assets/mega.svg";
+import { EVENT_DATE } from "./home.data";
 
 const EVENT_LOCATION = "CAMPO GRANDE · MATO GROSSO DO SUL · 2027";
 const EVENT_QUOTE = "\"Sistemas de Informação Inteligentes: Inovações, Aplicações e Ética na Inteligência Artificial\". Um espaço para inovação, reflexão e conexão entre pesquisadores, profissionais e estudantes.";
 
 export default function HomeSection() {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const difference = EVENT_DATE.getTime() - Date.now();
+
+      if (difference <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      });
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatValue = (value: number) => String(value).padStart(2, "0");
+
   return (
     <section id="home" className="home-section">
       <div className="home-section__content">
@@ -15,10 +49,10 @@ export default function HomeSection() {
           <span className="home-section__main-title-line">Simpósio</span>
           <span className="home-section__main-title-line">Brasileiro</span>
           <span className="home-section__main-title-line">
-            de <span className="home-section__main-title-highlight">Sistemas</span>
+            de&nbsp;<span className="home-section__main-title-highlight">Sistemas</span>
           </span>
           <span className="home-section__main-title-line home-section__main-title-highlight">
-            de Informação
+            de&nbsp;Informação
           </span>
         </h1>
 
@@ -26,22 +60,22 @@ export default function HomeSection() {
         
         <div className="home-section__countdown">
           <div className="home-section__countdown-item">
-            <span className="home-section__countdown-value">00</span>
+            <span className="home-section__countdown-value">{formatValue(timeLeft.days)}</span>
             <span className="home-section__countdown-label">DIAS</span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
-            <span className="home-section__countdown-value">00</span>
+            <span className="home-section__countdown-value">{formatValue(timeLeft.hours)}</span>
             <span className="home-section__countdown-label">HORAS</span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
-            <span className="home-section__countdown-value">00</span>
+            <span className="home-section__countdown-value">{formatValue(timeLeft.minutes)}</span>
             <span className="home-section__countdown-label">MIN</span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
-            <span className="home-section__countdown-value">00</span>
+            <span className="home-section__countdown-value">{formatValue(timeLeft.seconds)}</span>
             <span className="home-section__countdown-label">SEG</span>
           </div>
         </div>
