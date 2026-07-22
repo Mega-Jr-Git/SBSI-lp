@@ -17,7 +17,7 @@
 
 .tracks-call-section__title {
   color: var(--color-text-dark);
-  font-size: clamp(2.2rem, 2.5vw, 3.5rem);
+  font-size: var(--font-size-title);
   font-weight: 600;
   margin-top: 1rem;
 }
@@ -28,7 +28,7 @@
 
 .tracks-call-section__description {
   color: var(--color-text-dark);
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-size: var(--font-size-body);
   font-weight: 400;
 }
 
@@ -37,7 +37,7 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   gap: 1.5rem;
-  margin: 5rem auto;
+  margin: 0 auto;
   padding: 3rem 0 0.6rem;
   background-color: var(--color-background-base);
   max-width: min(90%, 1200px);
@@ -51,12 +51,11 @@
   justify-content: flex-start;
   text-align: center;
   padding: 0 1.5rem;
-  margin-bottom: 2rem;
 }
 
 .tracks-call-card__title {
   color: var(--color-text-dark);
-  font-size: clamp(1rem, 2vw, 1.6rem);
+  font-size: var(--font-size-subtitle);
   font-weight: 600;
   margin-top: 1rem;
 }
@@ -64,13 +63,13 @@
 .tracks-call-card__description {
   flex: 1;
   color: var(--color-text-dark);
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-size: var(--font-size-body);
   font-weight: 400;
 }
 
 .tracks-call-card__data {
   color: var(--color-text-dark);
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-size: var(--font-size-body);
   white-space: nowrap;
 }
 
@@ -79,7 +78,7 @@
   align-items: center;
   gap: 0.8rem;
   color: var(--color-text-dark);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: var(--font-size-button);
   margin: 1rem 0;
   background-color: var(--sbsi-orange);
   border: 2px solid var(--sbsi-orange);
@@ -110,9 +109,5 @@
     grid-template-columns: 1fr;
     max-width: 100%;
     gap: 0.5rem;
-  }
-
-  .tracks-call-card {
-    margin-bottom: 1rem;
   }
 }

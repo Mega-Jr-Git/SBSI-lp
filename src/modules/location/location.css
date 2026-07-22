@@ -18,7 +18,7 @@
   color: var(--sbsi-orange);
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: var(--font-size-label);
   line-height: 138%;
   letter-spacing: 0.15em;
   border: 1px solid var(--sbsi-orange);
@@ -30,7 +30,7 @@
   color: var(--sbsi-black);
   font-family: var(--font-inter);
   font-weight: 800;
-  font-size: 3.75rem;
+  font-size: var(--font-size-title);
   line-height: 138%;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
@@ -39,7 +39,7 @@
 .location-section__dot {
   color: var(--sbsi-orange-light);
   font-weight: 800;
-  font-size: 2.25rem;
+  font-size: var(--font-size-accent);
   line-height: 138%;
   letter-spacing: -0.03em;
 }
@@ -48,7 +48,7 @@
   color: var(--sbsi-black);
   font-family: var(--font-inter);
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: var(--font-size-body);
   line-height: 138%;
   letter-spacing: 0.01em;
   text-align: center;
@@ -75,7 +75,7 @@
   border-radius: 1.875rem;
   padding: 0.625rem;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: var(--font-size-button);
   line-height: 95%;
   letter-spacing: -0.03em;
   text-align: center;
@@ -107,18 +107,6 @@
     padding: 3rem 1.5rem;
   }
 
-  .location-section__tag {
-    font-size: 0.8rem;
-  }
-
-  .location-section__title {
-    font-size: 2rem;
-  }
-
-  .location-section__description {
-    font-size: 0.875rem;
-  }
-
   .location-section__button-group {
     flex-direction: column;
     width: 100%;
@@ -128,7 +116,6 @@
 
   .location-section__button {
     width: 100%;
-    font-size: 1rem;
   }
 
   .location-section__map-container {

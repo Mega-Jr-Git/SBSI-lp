@@ -44,7 +44,7 @@ export default function HomeSection() {
     <section id="home" className="home-section">
       <div className="home-section__content">
         <p className="home-section__location">{EVENT_LOCATION}</p>
-        
+
         <h1 className="home-section__main-title">
           <span className="home-section__main-title-line">Simpósio</span>
           <span className="home-section__main-title-line">Brasileiro</span>
@@ -57,7 +57,7 @@ export default function HomeSection() {
         </h1>
 
         <p className="home-section__quote">{EVENT_QUOTE}</p>
-        
+
         <div className="home-section__countdown">
           <div className="home-section__countdown-item">
             <span className="home-section__countdown-value">{formatValue(timeLeft.days)}</span>
@@ -81,7 +81,7 @@ export default function HomeSection() {
         </div>
       </div>
 
-      <a 
+      <a
         href="https://www.megajunior.com.br/"
         target="_blank"
         rel="noopener noreferrer"

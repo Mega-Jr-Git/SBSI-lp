@@ -18,9 +18,19 @@
   --sbsi-hero-overlay-start: rgba(0, 0, 0, 0.6);
   --sbsi-hero-overlay-end: rgba(0, 0, 0, 0.95);
 
+  --font-size-label: clamp(0.7rem, 1.5vw, 1rem);
+  --font-size-body: clamp(1rem, 1.3vw, 1.125rem);
+  --font-size-button: clamp(1rem, 2vw, 1.25rem);
+  --font-size-subtitle: clamp(1.125rem, 2.5vw, 1.6rem);
+  --font-size-title: clamp(2rem, 4vw, 3.5rem);
+  --font-size-display: clamp(1.75rem, 10vw, 7.5rem);
+  --font-size-accent: clamp(1.5rem, 3vw, 2.25rem);
+  --font-size-countdown-value: clamp(2rem, 5vw, 4.5rem);
+  --font-size-countdown-label: clamp(0.75rem, 1vw, 0.875rem);
+
   font-family: var(--font-display);
-  color: #fff;
-  background: #fff;
+  color: var(--color-text-dark);
+  background: var(--color-background-base);
 }
 
 * {
@@ -35,8 +45,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #fff;
-  color: #fff;
+  background: var(--color-background-base);
+  color: var(--color-text-dark);
 }
 
 #root {
@@ -45,7 +55,7 @@ body {
 
 .page-shell {
   min-height: 100vh;
-  background: #fff;
+  background: var(--color-background-base);
 }
 
 .site-header {
@@ -398,44 +408,9 @@ body {
   padding: 0;
 }
 
-.content-section {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  scroll-margin-top: 0;
-  background: #fff;
-}
-
-.section-card {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-}
-
-.section-card__eyebrow {
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.section-card__title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0.5rem 0;
-}
-
-.section-card__description {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
 .site-footer {
   border-top: 1px solid #ececec;
-  background: #fff;
+  background: var(--color-background-base);
 }
 
 .site-footer__inner {

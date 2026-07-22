@@ -28,7 +28,7 @@
 
 .home-section__location {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: var(--font-size-label);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin: 0;
@@ -37,14 +37,13 @@
 
 @media (min-width: 768px) {
   .home-section__location {
-    font-size: 1rem;
     margin-bottom: 1.5rem;
   }
 }
 
 .home-section__main-title {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 10vw, 2.75rem);
+  font-size: var(--font-size-display);
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -52,15 +51,8 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .home-section__main-title {
-    font-size: 5.5rem;
-  }
-}
-
 @media (min-width: 1024px) {
   .home-section__main-title {
-    font-size: 7.5rem;
     line-height: 0.9;
   }
 }
@@ -80,7 +72,7 @@
 
 .home-section__quote {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   font-weight: 400;
   line-height: 1.5;
   margin: 1rem auto 0;
@@ -89,7 +81,6 @@
 
 @media (min-width: 768px) {
   .home-section__quote {
-    font-size: 1.125rem;
     max-width: 75%;
   }
 }
@@ -118,29 +109,17 @@
 
 .home-section__countdown-value {
   font-family: var(--font-mono);
-  font-size: 2rem;
+  font-size: var(--font-size-countdown-value);
   font-weight: 800;
   line-height: 95%;
   letter-spacing: -0.03em;
 }
 
-@media (min-width: 768px) {
-  .home-section__countdown-value {
-    font-size: 4.5rem;
-  }
-}
-
 .home-section__countdown-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: var(--font-size-countdown-label);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-}
-
-@media (min-width: 768px) {
-  .home-section__countdown-label {
-    font-size: 0.875rem;
-  }
 }
 
 .home-section__countdown-separator {
