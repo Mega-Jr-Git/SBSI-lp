@@ -92,7 +92,15 @@ Estas regras se aplicam a qualquer modulo que use os padroes abaixo:
 - **Imagens**: `alt` descritivo, nunca vazio quando a imagem carrega
   informacao (ex: nome do patrocinador/instituicao).
 
-## 6. Antes de abrir o PR
+## 6. Internacionalizacao
+
+Texto visivel nunca fica hardcoded no JSX em um unico idioma.
+Cada modulo deve entregar `<slug>.content.ts` com os textos em `pt`
+e `en`, lidos via `useLocale()` do modulo compartilhado de i18n.
+
+Consulte `src/shared/i18n/README.md` para instrucoes detalhadas de uso.
+
+## 7. Antes de abrir o PR
 
 ```bash
 npm run build
@@ -105,3 +113,4 @@ Confira tambem no navegador:
 - rolagem/ancora ate a nova secao;
 - teclado: tab ate os elementos interativos do modulo e, se houver modal,
   fechamento com `Esc`.
+*
