@@ -56,7 +56,7 @@
   margin-bottom: 2rem;
 }
 
-.location-section__buttonGroup {
+.location-section__button-group {
   display: flex;
   gap: 1rem;
   margin-bottom: 2.5rem;
@@ -88,7 +88,7 @@
   color: var(--sbsi-white);
 }
 
-.location-section__mapContainer {
+.location-section__map-container {
   width: 100%;
   max-width: 69.938rem;
   height: 33.375rem;
@@ -97,13 +97,13 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-.location-section__mapFrame {
+.location-section__map-frame {
   width: 100%;
   height: 100%;
 }
 
 @media (max-width: 48rem) {
-  .location-section__container {
+  .location-section__content {
     padding: 3rem 1.5rem;
   }
 
@@ -119,7 +119,7 @@
     font-size: 0.875rem;
   }
 
-  .location-section__buttonGroup {
+  .location-section__button-group {
     flex-direction: column;
     width: 100%;
     max-width: 17.5rem;
@@ -131,7 +131,7 @@
     font-size: 1rem;
   }
 
-  .location-section__mapContainer {
+  .location-section__map-container {
     height: 18.75rem;
     border-radius: 1rem;
   }

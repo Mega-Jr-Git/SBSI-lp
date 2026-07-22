@@ -1,5 +1,5 @@
-import "./Location.css";
-import { MAP_DIRECTIONS_URL, MAP_EMBED_URL, HOTELS_URL } from "./location.data";
+import "./location.css";
+import { MAP_DIRECTIONS_URL, MAP_EMBED_URL } from "./location.data";
 
 export default function LocationSection() {
   return (
@@ -16,7 +16,7 @@ export default function LocationSection() {
           para o simpósio, mas também a oportunidade de conhecer uma cidade com
           rica diversidade cultural e paisagens marcantes do bioma Cerrado.
         </p>
-        <div className="location-section__buttonGroup">
+        <div className="location-section__button-group">
           <a
             className="location-section__button"
             href={MAP_DIRECTIONS_URL}
@@ -25,16 +25,8 @@ export default function LocationSection() {
           >
             Como chegar
           </a>
-          <a
-            className="location-section__button"
-            href={HOTELS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver hotéis
-          </a>
         </div>
-        <div className="location-section__mapContainer">
+        <div className="location-section__map-container">
           <iframe
             src={MAP_EMBED_URL}
             width="100%"
@@ -44,7 +36,7 @@ export default function LocationSection() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Mapa de Campo Grande"
-            className="location-section__mapFrame"
+            className="location-section__map-frame"
           />
         </div>
       </div>
