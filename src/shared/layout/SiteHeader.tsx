@@ -67,7 +67,6 @@ export default function SiteHeader() {
   const langSelectorRef = useRef<HTMLDivElement>(null);
   const selectedLang =
     languages.find((lang) => lang.code === locale) || languages[0];
-  const linkSubmeter = ""; // Colocar link externo para submeter trabalho
   const t = navbarTranslations[locale];
 
   useEffect(() => {
@@ -133,12 +132,13 @@ export default function SiteHeader() {
         </nav>
 
         <div className="site-header__actions">
-          <a
-            href={linkSubmeter}
+          <button
+            type="button"
             className="site-header__btn site-header__btn--outline"
+            onClick={() => handleNavigation("chamada-trilhas")}
           >
             {t.submeter}
-          </a>
+          </button>
           <button
             type="button"
             className="site-header__btn site-header__btn--filled"
@@ -237,12 +237,13 @@ export default function SiteHeader() {
         </nav>
 
         <div className="site-header__mobile-actions">
-          <a
-            href={linkSubmeter}
+          <button
+            type="button"
             className="site-header__btn site-header__btn--outline"
+            onClick={() => handleNavigation("chamada-trilhas")}
           >
             {t.submeter}
-          </a>
+          </button>
           <button
             type="button"
             className="site-header__btn site-header__btn--filled"
