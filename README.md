@@ -99,6 +99,7 @@ make clean           # Remove container, volumes e orfaos
 
 ## Secoes atuais
 
+- `home` (`src/modules/home`): Seção inicial (Hero) com as informações primárias do evento e countdown.
 - `sobre` (`src/modules/about`): Informações institucionais sobre o SBSI.
 - `tracks-call` — seção de chamada para as trilhas.
 

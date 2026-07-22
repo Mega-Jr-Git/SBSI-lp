@@ -6,6 +6,7 @@ Esta pasta contem os modulos (secoes) da landing page.
 
 Abaixo estão listados os módulos de seção já implementados no projeto:
 
+- `home`: Seção inicial (Hero) com as informações primárias do evento e countdown.
 - `about`: Informações institucionais sobre o SBSI.
 - `tracks-call`: secao de chamada de trabalhos.
 - `location`: Apresenta o local físico do evento (UFMS, Campo Grande), oferecendo rotas de navegação direta, busca de hotéis e um mapa interativo integrado.
