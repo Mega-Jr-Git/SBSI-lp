@@ -1,14 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import logoUrl from "../../../id-visual/SBSI_branco.svg";
-
-// Mock temporário simulando a estrutura que deve ser entregue;
-const useLocale = () => {
-  const [locale, setLocale] = useState<"pt" | "en">("pt");
-  return { locale, setLocale };
-};
+import { useLocale } from "../../shared/i18n/useLocale";
+import { siteHeaderContent } from "./site-header.content";
 
 type NavItem = {
-  labelKey: keyof typeof navbarTranslations.pt.menu;
+  labelKey: keyof typeof siteHeaderContent.pt.menu;
   targetId?: string;
 };
 
@@ -40,34 +36,16 @@ const languages: Language[] = [
   },
 ];
 
-// Centralização dos textos da própria Navbar para suportar i18n
-const navbarTranslations = {
-  pt: {
-    menu: { sobre: "Sobre", trilhas: "Trilhas", local: "Local" },
-    submeter: "Submeta seu trabalho",
-    inscrever: "Inscreva-se",
-    ariaLang: "Mudar idioma. Atual: Português",
-  },
-  en: {
-    menu: { sobre: "About", trilhas: "Tracks", local: "Venue" },
-    submeter: "Submit your paper",
-    inscrever: "Register",
-    ariaLang: "Change language. Current: English",
-  },
-};
-
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-
-  // Consumindo o hook que deve ser criado para gerenciar o idioma globalmente.
   const { locale, setLocale } = useLocale();
 
   const langSelectorRef = useRef<HTMLDivElement>(null);
   const selectedLang =
     languages.find((lang) => lang.code === locale) || languages[0];
-  const t = navbarTranslations[locale];
+  const t = siteHeaderContent[locale];
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -100,7 +78,7 @@ export default function SiteHeader() {
   }
 
   function handleLanguageChange(code: "pt" | "en") {
-    setLocale(code); // Dispara a alteração no contexto global que deve ser criada.
+    setLocale(code);
     setIsLangOpen(false);
   }
 
@@ -118,7 +96,7 @@ export default function SiteHeader() {
           <img src={logoUrl} alt="SBSI" className="site-header__logo-img" />
         </button>
 
-        <nav aria-label="Navegação principal" className="site-header__nav">
+        <nav aria-label={t.navAria} className="site-header__nav">
           {navItems.map((item) => (
             <button
               key={item.labelKey}
@@ -201,7 +179,7 @@ export default function SiteHeader() {
           className="site-menu-toggle"
           aria-controls="site-mobile-menu"
           aria-expanded={isMenuOpen}
-          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-label={isMenuOpen ? t.menuClose : t.menuOpen}
           onClick={() => setIsMenuOpen((current) => !current)}
         >
           {isMenuOpen ? (
@@ -221,7 +199,7 @@ export default function SiteHeader() {
         className={`site-header__mobile-menu ${isMenuOpen ? "site-header__mobile-menu--open" : ""}`}
       >
         <nav
-          aria-label="Menu principal móvel"
+          aria-label={t.mobileNavAria}
           className="site-header__mobile-nav"
         >
           {navItems.map((item) => (

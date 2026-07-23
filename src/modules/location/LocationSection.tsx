@@ -4,8 +4,8 @@ import "./location.css";
 import { MAP_DIRECTIONS_URL, MAP_EMBED_URL } from "./location.data";
 
 export default function LocationSection() {
-  const { locale } = useLocale()
-  const content = locationContent[locale]
+  const { locale } = useLocale();
+  const content = locationContent[locale];
 
   return (
     <section id="local" className="location-section">

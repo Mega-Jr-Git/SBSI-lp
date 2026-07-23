@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 import "./home.css";
 
+import { useLocale } from "../../shared/i18n/useLocale";
+import { homeContent } from "./home.content";
+
 import megaLogo from "./assets/mega.svg";
 import { EVENT_DATE } from "./home.data";
 
 const EVENT_LOCATION = "CAMPO GRANDE · MATO GROSSO DO SUL · 2027";
-const EVENT_QUOTE = "\"Sistemas de Informação Inteligentes: Inovações, Aplicações e Ética na Inteligência Artificial\". Um espaço para inovação, reflexão e conexão entre pesquisadores, profissionais e estudantes.";
 
 export default function HomeSection() {
+  const { locale } = useLocale();
+  const content = homeContent[locale];
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -46,37 +51,37 @@ export default function HomeSection() {
         <p className="home-section__location">{EVENT_LOCATION}</p>
 
         <h1 className="home-section__main-title">
-          <span className="home-section__main-title-line">Simpósio</span>
-          <span className="home-section__main-title-line">Brasileiro</span>
+          <span className="home-section__main-title-line">{content.titleLine1}</span>
+          <span className="home-section__main-title-line">{content.titleLine2}</span>
           <span className="home-section__main-title-line">
-            de&nbsp;<span className="home-section__main-title-highlight">Sistemas</span>
+            {content.titlePrefix1}&nbsp;<span className="home-section__main-title-highlight">{content.titleHighlight}</span>
           </span>
           <span className="home-section__main-title-line home-section__main-title-highlight">
-            de&nbsp;Informação
+            {content.titlePrefix2 && <>{content.titlePrefix2}&nbsp;</>}{content.titleSuffix}
           </span>
         </h1>
 
-        <p className="home-section__quote">{EVENT_QUOTE}</p>
-
+        <p className="home-section__quote">{content.quote}</p>
+        
         <div className="home-section__countdown">
           <div className="home-section__countdown-item">
             <span className="home-section__countdown-value">{formatValue(timeLeft.days)}</span>
-            <span className="home-section__countdown-label">DIAS</span>
+            <span className="home-section__countdown-label">{content.countdown.days}</span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
             <span className="home-section__countdown-value">{formatValue(timeLeft.hours)}</span>
-            <span className="home-section__countdown-label">HORAS</span>
+            <span className="home-section__countdown-label">{content.countdown.hours}</span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
             <span className="home-section__countdown-value">{formatValue(timeLeft.minutes)}</span>
-            <span className="home-section__countdown-label">MIN</span>
+            <span className="home-section__countdown-label">{content.countdown.min}</span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
             <span className="home-section__countdown-value">{formatValue(timeLeft.seconds)}</span>
-            <span className="home-section__countdown-label">SEG</span>
+            <span className="home-section__countdown-label">{content.countdown.sec}</span>
           </div>
         </div>
       </div>
@@ -86,9 +91,9 @@ export default function HomeSection() {
         target="_blank"
         rel="noopener noreferrer"
         className="home-section__mega-logo-link"
-        aria-label="Acessar site da Mega Júnior"
+        aria-label={content.megaAria}
       >
-        <img src={megaLogo} alt="Logo da Mega Júnior" className="home-section__mega-logo" />
+        <img src={megaLogo} alt={content.megaAlt} className="home-section__mega-logo" />
       </a>
     </section>
   );
