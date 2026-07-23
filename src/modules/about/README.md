@@ -12,4 +12,4 @@ Exibe as informações institucionais sobre o Simpósio Brasileiro de Sistemas d
 - `assets/`: Imagens e SVGs específicos deste módulo (onde será colocada a logo).
 
 ## Como Editar
-O conteúdo de texto pode ser atualizado diretamente em `AboutSection.tsx`.
+O conteúdo de texto fica centralizado em `about.content.ts` (pt/en) e é consumido via `useLocale()`.

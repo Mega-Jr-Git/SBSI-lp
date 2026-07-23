@@ -1,3 +1,4 @@
+import { LocaleProvider } from "../shared/i18n/LocaleProvider";
 import SiteHeader from "../shared/layout/SiteHeader";
 import HomeSection from "../modules/home/HomeSection";
 import AboutSection from "../modules/about/AboutSection";
@@ -7,8 +8,9 @@ import SiteFooter from "../shared/layout/SiteFooter";
 
 export default function App() {
   return (
-    <div className="page-shell">
-      <SiteHeader />
+    <LocaleProvider>
+      <div className="page-shell">
+        <SiteHeader />
 
       <main className="page-content">
         <HomeSection />
@@ -17,7 +19,8 @@ export default function App() {
         <LocationSection />
       </main>
 
-      <SiteFooter />
-    </div>
+        <SiteFooter />
+      </div>
+    </LocaleProvider>
   );
 }

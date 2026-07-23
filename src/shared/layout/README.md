@@ -9,7 +9,8 @@ Esta pasta contem componentes de layout geral da pagina.
 
 ## Header
 
-O `SiteHeader` usa a lista `navItems` para montar os textos do menu.
+O `SiteHeader` usa `site-header.content.ts` com os textos em `pt` e `en`,
+lidos via `useLocale()` do módulo compartilhado de i18n.
 
 Enquanto um item nao tiver `targetId`, ele aparece no menu mas nao navega para
 nenhuma secao. Isso e util para manter texto lorem ipsum no esqueleto.
