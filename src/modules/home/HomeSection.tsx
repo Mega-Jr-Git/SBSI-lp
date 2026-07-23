@@ -7,8 +7,6 @@ import { homeContent } from "./home.content";
 import megaLogo from "./assets/mega.svg";
 import { EVENT_DATE } from "./home.data";
 
-const EVENT_LOCATION = "CAMPO GRANDE · MATO GROSSO DO SUL · 2027";
-
 export default function HomeSection() {
   const { locale } = useLocale();
   const content = homeContent[locale];
@@ -48,7 +46,7 @@ export default function HomeSection() {
   return (
     <section id="home" className="home-section">
       <div className="home-section__content">
-        <p className="home-section__location">{EVENT_LOCATION}</p>
+        <p className="home-section__location">{content.location}</p>
 
         <h1 className="home-section__main-title">
           <span className="home-section__main-title-line">{content.titleLine1}</span>

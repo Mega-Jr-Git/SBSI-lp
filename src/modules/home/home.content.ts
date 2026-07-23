@@ -1,5 +1,6 @@
 export const homeContent = {
   pt: {
+    location: "CAMPO GRANDE · MATO GROSSO DO SUL · 2027",
     titleLine1: "XXIII Simpósio",
     titleLine2: "Brasileiro",
     titlePrefix1: "de",
@@ -12,6 +13,7 @@ export const homeContent = {
     megaAlt: "Logo da Mega Júnior",
   },
   en: {
+    location: "CAMPO GRANDE · MATO GROSSO DO SUL · 2027",
     titleLine1: "XXIII Brazilian",
     titleLine2: "Symposium",
     titlePrefix1: "on",

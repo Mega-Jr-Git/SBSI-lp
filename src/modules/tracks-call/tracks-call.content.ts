@@ -15,7 +15,7 @@ export const tracksContent = {
     link: "Ver mais",
 
     tracks: [
-      { title: "Pesquisa em SI", date: "xx/xx/2027", link: "a" },
+      { title: "Pesquisa em SI", date: "xx/xx/2027", link: "" },
       { title: "Indústria e Inovação", date: "xx/xx/2027", link: "" },
       { title: "Minicursos em SI", date: "xx/xx/2027", link: "" },
       { title: "Novas Ideias e Resultados Emergentes em SI", date: "xx/xx/2027", link: "" },
@@ -33,7 +33,7 @@ export const tracksContent = {
     link: "See more",
 
     tracks: [
-      { title: "Research in IS", date: "xx/xx/2027", link: "a" },
+      { title: "Research in IS", date: "xx/xx/2027", link: "" },
       { title: "Industry and Innovation", date: "xx/xx/2027", link: "" },
       { title: "Short Courses in IS", date: "xx/xx/2027", link: "" },
       { title: "New Ideas and Emerging Results in IS", date: "xx/xx/2027", link: "" },
