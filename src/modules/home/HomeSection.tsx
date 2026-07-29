@@ -4,7 +4,6 @@ import "./home.css";
 import { useLocale } from "../../shared/i18n/useLocale";
 import { homeContent } from "./home.content";
 
-import megaLogo from "./assets/mega.svg";
 import { EVENT_DATE } from "./home.data";
 
 export default function HomeSection() {
@@ -83,16 +82,6 @@ export default function HomeSection() {
           </div>
         </div>
       </div>
-
-      <a
-        href="https://www.megajunior.com.br/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="home-section__mega-logo-link"
-        aria-label={content.megaAria}
-      >
-        <img src={megaLogo} alt={content.megaAlt} className="home-section__mega-logo" />
-      </a>
     </section>
   );
 }
