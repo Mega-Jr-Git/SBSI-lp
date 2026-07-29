@@ -9,8 +9,6 @@ export const homeContent = {
     titleSuffix: "Informação",
     quote: "\"Sistemas de Informação Inteligentes: Inovações, Aplicações e Ética na Inteligência Artificial\". Um espaço para inovação, reflexão e conexão entre pesquisadores, profissionais e estudantes.",
     countdown: { days: "DIAS", hours: "HORAS", min: "MIN", sec: "SEG" },
-    megaAria: "Acessar site da Mega Júnior",
-    megaAlt: "Logo da Mega Júnior",
   },
   en: {
     location: "CAMPO GRANDE · MATO GROSSO DO SUL · 2027",
@@ -22,7 +20,5 @@ export const homeContent = {
     titleSuffix: "Systems",
     quote: "\"Intelligent Information Systems: Innovations, Applications and Ethics in Artificial Intelligence\". A space for innovation, reflection and connection among researchers, professionals and students.",
     countdown: { days: "DAYS", hours: "HOURS", min: "MIN", sec: "SEC" },
-    megaAria: "Visit Mega Júnior website",
-    megaAlt: "Mega Júnior logo",
   },
 };

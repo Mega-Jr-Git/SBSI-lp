@@ -133,37 +133,3 @@
     height: 6rem;
   }
 }
-
-.home-section__mega-logo-link {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 50;
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .home-section__mega-logo-link {
-    bottom: 2rem;
-    right: 2rem;
-  }
-}
-
-.home-section__mega-logo {
-  width: 2.5rem;
-  height: auto;
-  opacity: 0.9;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.home-section__mega-logo:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-@media (min-width: 768px) {
-  .home-section__mega-logo {
-    width: 3.5rem;
-  }
-}

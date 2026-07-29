@@ -100,7 +100,7 @@ export default function SiteFooter() {
           <div className="site-footer__dev">
             <span className="site-footer__dev-text">{t.devBy}</span>
             <a
-              href="https://megajr.com.br"
+              href="https://www.megajunior.com.br/"
               target="_blank"
               rel="noopener noreferrer"
               className="site-footer__dev-link"
