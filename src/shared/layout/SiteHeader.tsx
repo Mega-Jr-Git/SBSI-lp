@@ -14,6 +14,8 @@ type Language = {
   alt: string;
 };
 
+const publicUrl = import.meta.env.BASE_URL;
+
 const navItems: NavItem[] = [
   { labelKey: "sobre", targetId: "sobre" },
   { labelKey: "trilhas", targetId: "chamada-trilhas" },
@@ -24,13 +26,13 @@ const languages: Language[] = [
   {
     code: "pt",
     label: "Português",
-    flagUrl: "/flags/brasil_flag.png",
+    flagUrl: `${publicUrl}flags/brasil_flag.png`,
     alt: "Brasil",
   },
   {
     code: "en",
     label: "English",
-    flagUrl: "/flags/usa_flag.png",
+    flagUrl: `${publicUrl}flags/usa_flag.png`,
     alt: "United States",
   },
 ];
@@ -92,7 +94,7 @@ export default function SiteHeader() {
           aria-label="SBSI"
           onClick={() => handleNavigation("home")}
         >
-          <img src="/SBSI_branco.svg" alt="SBSI" className="site-header__logo-img" />
+          <img src={`${publicUrl}SBSI_branco.svg`} alt="SBSI" className="site-header__logo-img" />
         </button>
 
         <nav aria-label={t.navAria} className="site-header__nav">

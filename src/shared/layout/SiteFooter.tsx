@@ -11,6 +11,8 @@ type InstitutionalLinkItem = {
   href: string;
 };
 
+const publicUrl = import.meta.env.BASE_URL;
+
 const navLinks: NavLinkItem[] = [
   { labelKey: "inicio", targetId: "home" },
   { labelKey: "sobre", targetId: "sobre" },
@@ -44,7 +46,7 @@ export default function SiteFooter() {
         <div className="site-footer__top">
           <div className="site-footer__brand">
             <img
-              src="/SBSI_branco.svg"
+              src={`${publicUrl}SBSI_branco.svg`}
               alt="SBSI 2027"
               className="site-footer__logo-sbsi"
             />
@@ -101,7 +103,7 @@ export default function SiteFooter() {
             >
               <img
                 className="site-footer__logo-mega"
-                src="/logo_megajr_escrito.svg"
+                src={`${publicUrl}logo_megajr_escrito.svg`}
                 alt="MEGA JR."
               />
             </a>
