@@ -7,7 +7,8 @@ export const homeContent = {
     titleHighlight: "Sistemas",
     titlePrefix2: "de",
     titleSuffix: "Informação",
-    quote: "\"Sistemas de Informação Inteligentes: Inovações, Aplicações e Ética na Inteligência Artificial\". Um espaço para inovação, reflexão e conexão entre pesquisadores, profissionais e estudantes.",
+    quote:
+      '"Sistemas de Informação para Transições Sustentáveis: Territórios, Organizações e Sociedade". Um espaço para inovação, reflexão e conexão entre pesquisadores, profissionais e estudantes.',
     countdown: { days: "DIAS", hours: "HORAS", min: "MIN", sec: "SEG" },
   },
   en: {
@@ -18,7 +19,8 @@ export const homeContent = {
     titleHighlight: "Information",
     titlePrefix2: "",
     titleSuffix: "Systems",
-    quote: "\"Intelligent Information Systems: Innovations, Applications and Ethics in Artificial Intelligence\". A space for innovation, reflection and connection among researchers, professionals and students.",
+    quote:
+      '"Information Systems for Sustainable Transitions: Territories, Organizations and Society". A space for innovation, reflection and connection among researchers, professionals and students.',
     countdown: { days: "DAYS", hours: "HOURS", min: "MIN", sec: "SEC" },
   },
 };
