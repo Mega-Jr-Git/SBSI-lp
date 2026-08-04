@@ -15,12 +15,12 @@ export const tracksContent = {
     link: "Ver mais",
 
     tracks: [
-      { title: "Pesquisa em SI", date: "xx/xx/2027", link: "" },
-      { title: "Indústria e Inovação", date: "xx/xx/2027", link: "" },
-      { title: "Minicursos em SI", date: "xx/xx/2027", link: "" },
-      { title: "Novas Ideias e Resultados Emergentes em SI", date: "xx/xx/2027", link: "" },
-      { title: "Grandes Desafios em Sistemas de Informação no Brasil", date: "xx/xx/2027", link: "" },
-      { title: "Concurso de Teses, Dissertações e TCCs em SI", date: "xx/xx/2027", link: "" },
+      { title: "Pesquisa em SI", date: "Em breve", link: "" },
+      { title: "Indústria e Inovação", date: "Em breve", link: "" },
+      { title: "Minicursos em SI", date: "Em breve", link: "" },
+      { title: "Novas Ideias e Resultados Emergentes em SI", date: "Em breve", link: "" },
+      { title: "Grandes Desafios em Sistemas de Informação no Brasil", date: "Em breve", link: "" },
+      { title: "Concurso de Teses, Dissertações e TCCs em SI", date: "Em breve", link: "" },
     ],
   },
   en: {
@@ -33,12 +33,12 @@ export const tracksContent = {
     link: "See more",
 
     tracks: [
-      { title: "Research in IS", date: "xx/xx/2027", link: "" },
-      { title: "Industry and Innovation", date: "xx/xx/2027", link: "" },
-      { title: "Short Courses in IS", date: "xx/xx/2027", link: "" },
-      { title: "New Ideas and Emerging Results in IS", date: "xx/xx/2027", link: "" },
-      { title: "Grand Challenges in Information Systems in Brazil", date: "xx/xx/2027", link: "" },
-      { title: "Thesis, Dissertation, and TCC Competition in IS", date: "xx/xx/2027", link: "" },
+      { title: "Research in IS", date: "Coming soon", link: "" },
+      { title: "Industry and Innovation", date: "Coming soon", link: "" },
+      { title: "Short Courses in IS", date: "Coming soon", link: "" },
+      { title: "New Ideas and Emerging Results in IS", date: "Coming soon", link: "" },
+      { title: "Grand Challenges in Information Systems in Brazil", date: "Coming soon", link: "" },
+      { title: "Thesis, Dissertation, and TCC Competition in IS", date: "Coming soon", link: "" },
     ],
   },
 }
