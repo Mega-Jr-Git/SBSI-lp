@@ -75,7 +75,7 @@ make clean           # Remove container, volumes e orfaos
 ```txt
 .
 |-- docs/                  # Decisoes, configuracao e padrao de codigo do projeto
-|-- id-visual/              # Assets da identidade visual (criada quando existirem)
+|-- public/                 # Recursos estáticos, incluindo identidade visual
 |-- src/
 |   |-- app/               # Composicao principal da pagina
 |   |-- modules/           # Secoes ativas da landing page (comeca vazio)
@@ -169,9 +169,9 @@ dentro da mesma pasta. Evite colocar regra especifica de uma secao em
 
 ## Identidade visual
 
-Os assets de identidade visual ficam em `id-visual/` — crie a pasta quando os
-primeiros assets existirem. Ate la, os componentes principais dependem mais de
-`src/styles/globals.css` do que de imagens.
+Os assets de identidade visual e outros recursos estáticos ficam em `public/`.
+Eles são servidos diretamente a partir da raiz do site, por exemplo,
+`public/flags/brasil_flag.png` é acessível em `/flags/brasil_flag.png`.
 
 ## Checklist antes de abrir PR
 
