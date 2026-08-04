@@ -4,8 +4,7 @@ Esta pasta contem componentes visuais reutilizaveis.
 
 ## Componentes atuais
 
-- `SectionPlaceholder.tsx`: estrutura temporaria para secoes simples, com
-  eyebrow, titulo e paragrafo.
+Nenhum componente compartilhado foi criado ainda.
 
 ## Quando criar um componente aqui
 
@@ -22,22 +21,3 @@ Exemplos:
 
 Se o componente sera usado por apenas uma secao, mantenha dentro do modulo da
 propria secao (`src/modules/<secao>/`), nunca aqui.
-
-## `SectionPlaceholder`
-
-Use `SectionPlaceholder` enquanto a secao ainda e um esqueleto. Ele ajuda a
-manter alinhamento, tipografia e espacamento consistentes.
-
-Exemplo:
-
-```tsx
-<SectionPlaceholder
-  id="local"
-  eyebrow="Local"
-  title="Lorem ipsum dolor sit amet"
-  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-/>
-```
-
-Quando uma secao ganhar layout proprio, substitua o placeholder por markup
-especifico no modulo da secao, seguindo `docs/coding-standards.md`.

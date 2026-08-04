@@ -75,7 +75,7 @@ make clean           # Remove container, volumes e orfaos
 ```txt
 .
 |-- docs/                  # Decisoes, configuracao e padrao de codigo do projeto
-|-- id-visual/              # Assets da identidade visual (criada quando existirem)
+|-- public/                 # Recursos estáticos, incluindo identidade visual
 |-- src/
 |   |-- app/               # Composicao principal da pagina
 |   |-- modules/           # Secoes ativas da landing page (comeca vazio)
@@ -94,15 +94,14 @@ make clean           # Remove container, volumes e orfaos
 - `src/modules/*`: cada pasta representa uma secao ativa da landing page.
 - `src/shared/layout/SiteHeader.tsx`: navbar minimalista atual.
 - `src/shared/layout/SiteFooter.tsx`: footer minimalista atual.
-- `src/shared/components/SectionPlaceholder.tsx`: base temporaria usada pelas secoes simples.
 - `src/styles/globals.css`: estilos globais da pagina, navbar e footer.
 
 ## Secoes atuais
 
-Nenhuma secao foi criada ainda. Este repositorio comeca so com o esqueleto —
-cada secao (home, sobre, programacao, submissao de trabalhos, organizacao,
-patrocinadores etc.) e criada do zero pelo time seguindo o passo a passo
-abaixo.
+- `home` (`src/modules/home`): Seção inicial (Hero) com as informações primárias do evento e countdown.
+- `sobre` (`src/modules/about`): Informações institucionais sobre o SBSI.
+- `tracks-call` — seção de chamada para as trilhas.
+- `location` (`src/modules/location`): local do evento, com rota e mapa.
 
 ## Como criar uma nova secao
 
@@ -119,11 +118,11 @@ src/modules/location/
 Exemplo em `src/modules/location/LocationSection.tsx`:
 
 ```tsx
-import SectionPlaceholder from "../../shared/components/SectionPlaceholder";
-
 export default function LocationSection() {
   return (
-    <SectionPlaceholder id="local" />
+    <section id="local" className="location-section">
+      {/* markup da secao */}
+    </section>
   );
 }
 ```
@@ -161,11 +160,8 @@ Adicione na ordem desejada dentro de `<main className="page-content">`:
 
 ## Padrao para secoes
 
-Para secoes simples, use `SectionPlaceholder`. Ele ja aplica:
-
-- altura base da secao;
-- estrutura vazia para evoluir o layout;
-- consistencia visual com a pagina branca atual.
+Construa o markup e o CSS da secao direto no modulo, seguindo as convencoes de
+`docs/coding-standards.md` (nomenclatura de arquivos, tokens de cor, BEM).
 
 Quando a secao ficar mais complexa, o modulo pode ganhar componentes proprios
 dentro da mesma pasta. Evite colocar regra especifica de uma secao em
@@ -173,9 +169,9 @@ dentro da mesma pasta. Evite colocar regra especifica de uma secao em
 
 ## Identidade visual
 
-Os assets de identidade visual ficam em `id-visual/` — crie a pasta quando os
-primeiros assets existirem. Ate la, os componentes principais dependem mais de
-`src/styles/globals.css` do que de imagens.
+Os assets de identidade visual e outros recursos estáticos ficam em `public/`.
+Eles são servidos diretamente a partir da raiz do site, por exemplo,
+`public/flags/brasil_flag.png` é acessível em `/flags/brasil_flag.png`.
 
 ## Checklist antes de abrir PR
 
