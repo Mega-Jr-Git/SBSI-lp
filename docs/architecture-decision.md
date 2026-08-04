@@ -14,7 +14,7 @@ Isso significa que:
 
 - a aplicacao vive diretamente em `src/`;
 - a documentacao e decisoes ficam em `docs/`;
-- a identidade visual fica em `id-visual/`, criada quando os assets estiverem definidos;
+- a identidade visual e outros recursos estáticos ficam em `public/`;
 - o codigo e organizado por modulos de produto, e nao apenas por tipo tecnico de arquivo.
 
 ## Motivacoes

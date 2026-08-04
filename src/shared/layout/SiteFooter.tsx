@@ -1,4 +1,3 @@
-import logoSbsiUrl from "../../../id-visual/SBSI_branco.svg";
 import { siteFooterContent, SiteFooterContent } from "./site-footer.content";
 import { useLocale } from "../../shared/i18n/useLocale";
 
@@ -26,11 +25,6 @@ const institutionalLinks: InstitutionalLinkItem[] = [
   { labelKey: "edicoes", href: "https://sbsi.sbc.org.br/2026/" },
 ];
 
-const footerLogoMegaUrl = new URL(
-  "../../../id-visual/logo_megajr_escrito.svg",
-  import.meta.url,
-).href;
-
 export default function SiteFooter() {
   const { locale } = useLocale();
   const t = siteFooterContent[locale];
@@ -50,7 +44,7 @@ export default function SiteFooter() {
         <div className="site-footer__top">
           <div className="site-footer__brand">
             <img
-              src={logoSbsiUrl}
+              src="/SBSI_branco.svg"
               alt="SBSI 2027"
               className="site-footer__logo-sbsi"
             />
@@ -107,7 +101,7 @@ export default function SiteFooter() {
             >
               <img
                 className="site-footer__logo-mega"
-                src={footerLogoMegaUrl}
+                src="/logo_megajr_escrito.svg"
                 alt="MEGA JR."
               />
             </a>
