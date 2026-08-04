@@ -18,6 +18,7 @@
   --color-background-warm: #f7efe3;
   --sbsi-hero-overlay-start: rgba(0, 0, 0, 0.6);
   --sbsi-hero-overlay-end: rgba(0, 0, 0, 0.95);
+  --site-header-height: 6.25rem;
 
   --font-size-label: clamp(0.7rem, 1.5vw, 1rem);
   --font-size-body: clamp(1rem, 1.3vw, 1.125rem);
@@ -60,7 +61,7 @@ body {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -84,8 +85,12 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-inline: 1.5rem;
-  min-height: 6.25rem;
+  min-height: var(--site-header-height);
   margin: 0 auto;
+}
+
+section[id]:not(#home) {
+  scroll-margin-top: var(--site-header-height);
 }
 
 .site-header__brand {
