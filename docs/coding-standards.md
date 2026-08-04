@@ -113,4 +113,3 @@ Confira tambem no navegador:
 - rolagem/ancora ate a nova secao;
 - teclado: tab ate os elementos interativos do modulo e, se houver modal,
   fechamento com `Esc`.
-*

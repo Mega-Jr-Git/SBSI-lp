@@ -70,12 +70,13 @@ export default function SiteHeader() {
 
   function handleNavigation(targetId?: string) {
     setIsMenuOpen(false);
-    if (targetId) {
-      window.history.pushState(null, "", `#${targetId}`);
-      document.getElementById(targetId)?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
+    if (!targetId) return;
+
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    window.history.pushState(null, "", `#${targetId}`);
+    target.scrollIntoView({ behavior: "smooth" });
   }
 
   function handleLanguageChange(code: "pt" | "en") {

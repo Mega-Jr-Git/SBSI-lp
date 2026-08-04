@@ -89,7 +89,7 @@ body {
   margin: 0 auto;
 }
 
-section[id]:not(#home) {
+section[id] {
   scroll-margin-top: var(--site-header-height);
 }
 

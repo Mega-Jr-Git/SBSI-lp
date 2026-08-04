@@ -11,7 +11,6 @@ export type SiteFooterContent = {
   };
   inst: {
     sbc: string;
-    comite: string;
     edicoes: string;
   };
   copyright: string;
@@ -33,7 +32,6 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
     },
     inst: {
       sbc: "SBC",
-      comite: "Comitê organizador",
       edicoes: "Edições anteriores",
     },
     copyright:
@@ -54,7 +52,6 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
     },
     inst: {
       sbc: "SBC",
-      comite: "Organizing committee",
       edicoes: "Previous editions",
     },
     copyright:
