@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mega-jr-git.github.io/SBSI-lp/sitemap.xml
