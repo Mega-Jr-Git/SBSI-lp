@@ -41,7 +41,7 @@ export const tpSi2027Content = {
     intro: [
       [
         "A área de Sistemas de Informação (SI) busca soluções para problemas reais da sociedade e das organizações por meio de tecnologias inovadoras. O Simpósio Brasileiro de Sistemas de Informação (SBSI), maior encontro da área no Brasil, acontece anualmente. O evento é promovido pela ",
-        link("cesi", "Comissão Especial de Sistemas de Informação CESI"),
+        link("cesi", "Comissão Especial de Sistemas de Informação (CESI)"),
         " da ",
         link("sbc", "Sociedade Brasileira de Computação (SBC)"),
         ", constituindo-se em um fórum para a apresentação e discussão de temas contemporâneos na área de SI, aproximando estudantes, pesquisadores, profissionais, empresários, o governo e a sociedade civil, a fim de promover a disseminação de resultados de pesquisa e inovação.",
@@ -135,14 +135,10 @@ export const tpSi2027Content = {
         [
           "Os artigos completos DEVEM seguir o ",
           link("template", "modelo de artigos da SBC"),
-          ", com limite de 15 a 20 páginas, incluindo referências, apêndices, figuras e tabelas, e DEVEM ser submetidos exclusivamente no formato PDF. Os artigos completos devem ser escritos em português ou em inglês, mas DEVEM apresentar título, resumo estruturado e palavras-chave exclusivamente EM INGLÊS no formulário do ",
-          link("jems", "JEMS 3"),
-          " e no arquivo PDF, mesmo que o restante do texto esteja escrito em português.",
+          ", com limite de 15 a 20 páginas, incluindo referências, apêndices, figuras e tabelas, e DEVEM ser submetidos exclusivamente no formato PDF. Os artigos completos devem ser escritos em português ou em inglês, mas DEVEM apresentar título, resumo estruturado e palavras-chave exclusivamente EM INGLÊS no formulário do JEMS3 e no arquivo PDF, mesmo que o restante do texto esteja escrito em português.",
         ],
         [
-          "O resumo estruturado DEVERÁ conter os nomes dos campos (labels) das seções exigidas, e isso deverá ser propagado no texto do artigo completo para manter a coesão do trabalho, além de ser preenchido no formulário de submissão do ",
-          link("jems", "JEMS 3"),
-          ", em até 300 PALAVRAS. Os campos das seções do resumo estruturado devem ser: 1) Research Context, 2) Scientific and/or Practical Problem, 3) Proposed Solution and/or Analysis, 4) Related IS Theory, 5) Research Method, 6) Summary of Results, and 7) Contributions and Impact to IS area. Para apoiar o preenchimento do campo “Related IS Theory”, acesse o portal ",
+          "O resumo estruturado DEVERÁ conter os nomes dos campos (labels) das seções exigidas, e isso deverá ser propagado no texto do artigo completo para manter a coesão do trabalho, além de ser preenchido no formulário de submissão do JEMS3, em até 300 PALAVRAS. Os campos das seções do resumo estruturado devem ser: 1) Research Context, 2) Scientific and/or Practical Problem, 3) Proposed Solution and/or Analysis, 4) Related IS Theory, 5) Research Method, 6) Summary of Results, and 7) Contributions and Impact to IS area. Para apoiar o preenchimento do campo “Related IS Theory”, acesse o portal ",
           link("byu", "BYU Library"),
           ". Recomenda-se ainda analisar exemplos de artigos completos publicados em edições anteriores nos ",
           link("anais", "Anais do SBSI"),
@@ -154,9 +150,7 @@ export const tpSi2027Content = {
           "O arquivo PDF do artigo completo NÃO DEVERÁ CONTER QUALQUER IDENTIFICAÇÃO DAS PESSOAS AUTORAS EM TODO O TEXTO (por exemplo, nomes de pessoas autoras, projetos, instituições, ferramentas, agradecimentos, links, citações de artigos que identifiquem as pessoas autoras, entre outros), considerando o processo de revisão duplamente anônima (double-anonymous review process) na TPSI.",
         ],
         [
-          "Após o prazo final da submissão de artigos completos no ",
-          link("jems", "JEMS 3"),
-          " (upload do arquivo do artigo em PDF), NÃO SERÁ PERMITIDA qualquer modificação de título, resumo estruturado, tópicos, arquivo PDF e, ESPECIALMENTE, de autoria (i.e., inclusão ou remoção de pessoas autoras, mesmo se vier a ser aceito). ALÉM DISSO, após este prazo final, também NÃO SERÁ PERMITIDO retirar o artigo do processo de revisão (withdraw).",
+          "Após o prazo final da submissão de artigos completos no JEMS3 (upload do arquivo do artigo em PDF), NÃO SERÁ PERMITIDA qualquer modificação de título, resumo estruturado, tópicos, arquivo PDF e, ESPECIALMENTE, de autoria (i.e., inclusão ou remoção de pessoas autoras, mesmo se vier a ser aceito). ALÉM DISSO, após este prazo final, também NÃO SERÁ PERMITIDO retirar o artigo do processo de revisão (withdraw).",
         ],
         [
           "A submissão de um artigo completo IMPLICA QUE o trabalho descrito não foi publicado anteriormente, que não está sob consideração para publicação e não será submetido a nenhum outro lugar enquanto estiver em processo de avaliação no SBSI. Adicionalmente, a publicação DEVE SER aprovada por todas as pessoas autoras e, tacitamente ou explicitamente, pelas autoridades responsáveis pela realização do trabalho. Um trabalho publicado no SBSI NÃO DEVERÁ ser publicado em outro lugar da mesma forma, em qualquer outro idioma, inclusive eletronicamente, pois qualquer tipo de plágio constitui um comportamento antiético e é inaceitável.",
@@ -268,7 +262,7 @@ export const tpSi2027Content = {
     intro: [
       [
         "The Information Systems (IS) field seeks solutions to real problems faced by society and organizations through innovative technologies. The Brazilian Symposium on Information Systems (SBSI), the largest event in the field in Brazil, takes place annually. The event is promoted by the ",
-        link("cesi", "Special Committee on Information Systems CESI"),
+        link("cesi", "Special Committee on Information Systems (CESI)"),
         " of the ",
         link("sbc", "Brazilian Computer Society (SBC)"),
         ", serving as a forum for presenting and discussing contemporary topics in IS, bringing together students, researchers, professionals, businesspeople, government, and civil society to promote the dissemination of research and innovation results.",
@@ -362,14 +356,10 @@ export const tpSi2027Content = {
         [
           "Full papers MUST follow the ",
           link("template", "SBC paper template"),
-          ", with a limit of 15 to 20 pages, including references, appendices, figures, and tables, and MUST be submitted exclusively in PDF format. Full papers may be written in Portuguese or English, but MUST present the title, structured abstract, and keywords exclusively IN ENGLISH in the ",
-          link("jems", "JEMS 3"),
-          " submission form and in the PDF file, even when the rest of the text is written in Portuguese.",
+          ", with a limit of 15 to 20 pages, including references, appendices, figures, and tables, and MUST be submitted exclusively in PDF format. Full papers may be written in Portuguese or English, but MUST present the title, structured abstract, and keywords exclusively IN ENGLISH in the JEMS3 submission form and in the PDF file, even when the rest of the text is written in Portuguese.",
         ],
         [
-          "The structured abstract MUST contain the field names (labels) of the required sections, and these must be carried into the full paper text to maintain the work's coherence, in addition to being completed in the ",
-          link("jems", "JEMS 3"),
-          " submission form, in up to 300 WORDS. The structured abstract section fields must be: 1) Research Context, 2) Scientific and/or Practical Problem, 3) Proposed Solution and/or Analysis, 4) Related IS Theory, 5) Research Method, 6) Summary of Results, and 7) Contributions and Impact to IS area. To help complete the “Related IS Theory” field, access the ",
+          "The structured abstract MUST contain the field names (labels) of the required sections, and these must be carried into the full paper text to maintain the work's coherence, in addition to being completed in the JEMS3 submission form, in up to 300 WORDS. The structured abstract section fields must be: 1) Research Context, 2) Scientific and/or Practical Problem, 3) Proposed Solution and/or Analysis, 4) Related IS Theory, 5) Research Method, 6) Summary of Results, and 7) Contributions and Impact to IS area. To help complete the “Related IS Theory” field, access the ",
           link("byu", "BYU Library"),
           " portal. It is also recommended to examine examples of full papers published in previous editions in the ",
           link("anais", "SBSI Proceedings"),
@@ -381,9 +371,7 @@ export const tpSi2027Content = {
           "The full paper PDF MUST NOT CONTAIN ANY IDENTIFICATION OF THE AUTHORS ANYWHERE IN THE TEXT (for example, author names, projects, institutions, tools, acknowledgments, links, citations of papers that identify the authors, among others), considering the double-anonymous review process at TPSI.",
         ],
         [
-          "After the deadline for submitting full papers to ",
-          link("jems", "JEMS 3"),
-          " (upload of the paper file in PDF format), NO modification of the title, structured abstract, topics, PDF file, and ESPECIALLY authorship (i.e., adding or removing authors, even if the paper is accepted) WILL BE PERMITTED. IN ADDITION, after this deadline, withdrawing the paper from the review process (withdraw) WILL NOT BE PERMITTED.",
+          "After the deadline for submitting full papers to JEMS3 (upload of the paper file in PDF format), NO modification of the title, structured abstract, topics, PDF file, and ESPECIALLY authorship (i.e., adding or removing authors, even if the paper is accepted) WILL BE PERMITTED. IN ADDITION, after this deadline, withdrawing the paper from the review process (withdraw) WILL NOT BE PERMITTED.",
         ],
         [
           "Submitting a full paper IMPLIES THAT the described work has not been published previously, is not under consideration for publication, and will not be submitted elsewhere while it is being evaluated at SBSI. Additionally, publication MUST BE approved by all authors and, tacitly or explicitly, by the authorities responsible for carrying out the work. A work published at SBSI MUST NOT be published elsewhere in the same form, in any other language, including electronically, since any type of plagiarism constitutes unethical and unacceptable behavior.",
