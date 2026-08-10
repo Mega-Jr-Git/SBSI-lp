@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale } from "../../shared/i18n/useLocale";
 import { siteHeaderContent } from "./site-header.content";
 
@@ -95,7 +95,11 @@ export default function SiteHeader() {
           aria-label="SBSI"
           onClick={() => handleNavigation("home")}
         >
-          <img src={`${publicUrl}SBSI_branco.svg`} alt="SBSI" className="site-header__logo-img" />
+          <img
+            src={`${publicUrl}SBSI_branco.svg`}
+            alt="SBSI"
+            className="site-header__logo-img"
+          />
         </button>
 
         <nav aria-label={t.navAria} className="site-header__nav">
@@ -148,6 +152,7 @@ export default function SiteHeader() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
@@ -200,10 +205,7 @@ export default function SiteHeader() {
         id="site-mobile-menu"
         className={`site-header__mobile-menu ${isMenuOpen ? "site-header__mobile-menu--open" : ""}`}
       >
-        <nav
-          aria-label={t.mobileNavAria}
-          className="site-header__mobile-nav"
-        >
+        <nav aria-label={t.mobileNavAria} className="site-header__mobile-nav">
           {navItems.map((item) => (
             <button
               key={item.labelKey}

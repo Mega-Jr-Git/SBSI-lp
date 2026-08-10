@@ -2,7 +2,7 @@ export type Track = {
   title: string;
   date?: string;
   link?: string;
-}
+};
 
 export const tracksContent = {
   pt: {
@@ -15,12 +15,28 @@ export const tracksContent = {
     link: "Ver mais",
 
     tracks: [
-      { title: "Pesquisa em SI", date: "Em breve", link: "" },
+      {
+        title: "Pesquisa em SI",
+        date: "08/09/2026 – 14/09/2026",
+        link: "#tp-si-2027",
+      },
       { title: "Indústria e Inovação", date: "Em breve", link: "" },
       { title: "Minicursos em SI", date: "Em breve", link: "" },
-      { title: "Novas Ideias e Resultados Emergentes em SI", date: "Em breve", link: "" },
-      { title: "Grandes Desafios em Sistemas de Informação no Brasil", date: "Em breve", link: "" },
-      { title: "Concurso de Teses, Dissertações e TCCs em SI", date: "Em breve", link: "" },
+      {
+        title: "Novas Ideias e Resultados Emergentes em SI",
+        date: "Em breve",
+        link: "",
+      },
+      {
+        title: "Grandes Desafios em Sistemas de Informação no Brasil",
+        date: "Em breve",
+        link: "",
+      },
+      {
+        title: "Concurso de Teses, Dissertações e TCCs em SI",
+        date: "Em breve",
+        link: "",
+      },
     ],
   },
   en: {
@@ -33,12 +49,28 @@ export const tracksContent = {
     link: "See more",
 
     tracks: [
-      { title: "Research in IS", date: "Coming soon", link: "" },
+      {
+        title: "Research in IS",
+        date: "Sep 8 – Sep 14, 2026",
+        link: "#tp-si-2027",
+      },
       { title: "Industry and Innovation", date: "Coming soon", link: "" },
       { title: "Short Courses in IS", date: "Coming soon", link: "" },
-      { title: "New Ideas and Emerging Results in IS", date: "Coming soon", link: "" },
-      { title: "Grand Challenges in Information Systems in Brazil", date: "Coming soon", link: "" },
-      { title: "Thesis, Dissertation, and TCC Competition in IS", date: "Coming soon", link: "" },
+      {
+        title: "New Ideas and Emerging Results in IS",
+        date: "Coming soon",
+        link: "",
+      },
+      {
+        title: "Grand Challenges in Information Systems in Brazil",
+        date: "Coming soon",
+        link: "",
+      },
+      {
+        title: "Thesis, Dissertation, and TCC Competition in IS",
+        date: "Coming soon",
+        link: "",
+      },
     ],
   },
-}
+};

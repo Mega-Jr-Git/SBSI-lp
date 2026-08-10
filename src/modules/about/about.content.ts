@@ -11,4 +11,4 @@ export const aboutContent = {
     p1: "The Brazilian Symposium on Information Systems (SBSI) is an annual event promoted by the Brazilian Computer Society (SBC) through its Special Committee on Information Systems (CESI). The 23rd edition of SBSI will be held from May 17 to 21, 2027 in Campo Grande, Mato Grosso do Sul, coordinated by the Federal University of Mato Grosso do Sul (UFMS).",
     p2: "The symposium aims to bring together researchers, students, professionals, and entrepreneurs to foster discussions on the advances and challenges related to the use of artificial intelligence in information systems. These discussions cover both practical applications in areas such as healthcare, education, industry, and public administration, and ethical aspects including transparency, privacy, bias, and social impacts.",
   },
-}
+};

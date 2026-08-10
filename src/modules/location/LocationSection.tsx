@@ -14,9 +14,7 @@ export default function LocationSection() {
         <h2 className="location-section__title">
           Campo Grande <span className="location-section__dot">•</span> 2027
         </h2>
-        <p className="location-section__description">
-          {content.description}
-        </p>
+        <p className="location-section__description">{content.description}</p>
         <div className="location-section__button-group">
           <a
             className="location-section__button"

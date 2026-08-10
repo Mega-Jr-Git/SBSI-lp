@@ -1,12 +1,12 @@
 export type SiteHeaderContent = {
-  menu: { sobre: string; trilhas: string; local: string }
-  submeter: string
-  inscrever: string
-  ariaLang: string
-  navAria: string
-  mobileNavAria: string
-  menuOpen: string
-  menuClose: string
+  menu: { sobre: string; trilhas: string; local: string };
+  submeter: string;
+  inscrever: string;
+  ariaLang: string;
+  navAria: string;
+  mobileNavAria: string;
+  menuOpen: string;
+  menuClose: string;
 };
 
 export const siteHeaderContent: Record<"pt" | "en", SiteHeaderContent> = {
