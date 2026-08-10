@@ -69,7 +69,7 @@ export default function TpSi2027Page() {
     <main id="tp-si-2027" className="tp-page">
       <header className="tp-hero">
         <p className="tp-kicker">Chamadas</p>
-        <h1>Chamada para a Trilha de Pesquisa em SI (TP-SI)</h1>
+        <h1>Trilha de Pesquisa em SI (TP-SI)</h1>
         <div className="tp-meta">
           <span>17–20 maio 2027</span>
           <span>Campo Grande · MS</span>
