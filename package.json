@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:prod": "tsc && vite build --base /2027/",
+    "postbuild": "node scripts/generate-seo.mjs",
+    "build:prod": "SITE_ORIGIN=https://sbsi.sbc.org.br/2027/ npm run build -- --base /2027/",
     "preview": "vite preview"
   },
   "dependencies": {
