@@ -4,6 +4,9 @@ export type Track = {
   link?: string;
 };
 
+const basePath = import.meta.env.BASE_URL.replace(/\/+$/, "");
+export const tpSiPath = `${basePath}/chamadas/chamada-pesquisa`;
+
 export const tracksContent = {
   pt: {
     title: "Chamadas para as",
@@ -18,7 +21,7 @@ export const tracksContent = {
       {
         title: "Pesquisa em SI",
         date: "08/09/2026 – 14/09/2026",
-        link: "#tp-si-2027",
+        link: tpSiPath,
       },
       { title: "Indústria e Inovação", date: "Em breve", link: "" },
       { title: "Minicursos em SI", date: "Em breve", link: "" },
@@ -52,7 +55,7 @@ export const tracksContent = {
       {
         title: "Research in IS",
         date: "Sep 8 – Sep 14, 2026",
-        link: "#tp-si-2027",
+        link: tpSiPath,
       },
       { title: "Industry and Innovation", date: "Coming soon", link: "" },
       { title: "Short Courses in IS", date: "Coming soon", link: "" },

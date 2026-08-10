@@ -12,6 +12,7 @@ type Props = {
 export default function TracksCallCard({ track }: Props) {
   const { locale } = useLocale();
   const content = tracksContent[locale];
+  const isPathnameLink = track.link?.startsWith("/") ?? false;
 
   return (
     <div className="tracks-call-card">
@@ -33,7 +34,23 @@ export default function TracksCallCard({ track }: Props) {
         <a
           className="tracks-call-card__button"
           href={track.link}
-          {...(!track.link.startsWith("#")
+          onClick={(event) => {
+            if (
+              !isPathnameLink ||
+              event.button !== 0 ||
+              event.metaKey ||
+              event.ctrlKey ||
+              event.shiftKey ||
+              event.altKey
+            ) {
+              return;
+            }
+
+            event.preventDefault();
+            window.history.pushState(null, "", track.link);
+            window.dispatchEvent(new PopStateEvent("popstate"));
+          }}
+          {...(!track.link.startsWith("#") && !isPathnameLink
             ? { target: "_blank", rel: "noopener noreferrer" }
             : {})}
         >

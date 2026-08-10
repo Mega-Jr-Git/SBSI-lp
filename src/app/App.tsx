@@ -4,18 +4,20 @@ import TpSi2027Page from "../modules/calls/tp-si/TpSi2027Page";
 import HomeSection from "../modules/home/HomeSection";
 import LocationSection from "../modules/location/LocationSection";
 import TracksCallSection from "../modules/tracks-call/TracksCallSection";
+import { tpSiPath } from "../modules/tracks-call/tracks-call.content";
 import { LocaleProvider } from "../shared/i18n/LocaleProvider";
 import SiteFooter from "../shared/layout/SiteFooter";
 import SiteHeader from "../shared/layout/SiteHeader";
 
 export default function App() {
   const [isTpPage, setIsTpPage] = useState(
-    () => window.location.hash === "#tp-si-2027",
+    () => window.location.pathname === tpSiPath,
   );
   useEffect(() => {
-    const onHash = () => setIsTpPage(window.location.hash === "#tp-si-2027");
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
+    const onLocationChange = () =>
+      setIsTpPage(window.location.pathname === tpSiPath);
+    window.addEventListener("popstate", onLocationChange);
+    return () => window.removeEventListener("popstate", onLocationChange);
   }, []);
   return (
     <LocaleProvider>
