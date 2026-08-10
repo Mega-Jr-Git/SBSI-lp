@@ -73,7 +73,10 @@ export default function SiteHeader() {
     if (!targetId) return;
 
     const target = document.getElementById(targetId);
-    if (!target) return;
+    if (!target) {
+      window.location.assign(`${publicUrl}#${targetId}`);
+      return;
+    }
 
     window.history.pushState(null, "", `#${targetId}`);
     target.scrollIntoView({ behavior: "smooth" });
