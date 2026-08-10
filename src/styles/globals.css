@@ -431,7 +431,7 @@ section[id] {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
+  width: 100%;
   height: 1px;
   background-color: rgba(var(--sbsi-white-rgb), 0.3);
 }
