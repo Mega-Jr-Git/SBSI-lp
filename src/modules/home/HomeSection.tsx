@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./home.css";
 
 import { useLocale } from "../../shared/i18n/useLocale";
@@ -48,37 +48,61 @@ export default function HomeSection() {
         <p className="home-section__location">{content.location}</p>
 
         <h1 className="home-section__main-title">
-          <span className="home-section__main-title-line">{content.titleLine1}</span>
-          <span className="home-section__main-title-line">{content.titleLine2}</span>
           <span className="home-section__main-title-line">
-            {content.titlePrefix1}&nbsp;<span className="home-section__main-title-highlight">{content.titleHighlight}</span>
+            {content.titleLine1}
+          </span>
+          <span className="home-section__main-title-line">
+            {content.titleLine2}
+          </span>
+          <span className="home-section__main-title-line">
+            {content.titlePrefix1}&nbsp;
+            <span className="home-section__main-title-highlight">
+              {content.titleHighlight}
+            </span>
           </span>
           <span className="home-section__main-title-line home-section__main-title-highlight">
-            {content.titlePrefix2 && <>{content.titlePrefix2}&nbsp;</>}{content.titleSuffix}
+            {content.titlePrefix2 && <>{content.titlePrefix2}&nbsp;</>}
+            {content.titleSuffix}
           </span>
         </h1>
 
         <p className="home-section__quote">{content.quote}</p>
-        
+
         <div className="home-section__countdown">
           <div className="home-section__countdown-item">
-            <span className="home-section__countdown-value">{formatValue(timeLeft.days)}</span>
-            <span className="home-section__countdown-label">{content.countdown.days}</span>
+            <span className="home-section__countdown-value">
+              {formatValue(timeLeft.days)}
+            </span>
+            <span className="home-section__countdown-label">
+              {content.countdown.days}
+            </span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
-            <span className="home-section__countdown-value">{formatValue(timeLeft.hours)}</span>
-            <span className="home-section__countdown-label">{content.countdown.hours}</span>
+            <span className="home-section__countdown-value">
+              {formatValue(timeLeft.hours)}
+            </span>
+            <span className="home-section__countdown-label">
+              {content.countdown.hours}
+            </span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
-            <span className="home-section__countdown-value">{formatValue(timeLeft.minutes)}</span>
-            <span className="home-section__countdown-label">{content.countdown.min}</span>
+            <span className="home-section__countdown-value">
+              {formatValue(timeLeft.minutes)}
+            </span>
+            <span className="home-section__countdown-label">
+              {content.countdown.min}
+            </span>
           </div>
           <div className="home-section__countdown-separator"></div>
           <div className="home-section__countdown-item">
-            <span className="home-section__countdown-value">{formatValue(timeLeft.seconds)}</span>
-            <span className="home-section__countdown-label">{content.countdown.sec}</span>
+            <span className="home-section__countdown-value">
+              {formatValue(timeLeft.seconds)}
+            </span>
+            <span className="home-section__countdown-label">
+              {content.countdown.sec}
+            </span>
           </div>
         </div>
       </div>

@@ -8,7 +8,13 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: linear-gradient(to bottom, var(--sbsi-hero-overlay-start), var(--sbsi-hero-overlay-end) 150%), url("./assets/paisagem-hero.JPG");
+  background-image:
+    linear-gradient(
+      to bottom,
+      var(--sbsi-hero-overlay-start),
+      var(--sbsi-hero-overlay-end) 150%
+    ),
+    url("./assets/paisagem-hero.JPG");
   background-size: cover;
   background-position: center;
   color: var(--sbsi-white);
@@ -64,7 +70,11 @@
 }
 
 .home-section__main-title-highlight {
-  background: linear-gradient(to top, var(--sbsi-orange-dark), var(--sbsi-orange));
+  background: linear-gradient(
+    to top,
+    var(--sbsi-orange-dark),
+    var(--sbsi-orange)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

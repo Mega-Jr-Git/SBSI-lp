@@ -1,5 +1,8 @@
-import { siteFooterContent, SiteFooterContent } from "./site-footer.content";
 import { useLocale } from "../../shared/i18n/useLocale";
+import {
+  type SiteFooterContent,
+  siteFooterContent,
+} from "./site-footer.content";
 
 type NavLinkItem = {
   labelKey: keyof SiteFooterContent["nav"];
