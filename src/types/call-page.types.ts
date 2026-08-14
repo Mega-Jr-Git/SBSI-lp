@@ -36,6 +36,9 @@ export type CallPageData = {
     openScience?: CallParagraph;
     diversity?: CallParagraph;
   };
+  importantInfoTitle?: string;
+  importantInfoSubtitle?: CallParagraph[];
+  importantInfoParagraphs?: CallParagraph[];
   formatTitle?: string;
   format?: {
     phase1Title: string;
@@ -43,15 +46,14 @@ export type CallPageData = {
     phase2Title: string;
     phase2Rules: string[];
   };
-  importantInfoTitle?: string;
-  importantInfo?: string[];
   reviewTitle: string;
   review: {
     paragraphs: CallParagraph[];
     criteria: CallParagraph[];
+    publication?: CallParagraph[];
   };
-  publicationTitle: string;
-  publication: {
+  publicationTitle?: string;
+  publication?: {
     paragraphs: CallParagraph[];
     requirements: string[];
     closing: string;

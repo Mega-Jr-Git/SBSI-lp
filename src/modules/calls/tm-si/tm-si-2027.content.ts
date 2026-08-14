@@ -7,6 +7,7 @@ export const tmSi2027Links: Record<string, string> = {
   submission: "https://jems3.sbc.org.br/events/694",
   modeloCapitulos: "https://www.sbc.org.br/documentosinstitucionais/#publicacoes",
   templateArtigos: "https://www.sbc.org.br/documentos-da-sbc/summary/169-templates-para-artigos-e-capitulos-de-livros/878-modelosparapublicaodeartigos",
+  ata: "http://www2.sbc.org.br/ce-si/arquivos/atas_reunioes_cesi/2019.pdf"
 };
 
 const link = (name: string, text: string): CallInline => ({
@@ -28,19 +29,82 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     },
     intro: [
       [
-        "A Comissão Organizadora da 23ª edição do Simpósio Brasileiro de Sistemas de Informação (SBSI 2027) convida pesquisadores da área de Sistemas de Informação a submeterem propostas de minicursos, introdutórios ou avançados, a serem ministrados nesta edição do evento.",
+        "A Comissão Organizadora da 23ª edição do SBSI convida pesquisadores da área de Sistemas de Informação a submeterem propostas de minicursos, introdutórios ou avançados, a serem ministrados nesta edição do evento.",
       ],
       [
-        "Minicursos são eventos de curta duração (4 horas) com a finalidade de apresentar uma visão geral de um tópico de pesquisa ou tecnologia de interesse da comunidade de Sistemas de Informação. O objetivo é permitir que o ouvinte aprenda sobre um novo assunto vinculado à sua área de atuação e extraia elementos para aplicação em sua pesquisa e/ou prática. Os minicursos deverão estar relacionados aos tópicos de interesse do simpósio.",
+        "Minicursos são eventos de curta duração com a finalidade de apresentar uma visão geral de um tópico de pesquisa ou tecnologia que seja de interesse da comunidade de Sistemas de Informação, de forma que o ouvinte tenha a oportunidade de aprender sobre um novo assunto vinculado à sua área de atuação e também de extrair elementos para serem aplicados em sua pesquisa e/ou prática. Os minicursos poderão ser introdutórios ou avançados, e deverão estar relacionados aos tópicos de interesse do simpósio.",
       ],
     ],
-    targetAudienceTitle: "Escopo e Público-Alvo",
+    targetAudienceTitle: "Escopo e público-alvo",
     targetAudience: [
       [
         "Os minicursos a serem apresentados no SBSI 2027 têm como público-alvo estudantes do ensino médio, estudantes de graduação, estudantes de pós-graduação, profissionais da indústria e docentes na área de Sistemas de Informação. Os minicursos podem cobrir tanto conceitos e aspectos fundamentais quanto tecnologias emergentes em Sistemas de Informação.",
       ],
     ],
-    topicsTitle: "Tópicos de Interesse",
+    submissionTitle: "Submissão de propostas",
+    submission: {
+      paragraphs: [
+        ["As submissões dos minicursos ocorrerão em duas fases:"],
+      ],
+      phases: [
+        {
+          paragraphs: [
+            [
+              strong("Primeira fase: "),
+              "Na primeira fase, uma proposta do minicurso deve ser apresentada para avaliação dos revisores. Até 3 membros do comitê de revisão analisarão as propostas, considerando a aderência à chamada de minicurso e ao formato solicitado, a qualidade técnica da proposta, da escrita, da sua estrutura, das figuras, tabelas e do resumo.",
+            ],
+          ],
+        },
+        {
+          paragraphs: [
+            [
+              strong("Segunda fase: "),
+              "Na segunda fase, o conteúdo do minicurso selecionado deverá ser submetido (em formato de texto) aos coordenadores da TM-SI. Na segunda etapa, o texto completo (capítulo) será revisado a fim de torná-lo adequado para publicação.",
+            ],
+          ],
+        },
+        {
+          paragraphs: [
+            [
+              "As submissões deverão ser realizadas na plataforma ",
+              link("submission", "JEMS 3 da SBC"),
+              ".",
+            ],
+          ]
+        }
+      ],
+    },
+    importantInfoTitle: "Informações importantes",
+     importantInfoSubtitle: [
+      [
+        "Na Reunião da Comissão Especial de Sistemas de Informação (CESI) com a comunidade durante o SBSI 2019 em Aracaju, conforme consta em ",
+      link("ata","ata aprovada"),
+      " foram promulgadas mudanças relativas aos minicursos, quais sejam:",
+    ]
+  ],
+      importantInfoParagraphs: [
+        [
+          "Os minicursos serão mantidos no evento e com submissão de propostas pela comunidade;",
+        ],
+        [
+          "Um capítulo de livro deverá ser produzido e será avaliado como resultado do aceite de uma proposta de minicurso;",
+        ],
+        [
+          "Os minicursos serão ",
+          strong("gratuitos para os participantes do SBSI"),
+            ", de modo que não haverá cobrança extra;",
+        ],
+        [
+          "A organização do SBSI ", strong("não se responsabilizará pelo apoio financeiro"), " para viabilizar a ida do(a) ministrante, de modo que, assim como autores de artigos completos aceitos, os autores de minicursos deverão arcar com as despesas da viagem para apresentação;",
+        ],
+        [
+          "Autores de minicursos deverão também se inscrever no evento, assim como pagar a taxa de publicação, uma vez que a publicação gera DOI e, consequentemente, custos para a organização;",
+        ],
+        [
+          "A comunidade decidiu por limitar a quantidade a ", strong("DOIS"), " minicursos por edição do SBSI.",
+        ],
+      ],
+    topicsTitle: "Tópicos de interesse",
     topics: [
       "Aspectos e impactos tecnológicos, sociais, econômicos e ambientais de sistemas de informação",
       "Complexidade de sistemas de informação",
@@ -67,128 +131,76 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       "Visão sociotécnica de sistemas de informação",
     ],
     topicsNote:
-      "Também será dada preferência a minicursos com caráter mais prático, que em suas propostas sejam destacadas estratégias para torná-los mais dinâmicos e para fomentar a interação entre instrutores e público, evitando estratégias exclusivamente expositivas.",
+      "Também será dada preferência a minicursos com caráter mais prático, que em suas propostas sejam destacadas estratégias para torná-los mais dinâmicos e para fomentar a interação entre instrutores e público. O objetivo é evitar que os minicursos sejam baseados apenas em estratégias expositivas.",
     datesTitle: "Datas Importantes",
     dates: [
       [
         "14/09/2026",
         "Submissão de proposta",
-        "artigo de 4 páginas via JEMS 3",
+        "artigo de 4 páginas",
       ],
       [
         "23/10/2026",
-        "1ª etapa de avaliação (proposta)",
-        "notificação de resultado aos autores",
+        "1ª etapa de avaliação",
+        "(proposta) - Notificação aos autores",
       ],
       [
         "01/12/2026",
         "Submissão do texto completo",
-        "envio do capítulo de livro aos coordenadores",
+        "capítulo",
       ],
       [
         "15/02/2027",
-        "Entrega da versão final",
-        "capítulo de livro finalizado para publicação",
+        "Entrega da Versão Final do capítulo de livro",
+        "",
       ],
-      ["17/05/2027 a 20/05/2027", "Realização do SBSI 2027", ""],
     ],
-    submissionTitle: "Instruções de Submissão",
-    submission: {
-      paragraphs: [
-        [
-          "As submissões dos minicursos ocorrerão em duas fases via plataforma ",
-          link("jems", "JEMS 3 da SBC"),
-          ":",
-        ],
-      ],
-      phases: [
-        {
-          paragraphs: [
-            [
-              strong("Primeira fase (Avaliação da proposta): "),
-              "Na primeira fase, a proposta do minicurso deverá ser escrita em Português ou Inglês e ter, no máximo, 4 páginas (",
-              link("templateArtigos", "formato de artigos da SBC"),
-              "). A proposta deve conter: título, autor(es) e filiação; resumo com até 200 palavras; descrição dos objetivos e requisitos técnicos; metodologia didática; tempo de realização (máx. 4h); relevância para o evento; esboço do conteúdo programático; referências e biografia curta dos autores.",
-            ],
-          ],
-        },
-        {
-          paragraphs: [
-            [
-              strong("Segunda fase (Texto completo): "),
-              "Cada minicurso selecionado deverá ter como versão final um texto no mesmo idioma da proposta e apresentação. O texto será publicado como capítulo de um livro on-line, conforme ",
-              link("modeloCapitulos", "modelo para publicação de capítulos de livros da SBC"),
-              ", de 20 a 30 páginas. Capítulos em português também devem conter título e resumo em inglês. Os autores deverão autorizar a publicação do resumo do minicurso no website do evento.",
-            ],
-          ],
-        },
-      ],
-      rules: [
-        [
-          "Os minicursos serão mantidos no evento com submissão de propostas pela comunidade.",
-        ],
-        [
-          "Um capítulo de livro deverá ser produzido e avaliado como resultado do aceite de uma proposta.",
-        ],
-        [
-          "Os minicursos serão gratuitos para os participantes do SBSI (sem cobrança extra de inscrição para os ouvintes).",
-        ],
-        [
-          "A organização do SBSI não se responsabilizará pelo apoio financeiro para viabilizar a ida do(a) ministrante; os autores arcarão com as despesas de viagem.",
-        ],
-        [
-          "Autores de minicursos deverão se inscrever no evento e pagar a taxa de publicação (geração de DOI).",
-        ],
-        [
-          "A quantidade é limitada a no máximo DOIS minicursos por edição do SBSI.",
-        ],
-      ],
-    },
-    reviewTitle: "Processo de Avaliação",
+    reviewTitle: "Formato",
     review: {
       paragraphs: [
         [
-          "A seleção dos minicursos para a TM-SI no SBSI 2027 será realizada por membros do Comitê de Programa a partir das propostas submetidas na 1ª fase.",
+          "Na primeira fase, a proposta do minicurso deverá ser escrita em Português ou Inglês e ter, no máximo, 4 páginas (",
+          link("templateArtigos", "formato de artigos da SBC"),
+          "), incluindo as seguintes informações:",
         ],
-        ["Os seguintes critérios serão considerados na avaliação das propostas:"],
       ],
       criteria: [
+        [strong("● "), "Título, autor(es) e filiação do(s) autor(es);"],
+        [strong("● "), "Resumo com, no máximo, 200 palavras;"],
         [
-          strong("Aderência ao Escopo"),
-          ": relevância do tema e alinhamento com as áreas de interesse do SBSI 2027.",
+          strong("● "),
+          'Descrição incluindo objetivos e requisitos técnicos (equipamento e "software"), indicando o escopo (introdutório ou avançado);',
         ],
+        [strong("● "), "Metodologia/abordagem didática a ser empregada;"],
         [
-          strong("Qualidade Técnica e Metodológica"),
-          ": clareza dos objetivos, estrutura do conteúdo programático e viabilidade de execução no tempo proposto.",
+          strong("● "),
+          "Tempo para a realização do minicurso (que deverá ter duração máxima de quatro horas);",
         ],
+        [strong("● "), "Relevância do minicurso para o SBSI 2027;"],
         [
-          strong("Abordagem Didática"),
-          ": estratégias propostas para tornar o minicurso dinâmico, interativo e com caráter prático, evitando apresentações exclusivamente expositivas.",
+          strong("● "),
+          "Esboço contendo os tópicos principais e o conteúdo programático;",
         ],
+        [strong("● "), "Referências principais;"],
+        [strong("● "), "Idioma em que será ministrado (Português ou Inglês);"],
+        [strong("● "), "Biografia curta do(s) autor(es)."],
+      ],
+      publication: [
         [
-          strong("Formato e Apresentação"),
-          ": conformidade com o limite de páginas, modelo de formatação da SBC, clareza e qualidade da escrita.",
+          "Cada minicurso selecionado deverá ter como versão final um texto no mesmo idioma da proposta e apresentação. O texto será publicado como capítulo de um livro on-line, conforme ",
+          link("modeloCapitulos", "modelo para publicação de capítulos de livros da SBC"),
+          ", de 20 a 30 páginas. Capítulos em português também devem conter título e resumo em inglês. Os autores deverão autorizar a publicação do resumo do minicurso no website do evento.",
         ],
       ],
     },
-    publicationTitle: "Apresentação e Publicação dos Minicursos Selecionados",
-    publication: {
-      paragraphs: [
-        [
-          "Os minicursos selecionados terão suas versões finais publicadas como capítulos de um livro on-line oficial do evento, mediante atendimento aos seguintes requisitos:",
-        ],
-      ],
-      requirements: [
-        "Pelo menos um(a) dos(as) autores(as)/ministrantes realize a inscrição no evento dentro do prazo estipulado;",
-        "Seja efetuado o pagamento da taxa de publicação (relativa à geração de DOI) para o capítulo aceito;",
-        "Pelo menos um(a) dos(as) ministrantes compareça PRESENCIALMENTE ao SBSI 2027 para ministrar o minicurso.",
-      ],
-      closing:
-        "Ressalta-se que o SBSI 2027 é PRESENCIAL e a condução do minicurso deve ocorrer presencialmente. A organização do evento não arcará com custos de transporte ou hospedagem dos ministrantes. Pessoas autoras sócias da SBC devem estar em dia com a anuidade para obter valores reduzidos de inscrição.",
-    },
+    tpcTitle: "TPC da TM-SI do SBSI 2027 ",
+    tpcStatus: "Em formação",
     coordinationTitle: "Coordenação da TM-SI 2027",
     coordinationKicker: "Coordenação",
-    coordinators: ["Davi Viana (UFMA)", "Paulo Malcher (UFRA)"],
+    coordinators: [
+      "Davi Viana (UFMA)",
+      "Paulo Malcher (UFRA)",
+    ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
   },
   en: {
@@ -202,19 +214,86 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     },
     intro: [
       [
-        "The Organizing Committee of the 23rd Brazilian Symposium on Information Systems (SBSI 2027) invites researchers in Information Systems to submit short course proposals (introductory or advanced) to be presented at this edition.",
+        "The Organizing Committee of the 23rd SBSI edition invites researchers in Information Systems to submit short course proposals (introductory or advanced) to be presented at this event edition.",
       ],
       [
-        "Short courses are short-duration events (4 hours) aimed at providing an overview of a research topic or technology relevant to the Information Systems community. The goal is to enable attendees to learn about new subjects in their field and apply these concepts in research or practice. Courses must align with the symposium's topics of interest.",
+        "Short courses are short-duration events aimed at presenting an overview of a research topic or technology of interest to the Information Systems community, allowing attendees to learn about a new topic related to their field and extract elements for research and practice. Courses must align with the symposium's topics of interest.",
       ],
     ],
-    targetAudienceTitle: "Scope and Target Audience",
+    targetAudienceTitle: "Scope and target audience",
     targetAudience: [
       [
-        "The target audience includes high school students, undergraduate and graduate students, industry professionals, and faculty members in Information Systems. Courses may cover foundational concepts as well as emerging technologies.",
+        "The target audience includes high school students, undergraduate and graduate students, industry professionals, and faculty members in Information Systems. Courses may cover foundational concepts as well as emerging technologies in Information Systems.",
       ],
     ],
-    topicsTitle: "Topics of Interest",
+    submissionTitle: "Proposal submission",
+    submission: {
+      paragraphs: [
+        ["Short course submissions will take place in two phases:"],
+      ],
+      phases: [
+        {
+          paragraphs: [
+            [
+              strong("First phase: "),
+              "In the first phase, a short course proposal must be submitted for reviewer evaluation. Up to 3 review committee members will evaluate the proposals based on adherence to the call, formatting, technical quality, writing, structure, figures, tables, and abstract.",
+            ],
+          ],
+        },
+        {
+          paragraphs: [
+            [
+              strong("Second phase: "),
+              "In the second phase, the selected short course content must be submitted (in text format) to TM-SI chairs. The full text (chapter) will be reviewed for publication.",
+            ],
+          ],
+        },
+        {
+          paragraphs: [
+            [
+              "Submissions must be made on the ",
+              link("submission", "JEMS 3 da SBC"),
+              ".",
+            ],
+          ],
+        }
+      ],
+    },
+    importantInfoTitle: "Important Information",
+    importantInfoSubtitle: [
+      [
+        "During the CESI meeting with the community at SBSI 2019 in Aracaju, as recorded in ",
+      link("ata","the approved minutes"),
+      " , changes regarding short courses were promulgated, as follows:",
+    ]
+  ],
+      importantInfoParagraphs: [
+        [
+          "Short courses will be maintained at the event with proposal submissions by the community;",
+        ],
+        [
+          "A book chapter must be produced and evaluated as a result of the acceptance of a short course proposal;",
+        ],
+        [
+          "Short courses will be ",
+          strong("free for SBSI participants"),
+          ", so there will be no extra charge;",
+        ],
+        [
+          "The SBSI organization ",
+          strong("will not be responsible for financial support"),
+          " to enable the instructor's attendance, so, like authors of accepted full papers, short course authors must cover their travel expenses for the presentation;",
+        ],
+        [
+          "Short course authors must also register for the event and pay the publication fee, as publication generates a DOI and, consequently, costs for the organization;",
+        ],
+        [
+          "The community decided to limit the quantity to ",
+          strong("TWO"),
+          " short courses per SBSI edition.",
+        ],
+      ],
+    topicsTitle: "Topics of interest",
     topics: [
       "Technological, social, economic, and environmental aspects and impacts of information systems",
       "Complexity of information systems",
@@ -241,128 +320,76 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       "Sociotechnical view of information systems",
     ],
     topicsNote:
-      "Preference will be given to practical and dynamic proposals that foster interaction between instructors and attendees, moving beyond strictly lecture-based formats.",
+      "Preference will be given to practical and dynamic proposals that foster interaction between instructors and attendees, avoiding purely lecture-based strategies.",
     datesTitle: "Important Dates",
     dates: [
       [
         "14/09/2026",
         "Proposal submission",
-        "4-page paper via JEMS 3",
+        "4-page paper",
       ],
       [
         "23/10/2026",
-        "1st Review Phase (Proposal)",
-        "notification to authors",
+        "1st Review Phase",
+        "(Proposal) - Notification to authors",
       ],
       [
         "01/12/2026",
         "Full text submission",
-        "submission of book chapter to chairs",
+        "chapter",
       ],
       [
         "15/02/2027",
-        "Final version submission",
-        "final book chapter ready for publication",
+        "Final version submission of the book chapter",
+        "",
       ],
-      ["17/05/2027 to 20/05/2027", "SBSI 2027 Event", ""],
     ],
-    submissionTitle: "Submission Instructions",
-    submission: {
-      paragraphs: [
-        [
-          "Submissions will be carried out in two phases via the ",
-          link("jems", "SBC JEMS 3 platform"),
-          ":",
-        ],
-      ],
-      phases: [
-        {
-          paragraphs: [
-            [
-              strong("First Phase (Proposal Evaluation): "),
-              "In the first phase, short course proposals must be written in Portuguese or English, up to 4 pages (",
-              link("templateArtigos", "SBC paper template"),
-              "). Proposals must include: title, authors/affiliations, abstract (max 200 words), objectives/technical requirements, didactic methodology, duration (max 4 hours), relevance to SBSI, program outline, references, and short bio.",
-            ],
-          ],
-        },
-        {
-          paragraphs: [
-            [
-              strong("Second Phase (Full Text): "),
-              "Each selected short course must submit a final text in the same language as the proposal and presentation. The text will be published as an online book chapter, according to the ",
-              link("modeloCapitulos", "SBC book chapter publication template"),
-              ", from 20 to 30 pages. Chapters in Portuguese must also contain an English title and abstract. Authors must authorize the publication of the short course abstract on the event website.",
-            ],
-          ],
-        },
-      ],
-      rules: [
-        [
-          "Short courses will be maintained with open community call for proposals.",
-        ],
-        [
-          "An accepted proposal requires producing an evaluated book chapter.",
-        ],
-        [
-          "Courses are free of extra charge for SBSI attendees.",
-        ],
-        [
-          "SBSI organization does not provide travel financial support for instructors.",
-        ],
-        [
-          "Authors must register for the conference and pay the publication fee (DOI costs).",
-        ],
-        [
-          "Limited to a maximum of TWO short courses in this SBSI edition.",
-        ],
-      ],
-    },
-    reviewTitle: "Evaluation Process",
+    reviewTitle: "Format",
     review: {
       paragraphs: [
         [
-          "Short courses for TM-SI at SBSI 2027 will be selected by Program Committee members based on the proposals submitted in Phase 1.",
+          "In the first phase, short course proposals must be written in Portuguese or English and contain at most 4 pages (",
+          link("templateArtigos", "SBC paper format"),
+          "), including the following information:",
         ],
-        ["The following criteria will be considered during evaluation:"],
       ],
       criteria: [
+        [strong("● "), "Title, author(s), and affiliation;"],
+        [strong("● "), "Abstract with up to 200 words;"],
         [
-          strong("Scope Alignment"),
-          ": relevance of topic and alignment with SBSI 2027 topics of interest.",
+          strong("● "),
+          'Description including goals and technical requirements (equipment and software), indicating scope (introductory or advanced);',
         ],
+        [strong("● "), "Didactic methodology/approach to be used;"],
         [
-          strong("Technical & Methodological Quality"),
-          ": clarity of goals, program outline structure, and feasibility within the allocated time.",
+          strong("● "),
+          "Estimated duration (maximum 4 hours);",
         ],
+        [strong("● "), "Relevance of the short course to SBSI 2027;"],
         [
-          strong("Didactic Approach"),
-          ": proposed strategies to make the course dynamic, interactive, and practical, avoiding purely lecture-based formats.",
+          strong("● "),
+          "Outline containing main topics and program content;",
         ],
+        [strong("● "), "Main references;"],
+        [strong("● "), "Language in which it will be taught (Portuguese or English);"],
+        [strong("● "), "Short biography of author(s)."],
+      ],
+      publication: [
         [
-          strong("Format & Presentation"),
-          ": adherence to page limit, SBC layout template, and overall writing quality.",
+          "Each selected short course must submit a final text in the same language as the proposal and presentation. The text will be published as an online book chapter, according to the ",
+          link("modeloCapitulos", "SBC book chapter publication template"),
+          ", from 20 to 30 pages. Chapters in Portuguese must also contain an English title and abstract. Authors must authorize the publication of the short course abstract on the event website.",
         ],
       ],
     },
-    publicationTitle: "Presentation and Publication of Selected Short Courses",
-    publication: {
-      paragraphs: [
-        [
-          "Accepted short courses will have their final texts published as online book chapters, provided the following requirements are met:",
-        ],
-      ],
-      requirements: [
-        "At least one author/instructor registers for the conference within the deadline;",
-        "Payment of the publication fee (for DOI generation) for the accepted chapter is completed;",
-        "At least one instructor attends SBSI 2027 IN PERSON to deliver the short course.",
-      ],
-      closing:
-        "Please note that SBSI 2027 is IN-PERSON and course delivery must take place on-site. The organizing committee will not cover travel or accommodation expenses. SBC active members are eligible for registration discounts.",
-    },
+    tpcTitle: "TM-SI TPC of SBSI 2027",
+    tpcStatus: "In formation",
     coordinationTitle: "SBSI 2027 IS Short Courses Track Chairs",
     coordinationKicker: "Chairs",
-    coordinators: ["Davi Viana (UFMA)", "Paulo Malcher (UFRA)"],
+    coordinators: [
+      "Davi Viana (UFMA)",
+      "Paulo Malcher (UFRA)",
+    ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
   },
 };

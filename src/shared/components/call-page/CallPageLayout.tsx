@@ -189,12 +189,15 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
             </section>
           )}
 
-          {content.importantInfo && (
+          {content.importantInfoParagraphs && (
             <section>
-              <h2>{content.importantInfoTitle || "Informações Importantes"}</h2>
-              <ul className="call-publication-requirements">
-                {content.importantInfo.map((info, idx) => (
-                  <li key={idx}>{info}</li>
+              <h2>{content.importantInfoTitle}</h2>
+              <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle, index) => (
+                <span key={index}>{renderInline(subtitle)}</span>
+              ))}</p>
+              <ul className="call-rules">
+                {content.importantInfoParagraphs.map((info) => (
+                   <li key={inlineKey(info)}>{renderInline(info)}</li>
                 ))}
               </ul>
             </section>
@@ -211,6 +214,9 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
                   <li key={inlineKey(criterion)}>{renderInline(criterion)}</li>
                 ))}
               </ul>
+              {content.review.publication && content.review.publication.map((paragraph, index) =>
+                renderParagraph(paragraph, index),
+              )}
             </section>
           )}
 
@@ -229,17 +235,9 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
             </section>
           )}
 
-          <section>
-            <h2>{content.coordinationTitle}</h2>
-            {content.coordinators.map((coordinator) => (
-              <p key={coordinator}>{coordinator}</p>
-            ))}
-          </section>
-
-          {/* --- NOVA SEÇÃO: Comitê de Programa (TPC) --- */}
-          {(content.tpcTitle || content.tpcStatus || content.tpcMembers) && (
+          {content.tpcTitle && (
             <section>
-              <h2>{content.tpcTitle || "Comitê de Programa (TPC)"}</h2>
+              <h2>{content.tpcTitle}</h2>
               {content.tpcStatus && <p>{content.tpcStatus}</p>}
               {content.tpcMembers && content.tpcMembers.length > 0 && (
                 <ul className="call-publication-requirements">
@@ -250,6 +248,13 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
               )}
             </section>
           )}
+
+          <section>
+            <h2>{content.coordinationTitle}</h2>
+            {content.coordinators.map((coordinator) => (
+              <p key={coordinator}>{coordinator}</p>
+            ))}
+          </section>
         </article>
 
         <aside className="call-aside">
