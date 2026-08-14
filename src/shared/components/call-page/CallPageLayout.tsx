@@ -107,29 +107,7 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
             </section>
           )}
 
-          <section>
-            <h2>{content.topicsTitle}</h2>
-            <ul className="call-topics">
-              {content.topics.map((topic) => (
-                <li key={topic}>{topic}</li>
-              ))}
-            </ul>
-            {content.topicsNote && <p className="call-topics-note">{content.topicsNote}</p>}
-          </section>
-
-          <section>
-            <h2>{content.datesTitle}</h2>
-            <ul className="call-inline-dates">
-              {content.dates.map(([date, label, description]) => (
-                <li key={date}>
-                  <strong>{date}:</strong> {label}
-                  {description && ` (${description})`}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
+            <section>
             <h2>{content.submissionTitle}</h2>
             {content.submission.paragraphs.map((paragraph, index) =>
               renderParagraph(paragraph, index),
@@ -202,6 +180,28 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
               </ul>
             </section>
           )}
+
+          <section>
+            <h2>{content.topicsTitle}</h2>
+            <ul className="call-topics">
+              {content.topics.map((topic) => (
+                <li key={topic}>{topic}</li>
+              ))}
+            </ul>
+            {content.topicsNote && <p className="call-topics-note">{content.topicsNote}</p>}
+          </section>
+
+          <section>
+            <h2>{content.datesTitle}</h2>
+            <ul className="call-inline-dates">
+              {content.dates.map(([date, label, description]) => (
+                <li key={date}>
+                  <strong>{date}:</strong> {label}
+                  {description && ` (${description})`}
+                </li>
+              ))}
+            </ul>
+          </section>
 
           {content.review && (
             <section>
