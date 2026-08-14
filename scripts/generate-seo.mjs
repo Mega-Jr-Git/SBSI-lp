@@ -31,7 +31,10 @@ if (!siteOrigin.pathname.endsWith("/")) {
 }
 
 const normalizedOrigin = siteOrigin.href;
-const sitemapPaths = ["chamadas/chamada-pesquisa"];
+const sitemapPaths = [
+  "chamadas/chamada-pesquisa",
+  "chamadas/chamada-minicursos",
+];
 const escapeXml = (value) =>
   value.replace(
     /[&<>"']/g,
