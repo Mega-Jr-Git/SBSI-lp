@@ -1,4 +1,6 @@
-export const tpSi2027Links = {
+import type { CallInline, CallPageData } from "../../../types/call-page.types";
+
+export const tpSi2027Links: Record<string, string> = {
   cesi: "https://www2.sbc.org.br/ce-si/",
   sbc: "https://www.sbc.org.br/",
   grandsi: "https://books-sol.sbc.org.br/index.php/sbc/catalog/book/183",
@@ -15,20 +17,14 @@ export const tpSi2027Links = {
   isys: "https://journals-sol.sbc.org.br/index.php/isys/issue/archive",
 } as const;
 
-type LinkName = keyof typeof tpSi2027Links;
-export type TpSi2027Inline =
-  | string
-  | { link: LinkName; text: string }
-  | { strong: string };
-export type TpSi2027Paragraph = TpSi2027Inline[];
-
-const link = (name: LinkName, text: string): TpSi2027Inline => ({
+const link = (name: string, text: string): CallInline => ({
   link: name,
   text,
 });
-const strong = (text: string): TpSi2027Inline => ({ strong: text });
 
-export const tpSi2027Content = {
+const strong = (text: string): CallInline => ({ strong: text });
+
+export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
   pt: {
     hero: {
       kicker: "Chamadas",
@@ -38,7 +34,7 @@ export const tpSi2027Content = {
       format: "Presencial",
       submit: "Submeter artigo ↗",
     },
-    intro: [
+       intro: [
       [
         "A área de Sistemas de Informação (SI) busca soluções para problemas reais da sociedade e das organizações por meio de tecnologias inovadoras. O Simpósio Brasileiro de Sistemas de Informação (SBSI), maior encontro da área no Brasil, acontece anualmente. O evento é promovido pela ",
         link("cesi", "Comissão Especial de Sistemas de Informação (CESI)"),
@@ -52,9 +48,9 @@ export const tpSi2027Content = {
       [
         "Para a Trilha de Pesquisa em SI (TP-SI) do SBSI 2027, espera-se a submissão de artigos completos que apresentem novas contribuições para a área de SI.",
       ],
-    ] as TpSi2027Paragraph[],
+    ],
     topicsTitle: "Tópicos de Interesse",
-    topics: [
+   topics: [
       "Aspectos e impactos tecnológicos, sociais, econômicos e ambientais de sistemas de informação",
       "Complexidade de sistemas de informação",
       "Desafios e tendências de sistemas de informação aplicados a domínios (saúde, agricultura, governo, educação, entre outros)",
@@ -80,7 +76,7 @@ export const tpSi2027Content = {
       "Visão sociotécnica de sistemas de informação",
     ],
     datesTitle: "Datas Importantes",
-    dates: [
+     dates: [
       [
         "08/09/2026",
         "Registro do artigo",
@@ -115,7 +111,7 @@ export const tpSi2027Content = {
     ],
     submissionTitle: "Instruções de Submissão",
     submission: {
-      paragraphs: [
+       paragraphs: [
         [
           "Esta trilha (TPSI) aceita apenas submissão de artigos completos (full papers), correspondentes a trabalhos de pesquisa concluídos, embasados na literatura científica, com ideias e resultados inovadores e seguindo procedimentos metodológicos científicos adequados. Ressalta-se a exigência de rigor quanto à efetiva pertinência da pesquisa à área de SI (em relação e/ou em interface com demais áreas da Computação ou outras) e à qualidade da escrita, do estudo conduzido e dos resultados apresentados.",
         ],
@@ -130,7 +126,7 @@ export const tpSi2027Content = {
         [
           "Cada submissão DEVE contemplar CUIDADOSAMENTE as regras a seguir. Submissões para a TPSI que não seguirem essas regras serão rejeitadas sumariamente sem revisão (desk reject):",
         ],
-      ] as TpSi2027Paragraph[],
+      ],
       rules: [
         [
           "Os artigos completos DEVEM seguir o ",
@@ -160,15 +156,15 @@ export const tpSi2027Content = {
           link("sbc", "Código de Conduta"),
           " para pessoas autoras de publicações. Na parte II, Art. 2º, informa-se que “o uso de Inteligência Artificial (IA) Generativa: a utilização de ferramentas e tecnologias de IA Generativa para a geração de conteúdos, na escrita e/ou revisão do conteúdo de artigos, deve ser declarada explicitamente no trabalho. A declaração pode ocorrer na Seção de Agradecimentos, na metodologia ou em uma seção definida especificamente para este fim, de acordo com o template adotado, e deve listar as ferramentas e descrever onde foram empregadas, por exemplo, textos, tabelas, gráficos, citações etc. Essas ferramentas não podem ser listadas como autores de um artigo. O uso de tais ferramentas não exime os autores da responsabilidade sobre todo o seu conteúdo, inclusive no caso de ser identificado plágio”.",
         ],
-      ] as TpSi2027Paragraph[],
-      openScience: [
+      ],
+       openScience: [
         "Solicitamos às pessoas autoras a adoção de princípios e práticas de Ciência Aberta, buscando promover a transparência, a replicabilidade e a reprodutibilidade na pesquisa. Encorajamos que todas as pessoas autoras divulguem dados e/ou artefatos (anonimizados e curados) para aumentar a transparência, a replicabilidade e a reprodutibilidade de seus estudos. Sugere-se disponibilizar material suplementar em repositórios como ",
         link("zenodo", "Zenodo"),
         " e ",
         link("figshare", "Figshare"),
         ", de forma anônima, devido ao processo de revisão adotado na TPSI.",
-      ] as TpSi2027Paragraph,
-      diversity: [
+      ] ,
+         diversity: [
         "Além disso, solicitamos que as submissões dos artigos completos utilizem referências de trabalhos de pesquisadores de grupos sub-representados e do sul global, incluindo textos publicados em veículos da comunidade brasileira especializada na área, como nos ",
         link("anais", "Anais do SBSI"),
         ", nos ",
@@ -176,7 +172,7 @@ export const tpSi2027Content = {
         " e no periódico ",
         link("isys", "iSys: Revista Brasileira de Sistemas de Informação"),
         ".",
-      ] as TpSi2027Paragraph,
+      ],
     },
     reviewTitle: "Processo de Revisão",
     review: {
@@ -185,8 +181,8 @@ export const tpSi2027Content = {
           "A seleção de artigos completos será realizada a partir da revisão por membros do Comitê de Programa da TPSI no SBSI. O processo de revisão será conduzido no formato duplamente anônimo (double-anonymous review process). Se todas as revisões indicarem claramente a aceitação ou a rejeição do artigo completo da forma que foi submetido, sem a necessidade de rebuttal, as pessoas autoras receberão uma decisão de “artigo completo aceito” ou “artigo completo rejeitado” na 1ª Notificação. As pessoas autoras dos demais artigos completos serão notificadas para procederem com a preparação e envio do rebuttal no período definido. Após a análise do rebuttal, as pessoas autoras destes artigos completos receberão uma decisão final de “artigo completo aceito” ou “artigo completo rejeitado” na 2ª Notificação.",
         ],
         ["Os seguintes critérios serão considerados na avaliação:"],
-      ] as TpSi2027Paragraph[],
-      criteria: [
+      ] ,
+     criteria: [
         [
           "Cada submissão DEVE contemplar CUIDADOSAMENTE as regras apresentadas na seção “Instruções de Submissão” (acima): submissões para a TPSI que não seguirem essas regras serão rejeitadas sumariamente sem revisão (desk reject).",
         ],
@@ -223,9 +219,9 @@ export const tpSi2027Content = {
           strong("Apresentação"),
           ": a clareza, a forma e a organização da exposição do conteúdo no artigo completo submetido à TPSI.",
         ],
-      ] as TpSi2027Paragraph[],
+      ],
     },
-    publicationTitle: "Apresentação e Publicação dos Artigos Completos Aceitos",
+  publicationTitle: "Apresentação e Publicação dos Artigos Completos Aceitos",
     publication: {
       paragraphs: [
         [
@@ -236,7 +232,7 @@ export const tpSi2027Content = {
           link("anais", "Anais do SBSI"),
           " como parte do acervo da Biblioteca Digital da SBC (SOL - SBC OpenLib), desde que atendam aos seguintes requisitos:",
         ],
-      ] as TpSi2027Paragraph[],
+      ],
       requirements: [
         "Pelo menos uma das pessoas autoras realize o pagamento da sua inscrição no evento dentro do prazo estipulado;",
         "Seja feito o pagamento de UMA TAXA de publicação PARA CADA artigo completo aceito;",
@@ -245,8 +241,8 @@ export const tpSi2027Content = {
       closing:
         "Ressalta-se que o SBSI 2027 é PRESENCIAL e não haverá qualquer possibilidade de apresentação on-line dos artigos completos aceitos. Pessoas autoras sócias da SBC devem estar em dia com a anuidade para terem direito aos valores reduzidos.",
     },
-    coordinationTitle: "Coordenação da Trilha de Pesquisa em SI do SBSI 2027",
-    coordinationKicker: "Coordenação",
+     coordinationTitle: "Coordenação da Trilha de Pesquisa em SI do SBSI 2027",
+     coordinationKicker: "Coordenação",
     coordinators: ["Claudia Cappelli (UERJ)", "Maria Claudia Emer (UTFPR)"],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
   },
@@ -273,7 +269,7 @@ export const tpSi2027Content = {
       [
         "For the IS Research Track (TP-SI) of SBSI 2027, submissions of full papers presenting new contributions to the IS field are expected.",
       ],
-    ] as TpSi2027Paragraph[],
+    ],
     topicsTitle: "Topics of Interest",
     topics: [
       "Technological, social, economic, and environmental aspects and impacts of information systems",
@@ -351,7 +347,7 @@ export const tpSi2027Content = {
         [
           "Each submission MUST CAREFULLY comply with the following rules. Submissions to TPSI that do not comply with these rules will be summarily rejected without review (desk reject):",
         ],
-      ] as TpSi2027Paragraph[],
+      ],
       rules: [
         [
           "Full papers MUST follow the ",
@@ -381,14 +377,14 @@ export const tpSi2027Content = {
           link("sbc", "Code of Conduct"),
           " for publication authors. Part II, Art. 2, states that “the use of Generative Artificial Intelligence (AI): the use of Generative AI tools and technologies to generate content, in the writing and/or revision of article content, must be explicitly declared in the work. The declaration may appear in the Acknowledgments section, the methodology, or a section specifically defined for this purpose, according to the adopted template, and must list the tools and describe where they were used, for example, text, tables, graphs, citations, etc. These tools may not be listed as authors of a paper. The use of such tools does not exempt authors from responsibility for all of its content, including if plagiarism is identified”.",
         ],
-      ] as TpSi2027Paragraph[],
+      ],
       openScience: [
         "We ask authors to adopt Open Science principles and practices, seeking to promote transparency, replicability, and reproducibility in research. We encourage all authors to share data and/or artifacts (anonymized and curated) to increase the transparency, replicability, and reproducibility of their studies. We suggest making supplementary material available in repositories such as ",
         link("zenodo", "Zenodo"),
         " and ",
         link("figshare", "Figshare"),
         ", anonymously, due to the review process adopted at TPSI.",
-      ] as TpSi2027Paragraph,
+      ],
       diversity: [
         "In addition, we ask full-paper submissions to cite works by researchers from underrepresented groups and from the Global South, including texts published in venues of the specialized Brazilian community, such as the ",
         link("anais", "SBSI Proceedings"),
@@ -397,7 +393,7 @@ export const tpSi2027Content = {
         " and the journal ",
         link("isys", "iSys: Brazilian Journal of Information Systems"),
         ".",
-      ] as TpSi2027Paragraph,
+      ],
     },
     reviewTitle: "Review Process",
     review: {
@@ -406,7 +402,7 @@ export const tpSi2027Content = {
           "The selection of full papers will be based on reviews by members of the TPSI Program Committee at SBSI. The review process will be conducted in a double-anonymous format. If all reviews clearly indicate acceptance or rejection of the full paper as submitted, without the need for a rebuttal, authors will receive a decision of “full paper accepted” or “full paper rejected” in the 1st Notification. Authors of the other full papers will be notified to prepare and submit a rebuttal during the defined period. After the rebuttal is analyzed, the authors of these full papers will receive a final decision of “full paper accepted” or “full paper rejected” in the 2nd Notification.",
         ],
         ["The following criteria will be considered in the evaluation:"],
-      ] as TpSi2027Paragraph[],
+      ],
       criteria: [
         [
           "Each submission MUST CAREFULLY comply with the rules presented in the “Submission Instructions” section (above): submissions to TPSI that do not comply with these rules will be summarily rejected without review (desk reject).",
@@ -444,7 +440,7 @@ export const tpSi2027Content = {
           strong("Presentation"),
           ": the clarity, form, and organization of the content presented in the full paper submitted to TPSI.",
         ],
-      ] as TpSi2027Paragraph[],
+      ],
     },
     publicationTitle: "Presentation and Publication of Accepted Full Papers",
     publication: {
@@ -457,7 +453,7 @@ export const tpSi2027Content = {
           link("anais", "SBSI Proceedings"),
           " as part of the SBC Digital Library collection (SOL - SBC OpenLib), provided that they meet the following requirements:",
         ],
-      ] as TpSi2027Paragraph[],
+      ],
       requirements: [
         "At least one author pays their event registration fee within the stipulated deadline;",
         "ONE publication FEE is paid FOR EACH accepted full paper;",
@@ -469,8 +465,8 @@ export const tpSi2027Content = {
     coordinationTitle: "Coordination of the SBSI 2027 IS Research Track",
     coordinationKicker: "Coordination",
     coordinators: ["Claudia Cappelli (UERJ)", "Maria Claudia Emer (UTFPR)"],
+    tpcTitle: "Program Committee (TPC)",
+    tpcStatus: "<In formation>",
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
   },
-} as const;
-
-export type TpSi2027Content = (typeof tpSi2027Content)["pt"];
+};
