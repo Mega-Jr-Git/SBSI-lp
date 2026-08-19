@@ -11,7 +11,16 @@ interface CallPageLayoutProps {
 export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
   useEffect(() => {
     window.scrollTo({ top: 0 });
-  }, []);
+
+    const baseTitle = "SBSI";
+    const suffix = content?.hero?.title;
+    if (suffix) {
+      document.title = `${baseTitle} | ${suffix}`;
+      return () => {
+        document.title = baseTitle;
+      };
+    }
+  }, [content?.hero?.title]);
 
   if (!content) {
     return (
