@@ -20,7 +20,7 @@ function AppContent() {
     initGA();
 
     const handlePopState = () => {
-      trackPageView();
+      setTimeout(trackPageView, 150);
       setCurrentPath(window.location.pathname);
     };
 
@@ -31,13 +31,13 @@ function AppContent() {
 
     history.pushState = function (...args) {
       originalPushState.apply(this, args);
-      trackPageView();
+      setTimeout(trackPageView, 150);
       setCurrentPath(window.location.pathname);
     };
 
     history.replaceState = function (...args) {
       originalReplaceState.apply(this, args);
-      trackPageView();
+      setTimeout(trackPageView, 150);
       setCurrentPath(window.location.pathname);
     };
 

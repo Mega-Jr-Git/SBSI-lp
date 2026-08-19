@@ -48,7 +48,6 @@ export default function TracksCallCard({ track }: Props) {
 
             event.preventDefault();
             window.history.pushState(null, "", track.link);
-            window.dispatchEvent(new PopStateEvent("popstate"));
           }}
           {...(!track.link.startsWith("#") && !isPathnameLink
             ? { target: "_blank", rel: "noopener noreferrer" }

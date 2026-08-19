@@ -35,7 +35,7 @@ export const trackPageView = () => {
   if (!GA_MEASUREMENT_ID || typeof window.gtag !== "function") return;
 
   const pagePath =
-    window.location.pathname + window.location.search + window.location.hash;
+    window.location.pathname + window.location.hash;
 
   window.gtag("event", "page_view", {
     page_path: pagePath,
