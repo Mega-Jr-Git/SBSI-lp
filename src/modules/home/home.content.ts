@@ -7,7 +7,8 @@ export const homeContent = {
     titleHighlight: "Sistemas",
     titlePrefix2: "de",
     titleSuffix: "Informação",
-    quote: "Sistemas de Informação para Transições Sustentáveis: Territórios, Organizações e Sociedade",
+    quote:
+      "Sistemas de Informação para Transições Sustentáveis: Territórios, Organizações e Sociedade",
     countdown: { days: "DIAS", hours: "HORAS", min: "MIN", sec: "SEG" },
   },
   en: {
@@ -18,7 +19,8 @@ export const homeContent = {
     titleHighlight: "Information",
     titlePrefix2: "",
     titleSuffix: "Systems",
-    quote: "Information Systems for Sustainable Transitions: Territories, Organizations and Society",
+    quote:
+      "Information Systems for Sustainable Transitions: Territories, Organizations and Society",
     countdown: { days: "DAYS", hours: "HOURS", min: "MIN", sec: "SEC" },
   },
 };

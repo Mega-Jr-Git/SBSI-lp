@@ -1,5 +1,4 @@
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
-const CONSENT_STORAGE_KEY = "sbsi_analytics_consent";
 
 declare global {
   interface Window {
@@ -8,15 +7,8 @@ declare global {
   }
 }
 
-export const getStoredConsent = (): "granted" | "denied" | null => {
-  return localStorage.getItem(CONSENT_STORAGE_KEY) as
-    | "granted"
-    | "denied"
-    | null;
-};
-
 export const initGA = () => {
-  if (!GA_MEASUREMENT_ID || getStoredConsent() !== "granted") return;
+  if (!GA_MEASUREMENT_ID) return;
 
   if (document.getElementById("ga-gtag-script")) return;
 
@@ -39,22 +31,8 @@ export const initGA = () => {
   trackPageView();
 };
 
-export const setConsent = (granted: boolean) => {
-  const status = granted ? "granted" : "denied";
-  localStorage.setItem(CONSENT_STORAGE_KEY, status);
-
-  if (granted) {
-    initGA();
-  }
-};
-
 export const trackPageView = () => {
-  if (
-    !GA_MEASUREMENT_ID ||
-    getStoredConsent() !== "granted" ||
-    typeof window.gtag !== "function"
-  )
-    return;
+  if (!GA_MEASUREMENT_ID || typeof window.gtag !== "function") return;
 
   const pagePath =
     window.location.pathname + window.location.search + window.location.hash;
@@ -70,12 +48,7 @@ export const trackSectionNavigation = (
   origin: "header" | "mobile_menu" | "footer",
   destination: string,
 ) => {
-  if (
-    !GA_MEASUREMENT_ID ||
-    getStoredConsent() !== "granted" ||
-    typeof window.gtag !== "function"
-  )
-    return;
+  if (!GA_MEASUREMENT_ID || typeof window.gtag !== "function") return;
 
   window.gtag("event", "section_navigation", {
     origin,
@@ -84,12 +57,7 @@ export const trackSectionNavigation = (
 };
 
 export const trackLanguageChange = (language: string) => {
-  if (
-    !GA_MEASUREMENT_ID ||
-    getStoredConsent() !== "granted" ||
-    typeof window.gtag !== "function"
-  )
-    return;
+  if (!GA_MEASUREMENT_ID || typeof window.gtag !== "function") return;
 
   window.gtag("event", "language_change", {
     language,

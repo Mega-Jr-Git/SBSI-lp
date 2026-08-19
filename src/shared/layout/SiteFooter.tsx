@@ -1,5 +1,8 @@
-import { siteFooterContent, SiteFooterContent } from "./site-footer.content";
 import { useLocale } from "../../shared/i18n/useLocale";
+import {
+  type SiteFooterContent,
+  siteFooterContent,
+} from "./site-footer.content";
 
 type NavLinkItem = {
   labelKey: keyof SiteFooterContent["nav"];
@@ -89,6 +92,10 @@ export default function SiteFooter() {
               </ul>
             </div>
           </div>
+        </div>
+
+        <div className="site-footer__analytics">
+          <p className="site-footer__analytics-text">{t.analyticsNotice}</p>
         </div>
 
         <div className="site-footer__bottom">
