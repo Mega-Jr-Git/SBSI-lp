@@ -15,6 +15,7 @@ export type SiteFooterContent = {
   };
   copyright: string;
   devBy: string;
+  analyticsNotice: string;
 };
 
 export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
@@ -37,6 +38,8 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
     copyright:
       "© 2027 Simpósio Brasileiro de Sistemas de Informação. Todos os direitos reservados",
     devBy: "Desenvolvido por:",
+    analyticsNotice:
+      "Este site utiliza Google Analytics para análise anônima de tráfego.",
   },
   en: {
     description:
@@ -57,5 +60,6 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
     copyright:
       "© 2027 Brazilian Symposium on Information Systems. All rights reserved",
     devBy: "Developed by:",
+    analyticsNotice: "This site uses Google Analytics for anonymous traffic analysis.",
   },
 };

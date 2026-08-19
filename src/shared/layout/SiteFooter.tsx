@@ -3,6 +3,7 @@ import {
   type SiteFooterContent,
   siteFooterContent,
 } from "./site-footer.content";
+import { trackSectionNavigation } from "../analytics/analytics";
 
 type NavLinkItem = {
   labelKey: keyof SiteFooterContent["nav"];
@@ -35,6 +36,8 @@ export default function SiteFooter() {
 
   function handleNavigation(targetId?: string) {
     if (!targetId) return;
+
+    trackSectionNavigation("footer", targetId);
 
     const target = document.getElementById(targetId);
     if (!target) return;
@@ -92,6 +95,10 @@ export default function SiteFooter() {
               </ul>
             </div>
           </div>
+        </div>
+
+        <div className="site-footer__analytics">
+          <p className="site-footer__analytics-text">{t.analyticsNotice}</p>
         </div>
 
         <div className="site-footer__bottom">

@@ -471,6 +471,20 @@ section[id] {
   opacity: 0.8;
 }
 
+.site-footer__analytics {
+  padding-top: 1.25rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+}
+
+.site-footer__analytics-text {
+  font-family: var(--font-inter);
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(var(--sbsi-white-rgb), 0.45);
+  letter-spacing: 0.01em;
+}
+
 @media (max-width: 62rem) {
   .site-header__nav,
   .site-header__actions {
