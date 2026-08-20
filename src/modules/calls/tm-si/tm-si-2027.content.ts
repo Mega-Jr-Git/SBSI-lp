@@ -22,11 +22,10 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     hero: {
       kicker: "Chamadas",
       title: "Trilha de Minicursos em SI (TM-SI)",
-      dates: "17–20 maio 2027",
-      location: "Campo Grande · MS",
-      format: "Presencial",
-      submit: "Submeter proposta ↗",
+      submit: "Submeter proposta",
+      about: "São esperados artigos completos com novas contribuições para a\nárea de Sistemas de Informação.",
     },
+    introTitle: "Descrição",
     intro: [
       [
         "A Comissão Organizadora da 23ª edição do SBSI convida pesquisadores da área de Sistemas de Informação a submeterem propostas de minicursos, introdutórios ou avançados, a serem ministrados nesta edição do evento.",
@@ -198,8 +197,8 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     coordinationTitle: "Coordenação da TM-SI 2027",
     coordinationKicker: "Coordenação",
     coordinators: [
-      "Davi Viana (UFMA)",
-      "Paulo Malcher (UFRA)",
+      {name: "Davi Viana", institution: "UFMA"},
+      {name: "Paulo Malcher", institution: "UFRA"},
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
   },
@@ -207,11 +206,10 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     hero: {
       kicker: "Calls",
       title: "IS Short Courses Track (TM-SI)",
-      dates: "May 17–20, 2027",
-      location: "Campo Grande · MS",
-      format: "In person",
-      submit: "Submit proposal ↗",
+      submit: "Submit proposal",
+      about: "Full papers presenting new contributions to the field of Information Systems are expected.",
     },
+    introTitle: "Description",
     intro: [
       [
         "The Organizing Committee of the 23rd SBSI edition invites researchers in Information Systems to submit short course proposals (introductory or advanced) to be presented at this event edition.",
@@ -387,8 +385,8 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     coordinationTitle: "SBSI 2027 IS Short Courses Track Chairs",
     coordinationKicker: "Chairs",
     coordinators: [
-      "Davi Viana (UFMA)",
-      "Paulo Malcher (UFRA)",
+      {name: "Davi Viana", institution: "UFMA"},
+      {name: "Paulo Malcher", institution: "UFRA"},
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
   },
