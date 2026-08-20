@@ -27,14 +27,13 @@ const strong = (text: string): CallInline => ({ strong: text });
 export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
   pt: {
     hero: {
-      kicker: "Chamadas",
-      title: "Trilha de Pesquisa em SI (TP-SI)",
-      dates: "17–20 maio 2027",
-      location: "Campo Grande · MS",
-      format: "Presencial",
-      submit: "Submeter artigo ↗",
+      kicker: "Voltar ao início",
+      title: "Chamada para a Trilha\nde Pesquisa em SI (TP-SI)",
+      submit: "Submeter artigo",
+      about: "São esperados artigos completos com novas contribuições para a\nárea de Sistemas de Informação.",
     },
-       intro: [
+    introTitle: "Descrição",
+    intro: [
       [
         "A área de Sistemas de Informação (SI) busca soluções para problemas reais da sociedade e das organizações por meio de tecnologias inovadoras. O Simpósio Brasileiro de Sistemas de Informação (SBSI), maior encontro da área no Brasil, acontece anualmente. O evento é promovido pela ",
         link("cesi", "Comissão Especial de Sistemas de Informação (CESI)"),
@@ -49,7 +48,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         "Para a Trilha de Pesquisa em SI (TP-SI) do SBSI 2027, espera-se a submissão de artigos completos que apresentem novas contribuições para a área de SI.",
       ],
     ],
-    topicsTitle: "Tópicos de Interesse",
+    topicsTitle: "Tópicos de interesse",
    topics: [
       "Aspectos e impactos tecnológicos, sociais, econômicos e ambientais de sistemas de informação",
       "Complexidade de sistemas de informação",
@@ -75,41 +74,41 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       "Transparência e accountability em sistemas de informação",
       "Visão sociotécnica de sistemas de informação",
     ],
-    datesTitle: "Datas Importantes",
+    datesTitle: "DATAS IMPORTANTES",
      dates: [
       [
         "08/09/2026",
         "Registro do artigo",
-        "título, pessoas autoras, tópicos de interesse e resumo estruturado no JEMS3",
+        "Título, pessoas autoras, tópicos de interesse e resumo estruturado no JEMS3",
       ],
       [
         "14/09/2026",
         "Submissão do artigo",
-        "upload do arquivo do artigo em PDF no JEMS3",
+        "Upload do arquivo do artigo em PDF no JEMS3",
       ],
       [
         "25/11/2026",
         "1ª Notificação",
-        "notificação às pessoas autoras com aceite, rejeição ou rebuttal",
+        "Notificação às pessoas autoras com aceite, rejeição ou rebuttal",
       ],
       [
         "02/12/2026",
         "Submissão do rebuttal",
-        "data limite para envio do rebuttal no JEMS3",
+        "Data limite para envio do rebuttal no JEMS3",
       ],
       [
         "14/12/2026",
-        "2ª Notificação (pós-rebuttal)",
-        "notificação às pessoas autoras com aceite ou rejeição após o rebuttal",
+        "2ª Notificação",
+        "Notificação às pessoas autoras com aceite ou rejeição após o rebuttal",
       ],
       [
         "15/02/2027",
         "Entrega da versão final",
-        "upload do arquivo da versão final em PDF no JEMS3",
+        "Upload do arquivo da versão final em PDF no JEMS3",
       ],
       ["17/05/2027 a 20/05/2027", "Realização do SBSI 2027", ""],
     ],
-    submissionTitle: "Instruções de Submissão",
+    submissionTitle: "Instruções de submissão",
     submission: {
        paragraphs: [
         [
@@ -123,9 +122,9 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
           ),
           ".",
         ],
-        [
-          "Cada submissão DEVE contemplar CUIDADOSAMENTE as regras a seguir. Submissões para a TPSI que não seguirem essas regras serão rejeitadas sumariamente sem revisão (desk reject):",
-        ],
+      ],
+      rulesIntro: [
+        "Cada submissão deve contemplar cuidadosamente as regras a seguir. Submissões para a TPSI que não seguirem essas regras serão rejeitadas sumariamente sem revisão (desk reject):",
       ],
       rules: [
         [
@@ -174,29 +173,29 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         ".",
       ],
     },
-    reviewTitle: "Processo de Revisão",
+    reviewTitle: "Processo e critérios de revisão",
     review: {
       paragraphs: [
         [
-          "A seleção de artigos completos será realizada a partir da revisão por membros do Comitê de Programa da TPSI no SBSI. O processo de revisão será conduzido no formato duplamente anônimo (double-anonymous review process). Se todas as revisões indicarem claramente a aceitação ou a rejeição do artigo completo da forma que foi submetido, sem a necessidade de rebuttal, as pessoas autoras receberão uma decisão de “artigo completo aceito” ou “artigo completo rejeitado” na 1ª Notificação. As pessoas autoras dos demais artigos completos serão notificadas para procederem com a preparação e envio do rebuttal no período definido. Após a análise do rebuttal, as pessoas autoras destes artigos completos receberão uma decisão final de “artigo completo aceito” ou “artigo completo rejeitado” na 2ª Notificação.",
+          "A seleção de artigos completos será realizada a partir da revisão por membros do Comitê de Programa da TPSI no SBSI. O processo de revisão será conduzido no formato duplamente anônimo (double-anonymous review process).\n\nSe todas as revisões indicarem claramente a aceitação ou a rejeição do artigo completo da forma que foi submetido, sem a necessidade de rebuttal, as pessoas autoras receberão uma decisão de “artigo completo aceito” ou “artigo completo rejeitado” na 1ª Notificação.\n\nAs pessoas autoras dos demais artigos completos serão notificadas para procederem com a preparação e envio do rebuttal no período definido. Após a análise do rebuttal, as pessoas autoras destes artigos completos receberão uma decisão final de “artigo completo aceito” ou “artigo completo rejeitado” na 2ª Notificação.",
         ],
-        ["Os seguintes critérios serão considerados na avaliação:"],
       ] ,
      criteria: [
         [
+          strong("Conformidade com as regras"),
           "Cada submissão DEVE contemplar CUIDADOSAMENTE as regras apresentadas na seção “Instruções de Submissão” (acima): submissões para a TPSI que não seguirem essas regras serão rejeitadas sumariamente sem revisão (desk reject).",
         ],
         [
           strong("Novidade"),
-          ": a novidade e/ou o caráter inovador das soluções propostas e/ou análises realizadas, das formulações de problemas científicos e/ou práticos, dos procedimentos metodológicos, da proposição e/ou uso de teorias de SI e/ou das avaliações e estudos experimentais apresentados, i.e., o quão o artigo completo submetido para a TPSI é suficientemente original com relação ao estado da arte.",
+          "A novidade e/ou o caráter inovador das soluções propostas e/ou análises realizadas, das formulações de problemas científicos e/ou práticos, dos procedimentos metodológicos, da proposição e/ou uso de teorias de SI e/ou das avaliações e estudos experimentais apresentados, i.e., o quão o artigo completo submetido para a TPSI é suficientemente original com relação ao estado da arte.",
         ],
         [
           strong("Rigor"),
-          ": a solidez, a clareza e a profundidade de contribuições técnicas ou teóricas, bem como o nível de rigor dos procedimentos metodológicos empregados e a integridade da avaliação apresentada no artigo completo submetido à TPSI.",
+          "A solidez, a clareza e a profundidade de contribuições técnicas ou teóricas, bem como o nível de rigor dos procedimentos metodológicos empregados e a integridade da avaliação apresentada no artigo completo submetido à TPSI.",
         ],
         [
           strong("Relevância"),
-          ": a importância e/ou o impacto potencial do artigo completo submetido para a TPSI em relação à área de SI a partir das publicações realizadas pela comunidade científica em veículos internacionais, incluindo as teorias de SI disponíveis no portal ",
+          "A importância e/ou o impacto potencial do artigo completo submetido para a TPSI em relação à área de SI a partir das publicações realizadas pela comunidade científica em veículos internacionais, incluindo as teorias de SI disponíveis no portal ",
           link("byu", "BYU Library"),
           ", bem como nacionais, como nos ",
           link("anais", "Anais do SBSI"),
@@ -213,15 +212,15 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         ],
         [
           strong("Transparência, Replicabilidade e Reprodutibilidade"),
-          ": o grau em que o artigo completo submetido à TPSI inclui informações suficientes para entender como uma inovação funciona; como os dados foram obtidos, analisados e interpretados; e como o artigo completo oferece suporte à verificação independente ou à replicação das contribuições reivindicadas.",
+          "O grau em que o artigo completo submetido à TPSI inclui informações suficientes para entender como uma inovação funciona; como os dados foram obtidos, analisados e interpretados; e como o artigo completo oferece suporte à verificação independente ou à replicação das contribuições reivindicadas.",
         ],
         [
           strong("Apresentação"),
-          ": a clareza, a forma e a organização da exposição do conteúdo no artigo completo submetido à TPSI.",
+          "A clareza, a forma e a organização da exposição do conteúdo no artigo completo submetido à TPSI.",
         ],
       ],
     },
-  publicationTitle: "Apresentação e Publicação dos Artigos Completos Aceitos",
+  publicationTitle: "Apresentação e publicação",
     publication: {
       paragraphs: [
         [
@@ -239,22 +238,34 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         "Pelo menos uma das pessoas autoras compareça PRESENCIALMENTE ao SBSI 2027 para apresentar o artigo completo aceito.",
       ],
       closing:
-        "Ressalta-se que o SBSI 2027 é PRESENCIAL e não haverá qualquer possibilidade de apresentação on-line dos artigos completos aceitos. Pessoas autoras sócias da SBC devem estar em dia com a anuidade para terem direito aos valores reduzidos.",
+        "Ressalta-se que o SBSI 2027 é PRESENCIAL e não haverá qualquer possibilidade de apresentação on-line dos artigos completos aceitos.\n\nPessoas autoras sócias da SBC devem estar em dia com a anuidade para terem direito aos valores reduzidos.",
     },
-     coordinationTitle: "Coordenação da Trilha de Pesquisa em SI do SBSI 2027",
-     coordinationKicker: "Coordenação",
-    coordinators: ["Claudia Cappelli (UERJ)", "Maria Claudia Emer (UTFPR)"],
+     coordinationTitle: "Coordenação da trilha",
+     coordinationKicker: "Responsáveis pela TP-SI no SBSI 2027.",
+    coordinators: [
+      {name: "Claudia Cappelli", institution: "UERJ"},
+      {name: "Maria Claudia Emer", institution: "UTFPR"},
+    ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
+    tocTitle: "NESTA CHAMADA",
+    toc: [
+      { id: "descricao", title: "Descrição" },
+      { id: "topicos", title: "Tópicos" },
+      { id: "datas", title: "Datas" },
+      { id: "instrucoes", title: "Submissão" },
+      { id: "revisao", title: "Revisão" },
+      { id: "publicacao", title: "Publicação" },
+      { id: "coordenacao", title: "Coordenação" },
+    ],
   },
   en: {
     hero: {
-      kicker: "Calls",
-      title: "IS Research Track (TP-SI)",
-      dates: "May 17–20, 2027",
-      location: "Campo Grande · MS",
-      format: "In person",
-      submit: "Submit paper ↗",
+      kicker: "Back to Home",
+      title: "Calls for the IS Research Track (TP-SI)",
+      submit: "Submit paper",
+      about: "Full papers presenting new contributions to the field of Information Systems are expected.",
     },
+    introTitle: "Description",
     intro: [
       [
         "The Information Systems (IS) field seeks solutions to real problems faced by society and organizations through innovative technologies. The Brazilian Symposium on Information Systems (SBSI), the largest event in the field in Brazil, takes place annually. The event is promoted by the ",
@@ -296,7 +307,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       "Transparency and accountability in information systems",
       "Sociotechnical view of information systems",
     ],
-    datesTitle: "Important Dates",
+    datesTitle: "IMPORTANT DATES",
     dates: [
       [
         "08/09/2026",
@@ -320,7 +331,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       ],
       [
         "14/12/2026",
-        "2nd Notification (post-rebuttal)",
+        "2nd Notification",
         "notification to authors of acceptance or rejection after the rebuttal",
       ],
       [
@@ -328,7 +339,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         "Final version delivery",
         "upload of the final version file in PDF format to JEMS3",
       ],
-      ["17/05/2027 to 20/05/2027", "SBSI 2027", ""],
+      ["17/05/2027 to 20/05/2027", "Holding of SBSI 2027", ""],
     ],
     submissionTitle: "Submission Instructions",
     submission: {
@@ -344,9 +355,9 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
           ),
           ".",
         ],
-        [
-          "Each submission MUST CAREFULLY comply with the following rules. Submissions to TPSI that do not comply with these rules will be summarily rejected without review (desk reject):",
-        ],
+      ],
+      rulesIntro: [
+        "Each submission MUST CAREFULLY comply with the following rules. Submissions to TPSI that do not comply with these rules will be summarily rejected without review (desk reject):",
       ],
       rules: [
         [
@@ -395,29 +406,29 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         ".",
       ],
     },
-    reviewTitle: "Review Process",
+    reviewTitle: "Review Process and Criteria",
     review: {
       paragraphs: [
         [
-          "The selection of full papers will be based on reviews by members of the TPSI Program Committee at SBSI. The review process will be conducted in a double-anonymous format. If all reviews clearly indicate acceptance or rejection of the full paper as submitted, without the need for a rebuttal, authors will receive a decision of “full paper accepted” or “full paper rejected” in the 1st Notification. Authors of the other full papers will be notified to prepare and submit a rebuttal during the defined period. After the rebuttal is analyzed, the authors of these full papers will receive a final decision of “full paper accepted” or “full paper rejected” in the 2nd Notification.",
+          "The selection of full papers will be based on reviews by members of the TPSI Program Committee at SBSI. The review process will be conducted in a double-anonymous format.\n\nIf all reviews clearly indicate acceptance or rejection of the full paper as submitted, without the need for a rebuttal, authors will receive a decision of “full paper accepted” or “full paper rejected” in the 1st Notification.\n\nAuthors of the other full papers will be notified to prepare and submit a rebuttal during the defined period. After the rebuttal is analyzed, the authors of these full papers will receive a final decision of “full paper accepted” or “full paper rejected” in the 2nd Notification.",
         ],
-        ["The following criteria will be considered in the evaluation:"],
       ],
       criteria: [
         [
+          strong("Compliance with the rules"),
           "Each submission MUST CAREFULLY comply with the rules presented in the “Submission Instructions” section (above): submissions to TPSI that do not comply with these rules will be summarily rejected without review (desk reject).",
         ],
         [
           strong("Novelty"),
-          ": the novelty and/or innovative nature of the proposed solutions and/or analyses, the formulation of scientific and/or practical problems, the methodological procedures, the proposition and/or use of IS theories, and/or the evaluations and experimental studies presented; i.e., how sufficiently original the full paper submitted to TPSI is in relation to the state of the art.",
+          "The novelty and/or innovative nature of the proposed solutions and/or analyses, the formulation of scientific and/or practical problems, the methodological procedures, the proposition and/or use of IS theories, and/or the evaluations and experimental studies presented; i.e., how sufficiently original the full paper submitted to TPSI is in relation to the state of the art.",
         ],
         [
           strong("Rigor"),
-          ": the soundness, clarity, and depth of technical or theoretical contributions, as well as the level of rigor of the methodological procedures employed and the integrity of the evaluation presented in the full paper submitted to TPSI.",
+          "The soundness, clarity, and depth of technical or theoretical contributions, as well as the level of rigor of the methodological procedures employed and the integrity of the evaluation presented in the full paper submitted to TPSI.",
         ],
         [
           strong("Relevance"),
-          ": the importance and/or potential impact of the full paper submitted to TPSI in relation to the IS field, based on publications by the scientific community in international venues, including IS theories available on the ",
+          "The importance and/or potential impact of the full paper submitted to TPSI in relation to the IS field, based on publications by the scientific community in international venues, including IS theories available on the ",
           link("byu", "BYU Library"),
           " portal, as well as national venues such as the ",
           link("anais", "SBSI Proceedings"),
@@ -434,11 +445,11 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         ],
         [
           strong("Transparency, Replicability, and Reproducibility"),
-          ": the extent to which the full paper submitted to TPSI includes sufficient information to understand how an innovation works; how data were obtained, analyzed, and interpreted; and how the full paper supports independent verification or replication of the claimed contributions.",
+          "The extent to which the full paper submitted to TPSI includes sufficient information to understand how an innovation works; how data were obtained, analyzed, and interpreted; and how the full paper supports independent verification or replication of the claimed contributions.",
         ],
         [
           strong("Presentation"),
-          ": the clarity, form, and organization of the content presented in the full paper submitted to TPSI.",
+          "The clarity, form, and organization of the content presented in the full paper submitted to TPSI.",
         ],
       ],
     },
@@ -460,13 +471,24 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         "At least one author attends SBSI 2027 IN PERSON to present the accepted full paper.",
       ],
       closing:
-        "It is emphasized that SBSI 2027 is an IN-PERSON event and there will be no possibility of online presentation of accepted full papers. Authors who are SBC members must be up to date with their membership dues to be entitled to reduced fees.",
+        "It is emphasized that SBSI 2027 is an IN-PERSON event and there will be no possibility of online presentation of accepted full papers.\n\nAuthors who are SBC members must be up to date with their membership dues to be entitled to reduced fees.",
     },
     coordinationTitle: "Coordination of the SBSI 2027 IS Research Track",
-    coordinationKicker: "Coordination",
-    coordinators: ["Claudia Cappelli (UERJ)", "Maria Claudia Emer (UTFPR)"],
-    tpcTitle: "Program Committee (TPC)",
-    tpcStatus: "<In formation>",
+    coordinationKicker: "Those responsible for TP-SI at SBSI 2027.",
+    coordinators: [
+      {name: "Claudia Cappelli", institution: "UERJ"},
+      {name: "Maria Claudia Emer", institution: "UTFPR"},
+    ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
+    tocTitle: "IN THIS CALL",
+    toc: [
+      { id: "descricao", title: "Description" },
+      { id: "topicos", title: "Topics" },
+      { id: "datas", title: "Dates" },
+      { id: "instrucoes", title: "Submission" },
+      { id: "revisao", title: "Review" },
+      { id: "publicacao", title: "Publication" },
+      { id: "coordenacao", title: "Coordination" },
+    ],
   },
 };

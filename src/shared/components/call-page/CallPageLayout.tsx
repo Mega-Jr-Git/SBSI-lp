@@ -1,8 +1,10 @@
 import { type ReactNode, useEffect } from "react";
 import type { CallInline, CallPageData, CallParagraph } from "../../../types/call-page.types";
 import "./call-page.css";
+import { ArrowIcon } from "./assets/Arrow";
+import { CalendarIcon } from "./assets/Calendar";
 
-interface CallPageLayoutProps {
+type CallPageLayoutProps = {
   id: string;
   content?: CallPageData;
   links: Record<string, string>;
@@ -26,8 +28,8 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
     return (
       <main id={id} className="call-page">
         <header className="call-hero">
-          <p className="call-kicker">Chamadas</p>
-          <h1>Trilha de Minicursos (TM-SI)</h1>
+          <p className="call-kicker">Voltar ao início</p>
+          <h1>Chamada para a Trilha de Pesquisa em SI (TP-SI)</h1>
         </header>
         <div className="call-layout call-empty-state">
           <h2 className="call-empty-title">Em breve</h2>
@@ -80,13 +82,9 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
   return (
     <main id={id} className="call-page">
       <header className="call-hero">
-        <p className="call-kicker">{content.hero.kicker}</p>
+        <a href="/" className="call-kicker"><ArrowIcon /> {content.hero.kicker}</a>
         <h1>{content.hero.title}</h1>
-        <div className="call-meta">
-          <span>{content.hero.dates}</span>
-          <span>{content.hero.location}</span>
-          <span>{content.hero.format}</span>
-        </div>
+        <p className="call-about">{content.hero.about}</p>
         {links.submission && (
           <a
             className="call-hero-cta"
@@ -94,14 +92,15 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {content.hero.submit}
+            {content.hero.submit} <ArrowIcon />
           </a>
         )}
       </header>
 
       <div className="call-layout">
         <article className="call-body">
-          <section>
+          <section id="descricao" className="call-body-section">
+            <h2>{content.introTitle}</h2>
             {content.intro.map((paragraph, index) =>
               renderParagraph(paragraph, index),
             )}
@@ -116,18 +115,50 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
             </section>
           )}
 
-            <section>
+          <section id="topicos" className="call-body-section">
+            <h2>{content.topicsTitle}</h2>
+            <ul className="call-topics">
+              {content.topics.map((topic) => (
+                <li key={topic}>{topic}</li>
+              ))}
+            </ul>
+            {content.topicsNote && <p className="call-topics-note">{content.topicsNote}</p>}
+          </section>
+
+          <section id="datas" className="call-body-section">
+            <h2>{content.datesTitle}</h2>
+            <ul className="call-inline-dates">
+              {content.dates.map(([date, label, description]) => (
+                <li key={date}>
+                  <div className="call-inline-dates-date">
+                    <span className="call-inline-dates-calendar"><CalendarIcon /></span>
+                    <span className="call-inline-dates-span">{date}</span>
+                  </div>
+                  <div className="call-inline-dates-info">
+                    <div className="call-inline-label">{label}</div>
+                    <p>{description && ` ${description}.`}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section id="instrucoes" className="call-body-section">
             <h2>{content.submissionTitle}</h2>
             {content.submission.paragraphs.map((paragraph, index) =>
               renderParagraph(paragraph, index),
             )}
 
             {content.submission.rules && (
-              <ol className="call-rules">
-                {content.submission.rules.map((rule) => (
-                  <li key={inlineKey(rule)}>{renderInline(rule)}</li>
-                ))}
-              </ol>
+              <div className="call-submission-rules-box">
+                {content.submission.rulesIntro &&
+                  renderParagraph(content.submission.rulesIntro, "submission-rules-intro")}
+                <ol className="call-rules">
+                  {content.submission.rules.map((rule) => (
+                    <li key={inlineKey(rule)}>{renderInline(rule)}</li>
+                  ))}
+                </ol>
+              </div>
             )}
 
             {content.submission.phases && (
@@ -159,7 +190,7 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
           {content.format && (
             <section>
               <h2>{content.formatTitle || "Formato da Proposta e do Capítulo"}</h2>
-              
+
               <h3>{content.format.phase1Title}</h3>
               <ul className="call-publication-requirements">
                 {content.format.phase1Rules.map((rule, idx) => (
@@ -190,39 +221,19 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
             </section>
           )}
 
-          <section>
-            <h2>{content.topicsTitle}</h2>
-            <ul className="call-topics">
-              {content.topics.map((topic) => (
-                <li key={topic}>{topic}</li>
-              ))}
-            </ul>
-            {content.topicsNote && <p className="call-topics-note">{content.topicsNote}</p>}
-          </section>
-
-          <section>
-            <h2>{content.datesTitle}</h2>
-            <ul className="call-inline-dates">
-              {content.dates.map(([date, label, description]) => (
-                <li key={date}>
-                  <strong>{date}:</strong> {label}
-                  {description && ` (${description})`}
-                </li>
-              ))}
-            </ul>
-          </section>
-
           {content.review && (
-            <section>
+            <section id="revisao" className="call-body-section">
               <h2>{content.reviewTitle}</h2>
               {content.review.paragraphs.map((paragraph, index) =>
                 renderParagraph(paragraph, index),
               )}
-              <ul className="call-publication-requirements">
+              <div className="call-criteria-grid">
                 {content.review.criteria.map((criterion) => (
-                  <li key={inlineKey(criterion)}>{renderInline(criterion)}</li>
+                  <div key={inlineKey(criterion)} className="call-criterion-card">
+                    {renderInline(criterion)}
+                  </div>
                 ))}
-              </ul>
+              </div>
               {content.review.publication && content.review.publication.map((paragraph, index) =>
                 renderParagraph(paragraph, index),
               )}
@@ -230,22 +241,22 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
           )}
 
           {content.publication && (
-            <section>
+            <section id="publicacao" className="call-body-section">
               <h2>{content.publicationTitle}</h2>
               {content.publication.paragraphs.map((paragraph, index) =>
                 renderParagraph(paragraph, index),
               )}
-              <ul className="call-publication-requirements">
+              <ul className="call-publication-cards">
                 {content.publication.requirements.map((requirement) => (
                   <li key={requirement}>{requirement}</li>
                 ))}
               </ul>
-              <p>{content.publication.closing}</p>
+              <p className="call-publication-note">{content.publication.closing}</p>
             </section>
           )}
 
           {content.tpcTitle && (
-            <section>
+            <section className="call-body-section">
               <h2>{content.tpcTitle}</h2>
               {content.tpcStatus && <p>{content.tpcStatus}</p>}
               {content.tpcMembers && content.tpcMembers.length > 0 && (
@@ -258,15 +269,36 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
             </section>
           )}
 
-          <section>
+          <section id="coordenacao" className="call-body-section">
             <h2>{content.coordinationTitle}</h2>
-            {content.coordinators.map((coordinator) => (
-              <p key={coordinator}>{coordinator}</p>
-            ))}
+            {content.coordinationKicker && <p className="call-coordination-kicker">{content.coordinationKicker}</p>}
+            <div className="call-coordinator-grid">
+              {content.coordinators.map((coordinator) => (
+                <div key={coordinator.name} className="call-coordinator-card">
+                  <strong>{coordinator.name}</strong>
+                  <span>{coordinator.institution}</span>
+                </div>
+              ))}
+            </div>
           </section>
         </article>
 
         <aside className="call-aside">
+          {content.toc && (
+            <div className="call-in-this-call">
+              <h2>{content.tocTitle}</h2>
+              <ol className="call-toc">
+                {content.toc.map((item, i) => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`}>
+                      <span>{String(i + 1).padStart(2, "0")}</span>
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
           <div className="call-date-card">
             <h2>{content.datesTitle}</h2>
             <ul className="call-date-list">
@@ -284,34 +316,7 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {content.hero.submit}
-              </a>
-            )}
-          </div>
-
-          <div className="call-coordination">
-            <p className="call-kicker">{content.coordinationKicker}</p>
-            {content.coordinators.map((coordinator) => (
-              <p key={coordinator}>
-                <strong>{coordinator}</strong>
-              </p>
-            ))}
-          </div>
-
-          <div className="call-links">
-            {links.cesi && (
-              <a href={links.cesi} target="_blank" rel="noopener noreferrer">
-                {content.sideLinks.cesi}
-              </a>
-            )}
-            {links.sbc && (
-              <a href={links.sbc} target="_blank" rel="noopener noreferrer">
-                {content.sideLinks.sbc}
-              </a>
-            )}
-            {links.jems && (
-              <a href={links.jems} target="_blank" rel="noopener noreferrer">
-                {content.sideLinks.jems}
+                {content.hero.submit} <ArrowIcon />
               </a>
             )}
           </div>

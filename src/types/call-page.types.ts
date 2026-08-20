@@ -15,11 +15,10 @@ export type CallPageData = {
   hero: {
     kicker: string;
     title: string;
-    dates: string;
-    location: string;
-    format: string;
     submit: string;
+    about: string;
   };
+  introTitle: string;
   intro: CallParagraph[];
   targetAudienceTitle?: string;
   targetAudience?: CallParagraph[];
@@ -31,6 +30,7 @@ export type CallPageData = {
   submissionTitle: string;
   submission: {
     paragraphs: CallParagraph[];
+    rulesIntro?: CallParagraph;
     phases?: CallSubmissionPhase[];
     rules?: CallParagraph[];
     openScience?: CallParagraph;
@@ -60,7 +60,7 @@ export type CallPageData = {
   };
   coordinationTitle: string;
   coordinationKicker: string;
-  coordinators: string[];
+  coordinators: {name: string; institution: string}[];
   tpcTitle?: string;
   tpcStatus?: string;
   tpcMembers?: string[];
@@ -69,4 +69,6 @@ export type CallPageData = {
     sbc: string;
     jems: string;
   };
+  tocTitle?: string;
+  toc?: {id: string, title: string}[];
 };
