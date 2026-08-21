@@ -11,6 +11,7 @@ export default function TmSi2027Page() {
       id="tm-si-2027"
       content={content}
       links={tmSi2027Links}
+      criteriaBullets
     />
   );
 }
