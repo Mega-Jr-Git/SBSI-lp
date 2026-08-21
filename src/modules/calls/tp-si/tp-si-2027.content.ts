@@ -312,32 +312,32 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       [
         "08/09/2026",
         "Paper registration",
-        "title, authors, topics of interest, and structured abstract in JEMS3",
+        "Title, authors, topics of interest, and structured abstract in JEMS3",
       ],
       [
         "14/09/2026",
         "Paper submission",
-        "upload of the paper file in PDF format to JEMS3",
+        "Upload of the paper file in PDF format to JEMS3",
       ],
       [
         "25/11/2026",
         "1st Notification",
-        "notification to authors of acceptance, rejection, or rebuttal",
+        "Notification to authors of acceptance, rejection, or rebuttal",
       ],
       [
         "02/12/2026",
         "Rebuttal submission",
-        "deadline for sending the rebuttal in JEMS3",
+        "Deadline for sending the rebuttal in JEMS3",
       ],
       [
         "14/12/2026",
         "2nd Notification",
-        "notification to authors of acceptance or rejection after the rebuttal",
+        "Notification to authors of acceptance or rejection after the rebuttal",
       ],
       [
         "15/02/2027",
         "Final version delivery",
-        "upload of the final version file in PDF format to JEMS3",
+        "Upload of the final version file in PDF format to JEMS3",
       ],
       ["17/05/2027 to 20/05/2027", "Holding of SBSI 2027", ""],
     ],

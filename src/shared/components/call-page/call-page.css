@@ -345,7 +345,8 @@
 
 .call-criteria-grid--bullets .call-criterion-card { 
   position: relative;
-  align-content: center;
+  display: flex;
+  align-items: center;
   padding-left: 3rem; 
 }
 
@@ -629,6 +630,8 @@
   .call-inline-dates li {
     grid-template-columns: 1fr;
     column-gap: 0.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
   }
 
   .call-inline-label {
@@ -639,6 +642,10 @@
     padding-top: 0.7rem;
     justify-content: center;
     column-gap: 0.3rem;
+  }
+
+  .call-inline-dates-info {
+    align-items: center;
   }
 
   .call-inline-dates li:last-child .call-inline-dates-span {
@@ -662,6 +669,15 @@
 
   .call-criteria-grid {
     grid-template-columns: 1fr;
+  }
+
+  .call-date-list {
+    padding-left: 0;
+  }
+
+  .call-date {
+    align-items: center;
+    text-align: center;
   }
 
   .call-coordinator-grid {

@@ -136,17 +136,17 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       [
         "14/09/2026",
         "Submissão de proposta",
-        "artigo de 4 páginas",
+        "(Artigo de 4 páginas)",
       ],
       [
         "23/10/2026",
         "1ª etapa de avaliação",
-        "(proposta) - Notificação aos autores",
+        "(Proposta) - Notificação aos autores",
       ],
       [
         "01/12/2026",
         "Submissão do texto completo",
-        "capítulo",
+        "(Capítulo)",
       ],
       [
         "15/02/2027",
@@ -319,7 +319,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       [
         "14/09/2026",
         "Proposal submission",
-        "4-page paper",
+        "(4-page paper)",
       ],
       [
         "23/10/2026",
@@ -329,7 +329,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       [
         "01/12/2026",
         "Full text submission",
-        "chapter",
+        "(Chapter)",
       ],
       [
         "15/02/2027",
