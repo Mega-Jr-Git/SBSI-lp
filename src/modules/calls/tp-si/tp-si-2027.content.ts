@@ -220,7 +220,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         ],
       ],
     },
-  publicationTitle: "Apresentação e publicação",
+    publicationTitle: "Apresentação e publicação",
     publication: {
       paragraphs: [
         [
@@ -260,7 +260,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
   },
   en: {
     hero: {
-      kicker: "Back to Home",
+      kicker: "Back to home",
       title: "Calls for the IS Research Track (TP-SI)",
       submit: "Submit paper",
       about: "Full papers presenting new contributions to the field of Information Systems are expected.",

@@ -20,7 +20,7 @@ const strong = (text: string): CallInline => ({ strong: text });
 export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
   pt: {
     hero: {
-      kicker: "Chamadas",
+      kicker: "Voltar ao início",
       title: "Trilha de Minicursos em SI (TM-SI)",
       submit: "Submeter proposta",
       about: "São esperados artigos completos com novas contribuições para a\nárea de Sistemas de Informação.",
@@ -164,25 +164,20 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
         ],
       ],
       criteria: [
-        [strong("● "), "Título, autor(es) e filiação do(s) autor(es);"],
-        [strong("● "), "Resumo com, no máximo, 200 palavras;"],
+        ["Título, autor(es) e filiação do(s) autor(es);"],
+        ["Resumo com, no máximo, 200 palavras;"],
         [
-          strong("● "),
           'Descrição incluindo objetivos e requisitos técnicos (equipamento e "software"), indicando o escopo (introdutório ou avançado);',
         ],
-        [strong("● "), "Metodologia/abordagem didática a ser empregada;"],
+        ["Metodologia/abordagem didática a ser empregada;"],
         [
-          strong("● "),
           "Tempo para a realização do minicurso (que deverá ter duração máxima de quatro horas);",
         ],
-        [strong("● "), "Relevância do minicurso para o SBSI 2027;"],
-        [
-          strong("● "),
-          "Esboço contendo os tópicos principais e o conteúdo programático;",
-        ],
-        [strong("● "), "Referências principais;"],
-        [strong("● "), "Idioma em que será ministrado (Português ou Inglês);"],
-        [strong("● "), "Biografia curta do(s) autor(es)."],
+        ["Relevância do minicurso para o SBSI 2027;"],
+        ["Esboço contendo os tópicos principais e o conteúdo programático;"],
+        ["Referências principais;"],
+        ["Idioma em que será ministrado (Português ou Inglês);"],
+        ["Biografia curta do(s) autor(es)."],
       ],
       publication: [
         [
@@ -204,7 +199,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
   },
   en: {
     hero: {
-      kicker: "Calls",
+      kicker: "Back to home",
       title: "IS Short Courses Track (TM-SI)",
       submit: "Submit proposal",
       about: "Full papers presenting new contributions to the field of Information Systems are expected.",
@@ -352,25 +347,18 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
         ],
       ],
       criteria: [
-        [strong("● "), "Title, author(s), and affiliation;"],
-        [strong("● "), "Abstract with up to 200 words;"],
+        ["Title, author(s), and affiliation;"],
+        ["Abstract with up to 200 words;"],
         [
-          strong("● "),
           'Description including goals and technical requirements (equipment and software), indicating scope (introductory or advanced);',
         ],
-        [strong("● "), "Didactic methodology/approach to be used;"],
-        [
-          strong("● "),
-          "Estimated duration (maximum 4 hours);",
-        ],
-        [strong("● "), "Relevance of the short course to SBSI 2027;"],
-        [
-          strong("● "),
-          "Outline containing main topics and program content;",
-        ],
-        [strong("● "), "Main references;"],
-        [strong("● "), "Language in which it will be taught (Portuguese or English);"],
-        [strong("● "), "Short biography of author(s)."],
+        ["Didactic methodology/approach to be used;"],
+        ["Estimated duration (maximum 4 hours);"],
+        ["Relevance of the short course to SBSI 2027;"],
+        ["Outline containing main topics and program content;"],
+        ["Main references;"],
+        ["Language in which it will be taught (Portuguese or English);"],
+        ["Short biography of author(s)."],
       ],
       publication: [
         [
