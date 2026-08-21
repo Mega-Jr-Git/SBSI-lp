@@ -8,9 +8,10 @@ type CallPageLayoutProps = {
   id: string;
   content?: CallPageData;
   links: Record<string, string>;
+  criteriaBullets?: boolean;
 }
 
-export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
+export function CallPageLayout({ id, content, links, criteriaBullets }: CallPageLayoutProps) {
   useEffect(() => {
     window.scrollTo({ top: 0 });
 
@@ -227,7 +228,7 @@ export function CallPageLayout({ id, content, links }: CallPageLayoutProps) {
               {content.review.paragraphs.map((paragraph, index) =>
                 renderParagraph(paragraph, index),
               )}
-              <div className="call-criteria-grid">
+              <div className={`call-criteria-grid${criteriaBullets ? " call-criteria-grid--bullets" : ""}`}>
                 {content.review.criteria.map((criterion) => (
                   <div key={inlineKey(criterion)} className="call-criterion-card">
                     {renderInline(criterion)}

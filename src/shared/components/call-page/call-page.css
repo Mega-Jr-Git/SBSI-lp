@@ -155,7 +155,7 @@
 .call-body-section h2 {
   counter-increment: call-section;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.75rem;
   font-weight: 700;
 }
@@ -336,10 +336,29 @@
 }
 
 .call-criterion-card {
-  border: 1px solid var(--sbsi-orange-light);
+  align-content: baseline;
+  border: 1px solid var(--color-text-gray);
   border-radius: 1rem;
   padding: 1.25rem 1.5rem;
   color: var(--color-text-dark-gray);
+}
+
+.call-criteria-grid--bullets .call-criterion-card { 
+  position: relative;
+  align-content: center;
+  padding-left: 3rem; 
+}
+
+.call-criteria-grid--bullets .call-criterion-card::before {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.43rem;
+  height: 0.43rem;
+  border-radius: 50%;
+  background: var(--sbsi-orange);
 }
 
 .call-criterion-card b {
@@ -359,6 +378,7 @@
   color: var(--color-text-dark-gray);
   line-height: 1.6;
 }
+
 .call-publication-cards li::before {
   content: "";
   position: absolute;
@@ -453,6 +473,16 @@
 .call-date-card {
   border-top: 1px solid var(--sbsi-orange);
   text-align: left;
+}
+
+.call-date-card h2 {
+  text-align: center;
+}
+
+.call-date-card,
+.call-in-this-call,
+.call-submission-rules-box {
+  background: rgba(var(--sbsi-orange-rgb), 0.1);
 }
 
 .call-date {
