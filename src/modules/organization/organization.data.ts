@@ -15,12 +15,12 @@ export type OrganizationMember = {
 	/** Identificador único e estável (kebab-case), usado como React key. */
 	id: string; // ex.: "nome-sobrenome"
 	name: string; // ex.: "Nome Sobrenome"
-	role: string; // função - ex.: "Product Owner"
-	institution: string; // ex.: "UFMS"
+	role?: string; // função - ex.: "Product Owner"
+	institution?: string; // ex.: "UFMS"
 	group: OrganizationGroup; // ex.:"general-coordination", // ou "volunteer-team"
-	// * Caminho para a foto em `public/` (ex.: "/organization/nome-sobrenome.jpg").
+	// * Caminho para a foto em `public/` (ex.: "public\organization\nome-sobrenome.jpg").
 	photoUrl?: string; // photoUrl é opcional — se não colocar, aparece o placeholder cinza
-};
+};  
 
 export const organizationMembers: OrganizationMember[] = [
 	{
