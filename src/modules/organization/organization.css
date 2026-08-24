@@ -1,0 +1,99 @@
+.organization-section {
+	padding: var(--space-3xl, 4rem) var(--space-md, 1.5rem);
+	background-color: var(--color-background-inverse, #000000);
+	color: var(--color-text-inverse, #ffffff);
+}
+
+.organization-section__title {
+	font-size: var(--font-size-2xl, 2rem);
+	font-weight: var(--font-weight-bold, 700);
+	text-align: center;
+}
+
+.organization-section__highlight {
+	color: var(--color-brand-primary, #ff7a1a);
+}
+
+.organization-section__group {
+	margin-top: var(--space-xl, 3rem);
+}
+
+.organization-section__group-title {
+	font-size: var(--font-size-lg, 1.125rem);
+	font-weight: var(--font-weight-medium, 500);
+	border-bottom: 1px solid var(--color-border-inverse, #333333);
+	padding-bottom: var(--space-xs, 0.75rem);
+	margin-bottom: var(--space-lg, 2rem);
+}
+
+.organization-section__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.organization-section-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: var(--space-2xs, 0.5rem);
+	flex: 0 1 220px;
+	padding: 0 var(--space-lg, 2rem) var(--space-lg, 2rem);
+	border-left: 1px solid var(--color-border-inverse, #333333);
+}
+
+.organization-section-card:nth-child(3n + 1) {
+	border-left: none;
+}
+
+.organization-section-card__photo {
+	width: 96px;
+	height: 96px;
+	border-radius: var(--radius-full, 9999px);
+	object-fit: cover;
+	background-color: var(--color-surface-muted, #8c8c8c);
+}
+
+.organization-section-card__photo--placeholder {
+	background-color: var(--color-surface-muted, #8c8c8c);
+}
+
+.organization-section-card__name {
+	font-weight: var(--font-weight-semibold, 600);
+	margin-top: var(--space-xs, 0.75rem);
+}
+
+.organization-section-card__role {
+	color: var(--color-brand-primary, #ff7a1a);
+	font-weight: var(--font-weight-medium, 500);
+	font-size: var(--font-size-sm, 0.875rem);
+}
+
+.organization-section-card__institution {
+	color: var(--color-text-inverse-muted, #ff7a1a);
+	font-size: var(--font-size-sm, 0.875rem);
+}
+
+@media (max-width: 768px) {
+	.organization-section__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.organization-section-card {
+		border-left: none;
+	}
+
+	.organization-section-card:nth-child(2n) {
+		border-left: 1px solid var(--color-border-inverse, #333333);
+	}
+}
+
+@media (max-width: 480px) {
+	.organization-section__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.organization-section-card {
+		border-left: none !important;
+	}
+}
