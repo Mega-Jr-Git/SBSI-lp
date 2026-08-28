@@ -18,10 +18,14 @@ function membersByGroup(
 
 type MemberCardProps = {
 	member: OrganizationMember;
+	locale: "pt" | "en";
 	photoAlt: (name: string) => string;
 };
 
-function MemberCard({ member, photoAlt }: MemberCardProps) {
+function MemberCard({ member, locale, photoAlt }: MemberCardProps) {
+	const role = member.role[locale];
+	const institution = member.institution[locale];
+
 	return (
 		<div className="organization-section-card">
 			{member.photoUrl ? (
@@ -38,10 +42,12 @@ function MemberCard({ member, photoAlt }: MemberCardProps) {
 			)}
 
 			<p className="organization-section-card__name">{member.name}</p>
-			<p className="organization-section-card__role">{member.role}</p>
-			<p className="organization-section-card__institution">
-				{member.institution}
-			</p>
+
+			{role && <p className="organization-section-card__role">{role}</p>}
+
+			{institution && (
+				<p className="organization-section-card__institution">{institution}</p>
+			)}
 		</div>
 	);
 }
@@ -49,10 +55,11 @@ function MemberCard({ member, photoAlt }: MemberCardProps) {
 type MemberGroupProps = {
 	title: string;
 	members: OrganizationMember[];
+	locale: "pt" | "en";
 	photoAlt: (name: string) => string;
 };
 
-function MemberGroup({ title, members, photoAlt }: MemberGroupProps) {
+function MemberGroup({ title, members, locale, photoAlt }: MemberGroupProps) {
 	if (members.length === 0) {
 		return null;
 	}
@@ -63,7 +70,12 @@ function MemberGroup({ title, members, photoAlt }: MemberGroupProps) {
 
 			<div className="organization-section__grid">
 				{members.map((member) => (
-					<MemberCard key={member.id} member={member} photoAlt={photoAlt} />
+					<MemberCard
+						key={member.id}
+						member={member}
+						locale={locale}
+						photoAlt={photoAlt}
+					/>
 				))}
 			</div>
 		</div>
@@ -96,12 +108,14 @@ export default function OrganizationSection({}: OrganizationSectionProps) {
 			<MemberGroup
 				title={content.generalCoordination}
 				members={generalCoordination}
+				locale={locale}
 				photoAlt={content.photoAlt}
 			/>
 
 			<MemberGroup
 				title={content.volunteerTeam}
 				members={volunteerTeam}
+				locale={locale}
 				photoAlt={content.photoAlt}
 			/>
 		</section>
