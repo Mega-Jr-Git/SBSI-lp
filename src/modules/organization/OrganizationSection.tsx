@@ -43,11 +43,11 @@ function MemberCard({ member, locale, photoAlt }: MemberCardProps) {
 
 			<p className="organization-section-card__name">{member.name}</p>
 
-			{role && <p className="organization-section-card__role">{role}</p>}
+			{role ? <p className="organization-section-card__role">{role}</p> : null}
 
-			{institution && (
+			{institution ? (
 				<p className="organization-section-card__institution">{institution}</p>
-			)}
+			) : null}
 		</div>
 	);
 }
