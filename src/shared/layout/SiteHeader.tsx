@@ -23,6 +23,7 @@ const publicUrl = import.meta.env.BASE_URL;
 const navItems: NavItem[] = [
   { labelKey: "sobre", targetId: "sobre" },
   { labelKey: "trilhas", targetId: "chamada-trilhas" },
+  { labelKey: "organizacao", targetId: "organizacao" },
   { labelKey: "local", targetId: "local" },
 ];
 

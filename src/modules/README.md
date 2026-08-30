@@ -9,6 +9,7 @@ Abaixo estão listados os módulos de seção já implementados no projeto:
 - `home`: Seção inicial (Hero) com as informações primárias do evento e countdown.
 - `about`: Informações institucionais sobre o SBSI.
 - `tracks-call`: secao de chamada de trabalhos.
+- `organization`: secao de coordenadores e colaboradores
 - `location`: Apresenta o local físico do evento (UFMS, Campo Grande), oferecendo rotas de navegação direta, busca de hotéis e um mapa interativo integrado.
 
 ## Padrao obrigatorio

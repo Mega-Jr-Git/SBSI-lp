@@ -3,6 +3,7 @@ import AboutSection from "../modules/about/AboutSection";
 import TmSi2027Page from "../modules/calls/tm-si/TmSi2027Page";
 import TpSi2027Page from "../modules/calls/tp-si/TpSi2027Page";
 import HomeSection from "../modules/home/HomeSection";
+import OrganizationSection from "../modules/organization/OrganizationSection";
 import LocationSection from "../modules/location/LocationSection";
 import TracksCallSection from "../modules/tracks-call/TracksCallSection";
 import { tmSiPath, tpSiPath } from "../modules/tracks-call/tracks-call.content";
@@ -62,6 +63,7 @@ function AppContent() {
         <HomeSection />
         <AboutSection />
         <TracksCallSection />
+        <OrganizationSection />
         <LocationSection />
       </main>
     );
