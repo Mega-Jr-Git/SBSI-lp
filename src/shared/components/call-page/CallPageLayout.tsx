@@ -129,11 +129,19 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           <section id="datas" className="call-body-section">
             <h2>{content.datesTitle}</h2>
             <ul className="call-inline-dates">
-              {content.dates.map(([date, label, description]) => (
+              {content.dates.map(([date, label, description, oldDate]) => (
                 <li key={date}>
                   <div className="call-inline-dates-date">
                     <span className="call-inline-dates-calendar"><CalendarIcon /></span>
-                    <span className="call-inline-dates-span">{date}</span>
+                    <span className="call-inline-dates-span">
+                      {oldDate && (
+                        <>
+                          <s className="call-date-old">{oldDate}</s>
+                          <br />
+                        </>
+                      )}
+                      {date}
+                    </span>
                   </div>
                   <div className="call-inline-dates-info">
                     <div className="call-inline-label">{label}</div>
@@ -285,27 +293,20 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
         </article>
 
         <aside className="call-aside">
-          {content.toc && (
-            <div className="call-in-this-call">
-              <h2>{content.tocTitle}</h2>
-              <ol className="call-toc">
-                {content.toc.map((item, i) => (
-                  <li key={item.id}>
-                    <a href={`#${item.id}`}>
-                      <span>{String(i + 1).padStart(2, "0")}</span>
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
           <div className="call-date-card">
             <h2>{content.datesTitle}</h2>
             <ul className="call-date-list">
-              {content.dates.map(([date, label]) => (
+              {content.dates.map(([date, label, , oldDate]) => (
                 <li className="call-date" key={date}>
-                  <span>{date}</span>
+                  <span>
+                    {oldDate && (
+                      <>
+                        <s className="call-date-old">{oldDate}</s>
+                        <br />
+                      </>
+                    )}
+                    {date}
+                  </span>
                   <strong>{label}</strong>
                 </li>
               ))}

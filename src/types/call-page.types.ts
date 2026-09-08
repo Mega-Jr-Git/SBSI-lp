@@ -26,7 +26,7 @@ export type CallPageData = {
   topics: string[];
   topicsNote?: string;
   datesTitle: string;
-  dates: [date: string, label: string, description?: string][];
+  dates: [date: string, label: string, description?: string, oldDate?: string][];
   submissionTitle: string;
   submission: {
     paragraphs: CallParagraph[];

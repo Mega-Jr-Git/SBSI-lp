@@ -77,14 +77,16 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
     datesTitle: "DATAS IMPORTANTES",
      dates: [
       [
-        "08/09/2026",
+        "21/09/2026 (HARD)",
         "Registro do artigo",
         "Título, pessoas autoras, tópicos de interesse e resumo estruturado no JEMS3",
+        "08/09/2026",
       ],
       [
-        "14/09/2026",
+        "28/09/2026 (HARD)",
         "Submissão do artigo",
         "Upload do arquivo do artigo em PDF no JEMS3",
+        "14/09/2026",
       ],
       [
         "25/11/2026",
@@ -310,14 +312,16 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
     datesTitle: "IMPORTANT DATES",
     dates: [
       [
-        "08/09/2026",
+        "21/09/2026 (HARD)",
         "Paper registration",
         "Title, authors, topics of interest, and structured abstract in JEMS3",
+        "08/09/2026",
       ],
       [
-        "14/09/2026",
+        "28/09/2026 (HARD)",
         "Paper submission",
         "Upload of the paper file in PDF format to JEMS3",
+        "14/09/2026",
       ],
       [
         "25/11/2026",

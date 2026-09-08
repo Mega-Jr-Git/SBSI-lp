@@ -265,7 +265,7 @@
 
 .call-inline-dates li {
   display: grid;
-  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
   column-gap: 1rem;
   counter-increment: rule;
   border-bottom: 1px solid var(--sbsi-orange-light);
@@ -293,6 +293,11 @@
 .call-inline-dates-span {
   font-family: var(--font-mono);
   color: var(--sbsi-black);
+}
+
+.call-date-old {
+  display: inline-block;
+  opacity: 0.5;
 }
 
 .call-inline-label {
@@ -462,8 +467,7 @@
 }
 
 .call-date-card,
-.call-coordination,
-.call-in-this-call {
+.call-coordination {
   text-align: center;
   border: 1px solid var(--sbsi-orange-dark);
   border-radius: 2.5rem;
@@ -481,7 +485,6 @@
 }
 
 .call-date-card,
-.call-in-this-call,
 .call-submission-rules-box {
   background: rgba(var(--sbsi-orange-rgb), 0.1);
 }
@@ -527,30 +530,6 @@
   color: var(--color-text-cream);
   line-height: 1.5;
   margin: 1.25rem 0;
-}
-
-.call-page .call-toc {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  width: fit-content;
-}
-
-.call-toc li a {
-  display: flex;
-  gap: 0.75rem;
-  padding: 0.85rem 0;
-  color: var(--sbsi-black);
-}
-
-.call-toc li a span {
-  font-size: 0.87rem;
-  font-family: var(--font-mono);
-}
-
-.call-toc li a:hover,
-.call-toc li a:focus-visible {
-  color: var(--sbsi-orange);
 }
 
 .call-phase-item {
@@ -657,8 +636,7 @@
   }
 
   .call-date-card,
-  .call-coordination,
-  .call-in-this-call {
+  .call-coordination {
     padding: 1.35rem;
   }
 
