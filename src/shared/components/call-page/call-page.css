@@ -8,8 +8,13 @@
 
 .call-hero {
   position: relative;
-  background: linear-gradient(95.96deg, var(--sbsi-black) 6.41%, var(--sbsi-gradient-2) 51.76%, var(--sbsi-gradient-3) 98.66%);
-  padding: 12rem max(1.5rem, calc((100% - 1180px) / 3)) 10rem;
+  background: linear-gradient(
+    95.96deg,
+    var(--sbsi-black) 6.41%,
+    var(--sbsi-gradient-2) 51.76%,
+    var(--sbsi-gradient-3) 98.66%
+  );
+  padding: 7rem max(1.5rem, calc((100% - 1180px) / 3)) 4rem;
   font-family: var(--font-inter);
 }
 
@@ -37,7 +42,7 @@
   gap: 0.5rem;
   font-size: 1.125rem;
   font-weight: 400;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
 }
 
 .call-kicker:hover {
@@ -46,18 +51,17 @@
 
 .call-hero h1 {
   font-weight: 600;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 0.98;
-  max-width: 1000px;
-  margin: 0;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  line-height: 1.05;
+  margin: 1.1rem 0;
   white-space: pre-line;
-  margin: 2rem 0 2rem 0;
 }
 
 .call-about {
   font-size: 1.25rem;
   white-space: pre-line;
   color: var(--color-text-gray);
+  margin: 0.5rem 0;
 }
 
 .call-lead {
@@ -87,7 +91,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  margin-top: 1.25rem;
+  margin-top: 0.75rem;
   padding: 0.6rem 1rem;
   border: 1px solid var(--sbsi-orange);
   border-radius: 2rem;
@@ -107,7 +111,7 @@
 }
 
 .call-meta + .call-hero-cta {
-  margin-top: 1.25rem;
+  margin-top: 0.75rem;
 }
 
 .call-hero-cta:hover,
@@ -224,7 +228,7 @@
   color: var(--color-text-dark-gray);
 }
 
-.call-topics li:nth-child(-n+2) {
+.call-topics li:nth-child(-n + 2) {
   border-top: none;
 }
 
@@ -348,11 +352,11 @@
   color: var(--color-text-dark-gray);
 }
 
-.call-criteria-grid--bullets .call-criterion-card { 
+.call-criteria-grid--bullets .call-criterion-card {
   position: relative;
   display: flex;
   align-items: center;
-  padding-left: 3rem; 
+  padding-left: 3rem;
 }
 
 .call-criteria-grid--bullets .call-criterion-card::before {
@@ -551,11 +555,14 @@
   border: 1px solid var(--sbsi-orange);
   border-radius: 3rem;
   padding: 0.8rem 0.9rem;
+
   color: var(--sbsi-orange);
   font-weight: 700;
   text-align: center;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .call-submission-link:hover,
@@ -566,11 +573,11 @@
 
 @media (max-width: 800px) {
   .call-hero {
-    padding: 8rem 1.5rem 2.75rem;
+    padding: 5.5rem 1.5rem 2rem;
   }
 
   .call-hero h1 {
-    font-size: clamp(2.5rem, 12vw, 4.2rem);
+    font-size: clamp(2.25rem, 11vw, 3.75rem);
   }
 
   .call-layout {
@@ -587,7 +594,7 @@
     grid-template-columns: 1fr;
   }
 
-  .call-topics li:nth-child(-n+2) {
+  .call-topics li:nth-child(-n + 2) {
     border-top: 1px solid rgba(var(--color-text-dark-gray-rgb), 0.3);
   }
 

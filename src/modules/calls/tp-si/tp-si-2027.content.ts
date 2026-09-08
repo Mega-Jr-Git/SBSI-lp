@@ -28,7 +28,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
   pt: {
     hero: {
       kicker: "Voltar ao início",
-      title: "Chamada para a Trilha\nde Pesquisa em SI (TP-SI)",
+      title: "Chamada para a Trilha de Pesquisa em SI (TP-SI)",
       submit: "Submeter artigo",
       about: "São esperados artigos completos com novas contribuições para a\nárea de Sistemas de Informação.",
     },
@@ -49,7 +49,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       ],
     ],
     topicsTitle: "Tópicos de interesse",
-   topics: [
+    topics: [
       "Aspectos e impactos tecnológicos, sociais, econômicos e ambientais de sistemas de informação",
       "Complexidade de sistemas de informação",
       "Desafios e tendências de sistemas de informação aplicados a domínios (saúde, agricultura, governo, educação, entre outros)",
@@ -75,7 +75,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       "Visão sociotécnica de sistemas de informação",
     ],
     datesTitle: "DATAS IMPORTANTES",
-     dates: [
+    dates: [
       [
         "21/09/2026 (HARD)",
         "Registro do artigo",
@@ -112,7 +112,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
     ],
     submissionTitle: "Instruções de submissão",
     submission: {
-       paragraphs: [
+      paragraphs: [
         [
           "Esta trilha (TPSI) aceita apenas submissão de artigos completos (full papers), correspondentes a trabalhos de pesquisa concluídos, embasados na literatura científica, com ideias e resultados inovadores e seguindo procedimentos metodológicos científicos adequados. Ressalta-se a exigência de rigor quanto à efetiva pertinência da pesquisa à área de SI (em relação e/ou em interface com demais áreas da Computação ou outras) e à qualidade da escrita, do estudo conduzido e dos resultados apresentados.",
         ],
@@ -158,14 +158,14 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
           " para pessoas autoras de publicações. Na parte II, Art. 2º, informa-se que “o uso de Inteligência Artificial (IA) Generativa: a utilização de ferramentas e tecnologias de IA Generativa para a geração de conteúdos, na escrita e/ou revisão do conteúdo de artigos, deve ser declarada explicitamente no trabalho. A declaração pode ocorrer na Seção de Agradecimentos, na metodologia ou em uma seção definida especificamente para este fim, de acordo com o template adotado, e deve listar as ferramentas e descrever onde foram empregadas, por exemplo, textos, tabelas, gráficos, citações etc. Essas ferramentas não podem ser listadas como autores de um artigo. O uso de tais ferramentas não exime os autores da responsabilidade sobre todo o seu conteúdo, inclusive no caso de ser identificado plágio”.",
         ],
       ],
-       openScience: [
+      openScience: [
         "Solicitamos às pessoas autoras a adoção de princípios e práticas de Ciência Aberta, buscando promover a transparência, a replicabilidade e a reprodutibilidade na pesquisa. Encorajamos que todas as pessoas autoras divulguem dados e/ou artefatos (anonimizados e curados) para aumentar a transparência, a replicabilidade e a reprodutibilidade de seus estudos. Sugere-se disponibilizar material suplementar em repositórios como ",
         link("zenodo", "Zenodo"),
         " e ",
         link("figshare", "Figshare"),
         ", de forma anônima, devido ao processo de revisão adotado na TPSI.",
-      ] ,
-         diversity: [
+      ],
+      diversity: [
         "Além disso, solicitamos que as submissões dos artigos completos utilizem referências de trabalhos de pesquisadores de grupos sub-representados e do sul global, incluindo textos publicados em veículos da comunidade brasileira especializada na área, como nos ",
         link("anais", "Anais do SBSI"),
         ", nos ",
@@ -181,8 +181,8 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         [
           "A seleção de artigos completos será realizada a partir da revisão por membros do Comitê de Programa da TPSI no SBSI. O processo de revisão será conduzido no formato duplamente anônimo (double-anonymous review process).\n\nSe todas as revisões indicarem claramente a aceitação ou a rejeição do artigo completo da forma que foi submetido, sem a necessidade de rebuttal, as pessoas autoras receberão uma decisão de “artigo completo aceito” ou “artigo completo rejeitado” na 1ª Notificação.\n\nAs pessoas autoras dos demais artigos completos serão notificadas para procederem com a preparação e envio do rebuttal no período definido. Após a análise do rebuttal, as pessoas autoras destes artigos completos receberão uma decisão final de “artigo completo aceito” ou “artigo completo rejeitado” na 2ª Notificação.",
         ],
-      ] ,
-     criteria: [
+      ],
+      criteria: [
         [
           strong("Conformidade com as regras"),
           "Cada submissão DEVE contemplar CUIDADOSAMENTE as regras apresentadas na seção “Instruções de Submissão” (acima): submissões para a TPSI que não seguirem essas regras serão rejeitadas sumariamente sem revisão (desk reject).",
@@ -242,11 +242,11 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       closing:
         "Ressalta-se que o SBSI 2027 é PRESENCIAL e não haverá qualquer possibilidade de apresentação on-line dos artigos completos aceitos.\n\nPessoas autoras sócias da SBC devem estar em dia com a anuidade para terem direito aos valores reduzidos.",
     },
-     coordinationTitle: "Coordenação da trilha",
-     coordinationKicker: "Responsáveis pela TP-SI no SBSI 2027.",
+    coordinationTitle: "Coordenação da trilha",
+    coordinationKicker: "Responsáveis pela TP-SI no SBSI 2027.",
     coordinators: [
-      {name: "Claudia Cappelli", institution: "UERJ"},
-      {name: "Maria Claudia Emer", institution: "UTFPR"},
+      { name: "Claudia Cappelli", institution: "UERJ" },
+      { name: "Maria Claudia Emer", institution: "UTFPR" },
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
     tocTitle: "NESTA CHAMADA",
@@ -480,8 +480,8 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
     coordinationTitle: "Coordination of the SBSI 2027 IS Research Track",
     coordinationKicker: "Those responsible for TP-SI at SBSI 2027.",
     coordinators: [
-      {name: "Claudia Cappelli", institution: "UERJ"},
-      {name: "Maria Claudia Emer", institution: "UTFPR"},
+      { name: "Claudia Cappelli", institution: "UERJ" },
+      { name: "Maria Claudia Emer", institution: "UTFPR" },
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
     tocTitle: "IN THIS CALL",
