@@ -200,6 +200,15 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       {name: "Paulo Malcher", institution: "UFRA"},
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
+    tocTitle: "NESTA CHAMADA",
+    toc: [
+      { id: "descricao", title: "Descrição" },
+      { id: "topicos", title: "Tópicos" },
+      { id: "datas", title: "Datas" },
+      { id: "instrucoes", title: "Submissão" },
+      { id: "revisao", title: "Formato" },
+      { id: "coordenacao", title: "Coordenação" },
+    ],
   },
   en: {
     hero: {
@@ -385,5 +394,14 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       {name: "Paulo Malcher", institution: "UFRA"},
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
+    tocTitle: "IN THIS CALL",
+    toc: [
+      { id: "descricao", title: "Description" },
+      { id: "topicos", title: "Topics" },
+      { id: "datas", title: "Dates" },
+      { id: "instrucoes", title: "Submission" },
+      { id: "revisao", title: "Format" },
+      { id: "coordenacao", title: "Coordination" },
+    ],
   },
 };

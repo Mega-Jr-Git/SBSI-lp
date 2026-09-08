@@ -326,6 +326,22 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
               </a>
             )}
           </div>
+
+          {content.toc && (
+            <div className="call-in-this-call">
+              <h2>{content.tocTitle}</h2>
+              <ol className="call-toc">
+                {content.toc.map((item, i) => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`}>
+                      <span>{String(i + 1).padStart(2, "0")}</span>
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
         </aside>
       </div>
     </main>
