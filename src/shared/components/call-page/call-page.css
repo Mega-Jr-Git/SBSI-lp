@@ -175,6 +175,8 @@
   margin: 0 0 1.35rem;
   max-width: 90ch;
   white-space: pre-line;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .call-body strong {
@@ -325,6 +327,7 @@
 
 .call-submission-rules-box p {
   font-weight: 500;
+  text-align: left;
 }
 
 .call-criteria-grid {
