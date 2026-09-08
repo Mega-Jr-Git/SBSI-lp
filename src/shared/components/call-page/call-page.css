@@ -14,8 +14,15 @@
     var(--sbsi-gradient-2) 51.76%,
     var(--sbsi-gradient-3) 98.66%
   );
-  padding: 7rem max(1.5rem, calc((100% - 1180px) / 3)) 4rem;
+  padding: 8rem max(1.5rem, calc((100% - 1180px) / 3)) 4.5rem;
   font-family: var(--font-inter);
+}
+
+.call-eyebrow {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--color-text-gray);
+  margin: 0;
 }
 
 .call-empty-state {
@@ -36,32 +43,12 @@
   font-size: var(--font-size-base, 1rem);
 }
 
-.call-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.125rem;
-  font-weight: 400;
-  margin: 0 0 1rem;
-}
-
-.call-kicker:hover {
-  text-decoration: underline;
-}
-
 .call-hero h1 {
   font-weight: 600;
   font-size: clamp(2.25rem, 5.5vw, 4rem);
   line-height: 1.05;
   margin: 1.1rem 0;
   white-space: pre-line;
-}
-
-.call-about {
-  font-size: 1.25rem;
-  white-space: pre-line;
-  color: var(--color-text-gray);
-  margin: 0.5rem 0;
 }
 
 .call-lead {
@@ -75,16 +62,18 @@
 .call-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
-  padding-top: 1.5rem;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0.5rem 0 1rem;
+  padding: 0;
 }
 
-.call-meta span {
+.call-meta li {
   border: 1px solid rgba(var(--sbsi-white-rgb), 0.3);
   border-radius: 999px;
-  padding: 0.55rem 1rem;
-  font-size: 0.85rem;
-  background: rgba(var(--sbsi-brown-dark-rgb), 0.18);
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+  background: rgba(var(--sbsi-brown-dark-rgb), 0.28);
 }
 
 .call-hero-cta {
@@ -573,7 +562,7 @@
 
 @media (max-width: 800px) {
   .call-hero {
-    padding: 5.5rem 1.5rem 2rem;
+    padding: 6.5rem 1.5rem 2.25rem;
   }
 
   .call-hero h1 {

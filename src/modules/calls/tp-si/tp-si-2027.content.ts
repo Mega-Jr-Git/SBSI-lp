@@ -27,10 +27,13 @@ const strong = (text: string): CallInline => ({ strong: text });
 export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
   pt: {
     hero: {
-      kicker: "Voltar ao início",
-      title: "Chamada para a Trilha de Pesquisa em SI (TP-SI)",
+      title: "Trilha de Pesquisa em SI (TP-SI)",
       submit: "Submeter artigo",
-      about: "São esperados artigos completos com novas contribuições para a\nárea de Sistemas de Informação.",
+      badges: {
+        date: "17–20 maio 2027",
+        location: "Campo Grande · MS",
+        format: "Presencial",
+      },
     },
     introTitle: "Descrição",
     intro: [
@@ -262,10 +265,13 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
   },
   en: {
     hero: {
-      kicker: "Back to home",
       title: "Calls for the IS Research Track (TP-SI)",
       submit: "Submit paper",
-      about: "Full papers presenting new contributions to the field of Information Systems are expected.",
+      badges: {
+        date: "May 17–20, 2027",
+        location: "Campo Grande · MS",
+        format: "In person",
+      },
     },
     introTitle: "Description",
     intro: [

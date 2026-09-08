@@ -29,7 +29,7 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
     return (
       <main id={id} className="call-page">
         <header className="call-hero">
-          <p className="call-kicker">Voltar ao início</p>
+          <p className="call-eyebrow">Chamadas</p>
           <h1>Chamada para a Trilha de Pesquisa em SI (TP-SI)</h1>
         </header>
         <div className="call-layout call-empty-state">
@@ -83,9 +83,13 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
   return (
     <main id={id} className="call-page">
       <header className="call-hero">
-        <a href="/" className="call-kicker"><ArrowIcon /> {content.hero.kicker}</a>
+        <p className="call-eyebrow">Chamadas</p>
         <h1>{content.hero.title}</h1>
-        <p className="call-about">{content.hero.about}</p>
+        <ul className="call-meta">
+          <li>{content.hero.badges.date}</li>
+          <li>{content.hero.badges.location}</li>
+          <li>{content.hero.badges.format}</li>
+        </ul>
         {links.submission && (
           <a
             className="call-hero-cta"
