@@ -112,7 +112,7 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           </section>
 
           {content.targetAudience && (
-            <section>
+            <section className="call-body-section">
               <h2>{content.targetAudienceTitle || "Público-Alvo"}</h2>
               {content.targetAudience.map((paragraph, index) =>
                 renderParagraph(paragraph, `target-${index}`),
@@ -221,7 +221,7 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           )}
 
           {content.importantInfoParagraphs && (
-            <section>
+            <section className="call-body-section">
               <h2>{content.importantInfoTitle}</h2>
               <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle, index) => (
                 <span key={index}>{renderInline(subtitle)}</span>
