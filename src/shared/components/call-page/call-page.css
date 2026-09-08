@@ -268,6 +268,11 @@
   font-size: 1.125rem;
 }
 
+.call-inline-dates-span {
+  font-family: var(--font-mono);
+  color: var(--sbsi-black);
+}
+
 .call-inline-dates li:last-child .call-inline-dates-span {
   overflow-wrap: anywhere;
   text-wrap: balance;
@@ -282,11 +287,6 @@
 
 .call-inline-dates-calendar {
   color: var(--sbsi-orange-dark);
-}
-
-.call-inline-dates-span {
-  font-family: var(--font-mono);
-  color: var(--sbsi-black);
 }
 
 .call-date-old {
@@ -371,7 +371,6 @@
 
 .call-publication-cards li {
   position: relative;
-  padding-left: 3rem;
   border: 1px solid var(--color-text-gray);
   border-radius: 1.3rem;
   padding: 1.25rem 0 1.25rem 3rem;

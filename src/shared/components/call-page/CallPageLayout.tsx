@@ -176,11 +176,11 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
 
             {content.submission.phases && (
               <div className="call-submission-phases">
-                {content.submission.phases.map((phase, idx) => (
-                  <div key={idx} className="call-phase-item">
+                {content.submission.phases.map((phase) => (
+                  <div key={phase.title || (phase.paragraphs?.[0] ? inlineKey(phase.paragraphs[0]) : "phase")} className="call-phase-item">
                     {phase.title && <h3>{phase.title}</h3>}
-                    {phase.paragraphs?.map((p, pIdx) =>
-                      renderParagraph(p, `phase-p-${idx}-${pIdx}`),
+                    {phase.paragraphs?.map((p) =>
+                      renderParagraph(p, inlineKey(p)),
                     )}
                     {phase.rules && (
                       <ol className="call-rules">
@@ -206,15 +206,15 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
 
               <h3>{content.format.phase1Title}</h3>
               <ul className="call-publication-requirements">
-                {content.format.phase1Rules.map((rule, idx) => (
-                  <li key={idx}>{rule}</li>
+                {content.format.phase1Rules.map((rule) => (
+                  <li key={rule}>{rule}</li>
                 ))}
               </ul>
 
               <h3 className="call-subtitle-spaced">{content.format.phase2Title}</h3>
               <ul className="call-publication-requirements">
-                {content.format.phase2Rules.map((rule, idx) => (
-                  <li key={idx}>{rule}</li>
+                {content.format.phase2Rules.map((rule) => (
+                  <li key={rule}>{rule}</li>
                 ))}
               </ul>
             </section>
@@ -223,8 +223,8 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           {content.importantInfoParagraphs && (
             <section className="call-body-section">
               <h2>{content.importantInfoTitle}</h2>
-              <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle, index) => (
-                <span key={index}>{renderInline(subtitle)}</span>
+              <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle) => (
+                <span key={inlineKey(subtitle)}>{renderInline(subtitle)}</span>
               ))}</p>
               <ul className="call-rules">
                 {content.importantInfoParagraphs.map((info) => (
@@ -247,8 +247,8 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
                   </div>
                 ))}
               </div>
-              {content.review.publication && content.review.publication.map((paragraph, index) =>
-                renderParagraph(paragraph, index),
+              {content.review.publication?.map((paragraph) =>
+                renderParagraph(paragraph, inlineKey(paragraph)),
               )}
             </section>
           )}
@@ -274,8 +274,8 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
               {content.tpcStatus && <p>{content.tpcStatus}</p>}
               {content.tpcMembers && content.tpcMembers.length > 0 && (
                 <ul className="call-publication-requirements">
-                  {content.tpcMembers.map((member, idx) => (
-                    <li key={idx}>{member}</li>
+                  {content.tpcMembers.map((member) => (
+                    <li key={member}>{member}</li>
                   ))}
                 </ul>
               )}
