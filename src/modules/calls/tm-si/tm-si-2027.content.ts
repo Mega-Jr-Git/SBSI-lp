@@ -20,10 +20,13 @@ const strong = (text: string): CallInline => ({ strong: text });
 export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
   pt: {
     hero: {
-      kicker: "Voltar ao início",
       title: "Trilha de Minicursos em SI (TM-SI)",
       submit: "Submeter proposta",
-      about: "São esperados artigos completos com novas contribuições para a\nárea de Sistemas de Informação.",
+      badges: {
+        date: "17–20 maio 2027",
+        location: "Campo Grande · MS",
+        format: "Presencial",
+      },
     },
     introTitle: "Descrição",
     intro: [
@@ -134,9 +137,10 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     datesTitle: "Datas Importantes",
     dates: [
       [
-        "14/09/2026",
+        "28/09/2026 (HARD)",
         "Submissão de proposta",
         "(Artigo de 4 páginas)",
+        "14/09/2026",
       ],
       [
         "23/10/2026",
@@ -196,13 +200,25 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       {name: "Paulo Malcher", institution: "UFRA"},
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
+    tocTitle: "NESTA CHAMADA",
+    toc: [
+      { id: "descricao", title: "Descrição" },
+      { id: "topicos", title: "Tópicos" },
+      { id: "datas", title: "Datas" },
+      { id: "instrucoes", title: "Submissão" },
+      { id: "revisao", title: "Formato" },
+      { id: "coordenacao", title: "Coordenação" },
+    ],
   },
   en: {
     hero: {
-      kicker: "Back to home",
       title: "IS Short Courses Track (TM-SI)",
       submit: "Submit proposal",
-      about: "Full papers presenting new contributions to the field of Information Systems are expected.",
+      badges: {
+        date: "May 17–20, 2027",
+        location: "Campo Grande · MS",
+        format: "In person",
+      },
     },
     introTitle: "Description",
     intro: [
@@ -317,9 +333,10 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     datesTitle: "Important Dates",
     dates: [
       [
-        "14/09/2026",
+        "28/09/2026 (HARD)",
         "Proposal submission",
         "(4-page paper)",
+        "14/09/2026",
       ],
       [
         "23/10/2026",
@@ -377,5 +394,14 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       {name: "Paulo Malcher", institution: "UFRA"},
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
+    tocTitle: "IN THIS CALL",
+    toc: [
+      { id: "descricao", title: "Description" },
+      { id: "topicos", title: "Topics" },
+      { id: "datas", title: "Dates" },
+      { id: "instrucoes", title: "Submission" },
+      { id: "revisao", title: "Format" },
+      { id: "coordenacao", title: "Coordination" },
+    ],
   },
 };

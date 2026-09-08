@@ -21,12 +21,12 @@ export const tracksContent = {
     tracks: [
       {
         title: "Pesquisa em SI",
-        date: "08/09/2026 – 14/09/2026",
+        date: "21/09/2026 – 28/09/2026",
         link: tpSiPath,
       },
       {
         title: "Minicursos em SI",
-        date: "14/09/2026",
+        date: "28/09/2026",
         link: tmSiPath,
       },
       { title: "Indústria e Inovação", date: "Em breve", link: "" },
@@ -59,12 +59,12 @@ export const tracksContent = {
     tracks: [
       {
         title: "Research in IS",
-        date: "Sep 8 – Sep 14, 2026",
+        date: "Sep 21 – Sep 28, 2026",
         link: tpSiPath,
       },
       {
         title: "Short Courses in IS",
-        date: "Sep 14, 2026",
+        date: "Sep 28, 2026",
         link: tmSiPath,
       },
       { title: "Industry and Innovation", date: "Coming soon", link: "" },

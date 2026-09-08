@@ -13,10 +13,13 @@ export interface CallSubmissionPhase {
 
 export type CallPageData = {
   hero: {
-    kicker: string;
     title: string;
     submit: string;
-    about: string;
+    badges: {
+      date: string;
+      location: string;
+      format: string;
+    };
   };
   introTitle: string;
   intro: CallParagraph[];
@@ -26,7 +29,7 @@ export type CallPageData = {
   topics: string[];
   topicsNote?: string;
   datesTitle: string;
-  dates: [date: string, label: string, description?: string][];
+  dates: [date: string, label: string, description?: string, oldDate?: string][];
   submissionTitle: string;
   submission: {
     paragraphs: CallParagraph[];

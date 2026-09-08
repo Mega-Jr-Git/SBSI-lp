@@ -29,7 +29,7 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
     return (
       <main id={id} className="call-page">
         <header className="call-hero">
-          <p className="call-kicker">Voltar ao início</p>
+          <p className="call-eyebrow">Chamadas</p>
           <h1>Chamada para a Trilha de Pesquisa em SI (TP-SI)</h1>
         </header>
         <div className="call-layout call-empty-state">
@@ -83,9 +83,13 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
   return (
     <main id={id} className="call-page">
       <header className="call-hero">
-        <a href="/" className="call-kicker"><ArrowIcon /> {content.hero.kicker}</a>
+        <p className="call-eyebrow">Chamadas</p>
         <h1>{content.hero.title}</h1>
-        <p className="call-about">{content.hero.about}</p>
+        <ul className="call-meta">
+          <li>{content.hero.badges.date}</li>
+          <li>{content.hero.badges.location}</li>
+          <li>{content.hero.badges.format}</li>
+        </ul>
         {links.submission && (
           <a
             className="call-hero-cta"
@@ -108,7 +112,7 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           </section>
 
           {content.targetAudience && (
-            <section>
+            <section className="call-body-section">
               <h2>{content.targetAudienceTitle || "Público-Alvo"}</h2>
               {content.targetAudience.map((paragraph, index) =>
                 renderParagraph(paragraph, `target-${index}`),
@@ -129,11 +133,19 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           <section id="datas" className="call-body-section">
             <h2>{content.datesTitle}</h2>
             <ul className="call-inline-dates">
-              {content.dates.map(([date, label, description]) => (
+              {content.dates.map(([date, label, description, oldDate]) => (
                 <li key={date}>
                   <div className="call-inline-dates-date">
                     <span className="call-inline-dates-calendar"><CalendarIcon /></span>
-                    <span className="call-inline-dates-span">{date}</span>
+                    <span className="call-inline-dates-span">
+                      {oldDate && (
+                        <>
+                          <s className="call-date-old">{oldDate}</s>
+                          <br />
+                        </>
+                      )}
+                      {date}
+                    </span>
                   </div>
                   <div className="call-inline-dates-info">
                     <div className="call-inline-label">{label}</div>
@@ -164,11 +176,11 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
 
             {content.submission.phases && (
               <div className="call-submission-phases">
-                {content.submission.phases.map((phase, idx) => (
-                  <div key={idx} className="call-phase-item">
+                {content.submission.phases.map((phase) => (
+                  <div key={phase.title || (phase.paragraphs?.[0] ? inlineKey(phase.paragraphs[0]) : "phase")} className="call-phase-item">
                     {phase.title && <h3>{phase.title}</h3>}
-                    {phase.paragraphs?.map((p, pIdx) =>
-                      renderParagraph(p, `phase-p-${idx}-${pIdx}`),
+                    {phase.paragraphs?.map((p) =>
+                      renderParagraph(p, inlineKey(p)),
                     )}
                     {phase.rules && (
                       <ol className="call-rules">
@@ -194,25 +206,25 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
 
               <h3>{content.format.phase1Title}</h3>
               <ul className="call-publication-requirements">
-                {content.format.phase1Rules.map((rule, idx) => (
-                  <li key={idx}>{rule}</li>
+                {content.format.phase1Rules.map((rule) => (
+                  <li key={rule}>{rule}</li>
                 ))}
               </ul>
 
               <h3 className="call-subtitle-spaced">{content.format.phase2Title}</h3>
               <ul className="call-publication-requirements">
-                {content.format.phase2Rules.map((rule, idx) => (
-                  <li key={idx}>{rule}</li>
+                {content.format.phase2Rules.map((rule) => (
+                  <li key={rule}>{rule}</li>
                 ))}
               </ul>
             </section>
           )}
 
           {content.importantInfoParagraphs && (
-            <section>
+            <section className="call-body-section">
               <h2>{content.importantInfoTitle}</h2>
-              <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle, index) => (
-                <span key={index}>{renderInline(subtitle)}</span>
+              <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle) => (
+                <span key={inlineKey(subtitle)}>{renderInline(subtitle)}</span>
               ))}</p>
               <ul className="call-rules">
                 {content.importantInfoParagraphs.map((info) => (
@@ -235,8 +247,8 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
                   </div>
                 ))}
               </div>
-              {content.review.publication && content.review.publication.map((paragraph, index) =>
-                renderParagraph(paragraph, index),
+              {content.review.publication?.map((paragraph) =>
+                renderParagraph(paragraph, inlineKey(paragraph)),
               )}
             </section>
           )}
@@ -262,8 +274,8 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
               {content.tpcStatus && <p>{content.tpcStatus}</p>}
               {content.tpcMembers && content.tpcMembers.length > 0 && (
                 <ul className="call-publication-requirements">
-                  {content.tpcMembers.map((member, idx) => (
-                    <li key={idx}>{member}</li>
+                  {content.tpcMembers.map((member) => (
+                    <li key={member}>{member}</li>
                   ))}
                 </ul>
               )}
@@ -285,27 +297,20 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
         </article>
 
         <aside className="call-aside">
-          {content.toc && (
-            <div className="call-in-this-call">
-              <h2>{content.tocTitle}</h2>
-              <ol className="call-toc">
-                {content.toc.map((item, i) => (
-                  <li key={item.id}>
-                    <a href={`#${item.id}`}>
-                      <span>{String(i + 1).padStart(2, "0")}</span>
-                      {item.title}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
           <div className="call-date-card">
             <h2>{content.datesTitle}</h2>
             <ul className="call-date-list">
-              {content.dates.map(([date, label]) => (
+              {content.dates.map(([date, label, , oldDate]) => (
                 <li className="call-date" key={date}>
-                  <span>{date}</span>
+                  <span>
+                    {oldDate && (
+                      <>
+                        <s className="call-date-old">{oldDate}</s>
+                        <br />
+                      </>
+                    )}
+                    {date}
+                  </span>
                   <strong>{label}</strong>
                 </li>
               ))}
@@ -321,6 +326,22 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
               </a>
             )}
           </div>
+
+          {content.toc && (
+            <div className="call-in-this-call">
+              <h2>{content.tocTitle}</h2>
+              <ol className="call-toc">
+                {content.toc.map((item, i) => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`}>
+                      <span>{String(i + 1).padStart(2, "0")}</span>
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
         </aside>
       </div>
     </main>
