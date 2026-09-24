@@ -4,7 +4,7 @@ export const nire2027Links: Record<string, string> = {
   cesi: "https://www2.sbc.org.br/ce-si/",
   sbc: "https://www.sbc.org.br/",
   jems: "https://jems3.sbc.org.br/",
-  submission: "https://jems3.sbc.org.br/",
+  submission: "https://jems3.sbc.org.br/events/695",
   template: "https://www.sbc.org.br/documentosinstitucionais/#publicacoes",
   researchForm: "https://docs.google.com/document/d/1H_d7JfFJ5KnR7y0k-o4fimTAJqb4Pf99/edit?usp=drive_link&ouid=106114403009308115075&rtpof=true&sd=true",
   publicationAuthorization: "https://www.sbc.org.br/documentosinstitucionais/#publicacoes",
@@ -16,7 +16,7 @@ const strong = (text: string): CallInline => ({ strong: text });
 export const nire2027Content: Record<"pt" | "en", CallPageData> = {
   pt: {
     hero: {
-      title: "Chamada para a trilha de Novas Ideias e Resultados Emergentes em Sistemas de Informação (NIRE)",
+      title: "Trilha de Novas Ideias e Resultados Emergentes em Sistemas de Informação (NIRE)",
       submit: "Submeter artigo",
       badges: { date: "17–20 maio 2027", location: "Campo Grande · MS", format: "Presencial" },
     },
@@ -45,8 +45,8 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
     ],
     datesTitle: "Datas importantes",
     dates: [
-      ["11/12/2026", "Registro de artigos: até", ""],
-      ["18/02/2027", "Submissão dos arquivos: até", ""],
+      ["11/12/2026", "Registro de artigos", ""],
+      ["18/02/2027", "Submissão dos arquivos", ""],
       ["22/02/2027", "Notificação:", ""],
       ["a definir", "Entrega da versão final:", ""],
       ["a definir", "Inscrição dos autores:", ""],

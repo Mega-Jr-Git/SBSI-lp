@@ -168,6 +168,7 @@
 
 #nire-2027 #categorias h3 {
   color: var(--color-text-dark-gray);
+  font-weight: 700;
 }
 
 #nire-2027 #formato h3,
