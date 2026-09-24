@@ -82,7 +82,7 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
     ],
     reviewTitle: "Revisão dos Artigos",
     review: {
-      paragraphs: [["A seleção de trabalhos, de acordo com as categorias da NIRE, será realizada a partir da revisão por membros do Comitê de Programa da Trilha NIRE do SBSI 2026. Ressalta-se que, para a seleção dos trabalhos, cada artigo será revisado por, pelo menos, três membros do Comitê de Programa. O processo de revisão será conduzido no formato duplamente anônimo em todas as categorias da trilha (double-anonymous review process)."]],
+      paragraphs: [["A seleção de trabalhos, de acordo com as categorias da NIRE, será realizada a partir da revisão por membros do Comitê de Programa da Trilha NIRE do SBSI 2027. Ressalta-se que, para a seleção dos trabalhos, cada artigo será revisado por, pelo menos, três membros do Comitê de Programa. O processo de revisão será conduzido no formato duplamente anônimo em todas as categorias da trilha (double-anonymous review process)."]],
       criteria: [],
     },
     publicationTitle: "Orientação aos Trabalhos Aceitos",
@@ -91,7 +91,7 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
       requirements: [
         "A apresentação do trabalho está condicionada à apresentação do trabalho aceito, à inscrição de, pelo menos, uma das pessoas autoras no evento (em sua categoria), com a inclusão da taxa de publicação (uma taxa por trabalho aceito). Pessoas autoras sócias da SBC devem estar em dia com a anuidade para terem direito aos valores reduzidos.",
         "As pessoas autoras de propostas de Reflexões e Provocações devem incluir na versão final do artigo suas minibiografias com no máximo 10 linhas, como página adicional ao artigo.",
-        "No caso da categoria Desenho de Pesquisa, obrigatoriamente, a pessoa autora aluna de mestrado ou doutorado deverá participar presencial do evento para apresentação e discussão de seu trabalho.",
+        "No caso da categoria Desenho de Pesquisa, obrigatoriamente, a pessoa autora aluna de mestrado ou doutorado deverá participar presencialmente do evento para apresentação e discussão de seu trabalho.",
         "A publicação do artigo aceito nas categorias Novas Ideias e Resultados Emergentes no volume de Anais Estendidos do SBSI na SBC OpenLib está condicionada à apresentação presencial do trabalho durante o evento.",
       ],
       closing: "",
@@ -157,7 +157,7 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
     categoriesTitle: "Track Categories",
     categoriesIntro: [["The track is divided into two categories:"]],
     categories: [
-        { title: "Reflections and Provocations", paragraphs: [["This category aims to encourage discussion that leads the community to reflect on and rethink a topic or Information Systems as a field. We encourage papers that challenge conventional ideas, inspire new perspectives, and stimulate dialogue at the event. It explores critically relevant issues through in-depth analysis and creative thinking to foster research and practice in Information Systems. This is a space to discuss ontological, epistemological, methodological, and thematic views of the field, questioning current theories, values, goals, and topics while proposing new ideas and approaches. Reflections must include a problematization grounded in evidence and/or signals supporting the arguments. Provocations must contrast the current state with the proposed disruptions. This category is not intended for work in progress."]] },
+        { title: "Reflections and Provocations", paragraphs: [["This category aims to encourage discussion that leads the community to reflect on and rethink a topic or Information Systems as a field. We encourage papers that challenge conventional ideas, inspire new perspectives, and stimulate dialogue at the event. It explores critically relevant issues through in-depth analysis and creative thinking to foster research and practice in Information Systems. This is a space to discuss ontological, epistemological, methodological, and thematic views of the field, questioning current theories, values, goals, and topics while proposing new ideas and approaches. Reflections must present an analysis of a problem grounded in evidence and/or signals that support the arguments. Provocations must contrast the current state with the proposed disruptions. This category is not intended for work in progress."]] },
         { title: "Research Design", paragraphs: [["This category supports the development of new Information Systems researchers. We encourage research designs by Master's and PhD students to promote discussion and strengthen the research before the study in progress is completed. The aim is to deepen the research plan, including strategies, execution methods, and other relevant considerations, so the community can contribute effectively to the research and its potential contributions to the field. The proposal must be presented by the student researcher conducting the research."]] },
     ],
     submissionTitle: "Submissions",
@@ -172,8 +172,8 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
       phase2Rules: ["Short papers must be at least 4 and at most 5 pages, excluding references, and accompanied by the research form.", "Authors may define the paper sections."],
     },
     formatParagraphs: [
-      ["Authors of Reflections and Provocations papers must submit a paper with at least 8 and at most 10 pages, excluding references. The sections may be defined according to the authors of the work."],
-      ["Researchers in training who author Research Design papers must submit a short paper with at least 4 and at most 5 pages, excluding references, together with the ", link("researchForm", "research form"), ". The sections may be defined according to the authors of the work."],
+      ["Authors of Reflections and Provocations papers must submit a paper with at least 8 and at most 10 pages, excluding references. Authors may determine the section structure."],
+      ["Researchers in training who author Research Design papers must submit a short paper with at least 4 and at most 5 pages, excluding references, together with the ", link("researchForm", "research form"), ". Authors may determine the section structure."],
     ],
     reviewTitle: "Paper Review",
     review: {
@@ -182,7 +182,7 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
     },
     publicationTitle: "Guidance for Accepted Papers",
     publication: {
-      paragraphs: [["The final PDF must be submitted through JEMS, carefully and obligatorily addressing the reviewers' recommendations. Along with the final version, authors must submit the completed and signed ", link("publicationAuthorization", "publication authorization"), " for the paper through JEMS."]],
+      paragraphs: [["The final PDF must be submitted through JEMS, and must carefully take the reviewers' recommendations into account. Along with the final version, authors must submit the completed and signed ", link("publicationAuthorization", "publication authorization"), " for the paper through JEMS."]],
       requirements: [
         "Accepted work must be presented.",
         "At least one author must register for the event in the relevant category and pay the publication fee (one fee per accepted paper). SBC members must be up to date with their membership dues to qualify for reduced rates.",
