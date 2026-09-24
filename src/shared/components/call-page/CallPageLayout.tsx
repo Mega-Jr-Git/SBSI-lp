@@ -156,7 +156,26 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
             </ul>
           </section>
 
-          <section id="instrucoes" className="call-body-section">
+          {content.categories && (
+            <section id="categorias" className="call-body-section">
+              <h2>{content.categoriesTitle}</h2>
+              {content.categoriesIntro?.map((paragraph, index) =>
+                renderParagraph(paragraph, `categories-intro-${index}`),
+              )}
+              <div className="call-submission-phases">
+                {content.categories.map((category) => (
+                  <div key={category.title} className="call-phase-item">
+                    {category.title && <h3>{category.title}</h3>}
+                    {category.paragraphs?.map((paragraph) =>
+                      renderParagraph(paragraph, inlineKey(paragraph)),
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section id={content.categories ? "submissoes" : "instrucoes"} className="call-body-section">
             <h2>{content.submissionTitle}</h2>
             {content.submission.paragraphs.map((paragraph, index) =>
               renderParagraph(paragraph, index),
@@ -201,26 +220,33 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           </section>
 
           {content.format && (
-            <section>
+            <section id={content.categories ? "formato" : undefined} className={content.categories ? "call-body-section" : undefined}>
               <h2>{content.formatTitle || "Formato da Proposta e do Capítulo"}</h2>
+              {content.formatParagraphs ? (
+                content.formatParagraphs.map((paragraph, index) =>
+                  renderParagraph(paragraph, `format-${index}`),
+                )
+              ) : (
+                <>
+                  <h3>{content.format.phase1Title}</h3>
+                  <ul className="call-publication-requirements">
+                    {content.format.phase1Rules.map((rule) => (
+                      <li key={rule}>{rule}</li>
+                    ))}
+                  </ul>
 
-              <h3>{content.format.phase1Title}</h3>
-              <ul className="call-publication-requirements">
-                {content.format.phase1Rules.map((rule) => (
-                  <li key={rule}>{rule}</li>
-                ))}
-              </ul>
-
-              <h3 className="call-subtitle-spaced">{content.format.phase2Title}</h3>
-              <ul className="call-publication-requirements">
-                {content.format.phase2Rules.map((rule) => (
-                  <li key={rule}>{rule}</li>
-                ))}
-              </ul>
+                  <h3 className="call-subtitle-spaced">{content.format.phase2Title}</h3>
+                  <ul className="call-publication-requirements">
+                    {content.format.phase2Rules.map((rule) => (
+                      <li key={rule}>{rule}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </section>
           )}
 
-          {content.importantInfoParagraphs && (
+          {!content.categories && content.importantInfoParagraphs && (
             <section className="call-body-section">
               <h2>{content.importantInfoTitle}</h2>
               <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle) => (
@@ -265,6 +291,26 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
                 ))}
               </ul>
               <p className="call-publication-note">{content.publication.closing}</p>
+            </section>
+          )}
+
+          {content.categories && (content.importantInfoParagraph || content.importantInfoParagraphs) && (
+            <section id="orientacao-adicional" className="call-body-section">
+              <h2>{content.importantInfoTitle}</h2>
+              {content.importantInfoParagraph ? (
+                renderParagraph(content.importantInfoParagraph, "important-info")
+              ) : (
+                <>
+                  <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle) => (
+                    <span key={inlineKey(subtitle)}>{renderInline(subtitle)}</span>
+                  ))}</p>
+                  <ul className="call-rules">
+                    {content.importantInfoParagraphs?.map((info) => (
+                       <li key={inlineKey(info)}>{renderInline(info)}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </section>
           )}
 

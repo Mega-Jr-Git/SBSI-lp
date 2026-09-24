@@ -166,6 +166,15 @@
   color: var(--sbsi-white);
 }
 
+#nire-2027 #categorias h3 {
+  color: var(--color-text-dark-gray);
+}
+
+#nire-2027 #formato h3,
+#nire-2027 #formato .call-publication-requirements {
+  color: var(--color-text-dark-gray);
+}
+
 .call-body p {
   font-family: var(--font-inter);
   font-size: 1.05rem;
@@ -229,6 +238,12 @@
 .call-topics li:last-child {
   grid-column: 1 / -1;
   border-left: none;
+}
+
+/* NIRE has an even number of topics, so keep its final item in the second column. */
+#nire-2027 .call-topics li:last-child {
+  grid-column: auto;
+  border-left: 1px solid rgba(var(--color-text-dark-gray-rgb), 0.3);
 }
 
 .call-rules {
@@ -621,6 +636,10 @@
   }
 
   .call-topics li:nth-child(even) {
+    border-left: none;
+  }
+
+  #nire-2027 .call-topics li:last-child {
     border-left: none;
   }
 

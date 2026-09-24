@@ -30,6 +30,9 @@ export type CallPageData = {
   topicsNote?: string;
   datesTitle: string;
   dates: [date: string, label: string, description?: string, oldDate?: string][];
+  categoriesTitle?: string;
+  categoriesIntro?: CallParagraph[];
+  categories?: CallSubmissionPhase[];
   submissionTitle: string;
   submission: {
     paragraphs: CallParagraph[];
@@ -40,9 +43,11 @@ export type CallPageData = {
     diversity?: CallParagraph;
   };
   importantInfoTitle?: string;
+  importantInfoParagraph?: CallParagraph;
   importantInfoSubtitle?: CallParagraph[];
   importantInfoParagraphs?: CallParagraph[];
   formatTitle?: string;
+  formatParagraphs?: CallParagraph[];
   format?: {
     phase1Title: string;
     phase1Rules: string[];

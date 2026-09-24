@@ -7,6 +7,7 @@ export type Track = {
 const basePath = import.meta.env.BASE_URL.replace(/\/+$/, "");
 export const tpSiPath = `${basePath}/chamadas/chamada-pesquisa`;
 export const tmSiPath = `${basePath}/chamadas/chamada-minicursos`;
+export const nirePath = `${basePath}/chamadas/chamada-nire`;
 
 export const tracksContent = {
   pt: {
@@ -32,8 +33,8 @@ export const tracksContent = {
       { title: "Indústria e Inovação", date: "Em breve", link: "" },
       {
         title: "Novas Ideias e Resultados Emergentes em SI",
-        date: "Em breve",
-        link: "",
+        date: "11/12/2026 – 18/02/2027",
+        link: nirePath,
       },
       {
         title: "Grandes Desafios em Sistemas de Informação no Brasil",
@@ -70,8 +71,8 @@ export const tracksContent = {
       { title: "Industry and Innovation", date: "Coming soon", link: "" },
       {
         title: "New Ideas and Emerging Results in IS",
-        date: "Coming soon",
-        link: "",
+        date: "Dec 11, 2026 – Feb 18, 2027",
+        link: nirePath,
       },
       {
         title: "Grand Challenges in Information Systems in Brazil",
