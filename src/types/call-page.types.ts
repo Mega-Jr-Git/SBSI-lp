@@ -29,7 +29,12 @@ export type CallPageData = {
   topics: string[];
   topicsNote?: string;
   datesTitle: string;
-  dates: [date: string, label: string, description?: string, oldDate?: string][];
+  dates: [
+    date: string,
+    label: string,
+    description?: string,
+    oldDate?: string,
+  ][];
   categoriesTitle?: string;
   categoriesIntro?: CallParagraph[];
   categories?: CallSubmissionPhase[];
@@ -68,7 +73,7 @@ export type CallPageData = {
   };
   coordinationTitle: string;
   coordinationKicker: string;
-  coordinators: {name: string; institution: string}[];
+  coordinators: { name: string; institution: string }[];
   tpcTitle?: string;
   tpcStatus?: string;
   tpcMembers?: string[];
@@ -78,5 +83,5 @@ export type CallPageData = {
     jems: string;
   };
   tocTitle?: string;
-  toc?: {id: string, title: string}[];
+  toc?: { id: string; title: string }[];
 };

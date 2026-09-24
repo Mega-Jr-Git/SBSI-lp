@@ -1,5 +1,9 @@
 import { type ReactNode, useEffect } from "react";
-import type { CallInline, CallPageData, CallParagraph } from "../../../types/call-page.types";
+import type {
+  CallInline,
+  CallPageData,
+  CallParagraph,
+} from "../../../types/call-page.types";
 import "./call-page.css";
 import { ArrowIcon } from "./assets/Arrow";
 import { CalendarIcon } from "./assets/Calendar";
@@ -9,9 +13,14 @@ type CallPageLayoutProps = {
   content?: CallPageData;
   links: Record<string, string>;
   criteriaBullets?: boolean;
-}
+};
 
-export function CallPageLayout({ id, content, links, criteriaBullets }: CallPageLayoutProps) {
+export function CallPageLayout({
+  id,
+  content,
+  links,
+  criteriaBullets,
+}: CallPageLayoutProps) {
   useEffect(() => {
     window.scrollTo({ top: 0 });
 
@@ -35,7 +44,8 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
         <div className="call-layout call-empty-state">
           <h2 className="call-empty-title">Em breve</h2>
           <p className="call-empty-description">
-            A chamada completa e aprovada para a Trilha de Minicursos do SBSI 2027 estará disponível em breve.
+            A chamada completa e aprovada para a Trilha de Minicursos do SBSI
+            2027 estará disponível em breve.
           </p>
         </div>
       </main>
@@ -127,7 +137,9 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
                 <li key={topic}>{topic}</li>
               ))}
             </ul>
-            {content.topicsNote && <p className="call-topics-note">{content.topicsNote}</p>}
+            {content.topicsNote && (
+              <p className="call-topics-note">{content.topicsNote}</p>
+            )}
           </section>
 
           <section id="datas" className="call-body-section">
@@ -136,7 +148,9 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
               {content.dates.map(([date, label, description, oldDate]) => (
                 <li key={date}>
                   <div className="call-inline-dates-date">
-                    <span className="call-inline-dates-calendar"><CalendarIcon /></span>
+                    <span className="call-inline-dates-calendar">
+                      <CalendarIcon />
+                    </span>
                     <span className="call-inline-dates-span">
                       {oldDate && (
                         <>
@@ -175,7 +189,10 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
             </section>
           )}
 
-          <section id={content.categories ? "submissoes" : "instrucoes"} className="call-body-section">
+          <section
+            id={content.categories ? "submissoes" : "instrucoes"}
+            className="call-body-section"
+          >
             <h2>{content.submissionTitle}</h2>
             {content.submission.paragraphs.map((paragraph, index) =>
               renderParagraph(paragraph, index),
@@ -184,7 +201,10 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
             {content.submission.rules && (
               <div className="call-submission-rules-box">
                 {content.submission.rulesIntro &&
-                  renderParagraph(content.submission.rulesIntro, "submission-rules-intro")}
+                  renderParagraph(
+                    content.submission.rulesIntro,
+                    "submission-rules-intro",
+                  )}
                 <ol className="call-rules">
                   {content.submission.rules.map((rule) => (
                     <li key={inlineKey(rule)}>{renderInline(rule)}</li>
@@ -196,7 +216,15 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
             {content.submission.phases && (
               <div className="call-submission-phases">
                 {content.submission.phases.map((phase) => (
-                  <div key={phase.title || (phase.paragraphs?.[0] ? inlineKey(phase.paragraphs[0]) : "phase")} className="call-phase-item">
+                  <div
+                    key={
+                      phase.title ||
+                      (phase.paragraphs?.[0]
+                        ? inlineKey(phase.paragraphs[0])
+                        : "phase")
+                    }
+                    className="call-phase-item"
+                  >
                     {phase.title && <h3>{phase.title}</h3>}
                     {phase.paragraphs?.map((p) =>
                       renderParagraph(p, inlineKey(p)),
@@ -220,8 +248,13 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           </section>
 
           {content.format && (
-            <section id={content.categories ? "formato" : undefined} className={content.categories ? "call-body-section" : undefined}>
-              <h2>{content.formatTitle || "Formato da Proposta e do Capítulo"}</h2>
+            <section
+              id={content.categories ? "formato" : undefined}
+              className={content.categories ? "call-body-section" : undefined}
+            >
+              <h2>
+                {content.formatTitle || "Formato da Proposta e do Capítulo"}
+              </h2>
               {content.formatParagraphs ? (
                 content.formatParagraphs.map((paragraph, index) =>
                   renderParagraph(paragraph, `format-${index}`),
@@ -235,7 +268,9 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
                     ))}
                   </ul>
 
-                  <h3 className="call-subtitle-spaced">{content.format.phase2Title}</h3>
+                  <h3 className="call-subtitle-spaced">
+                    {content.format.phase2Title}
+                  </h3>
                   <ul className="call-publication-requirements">
                     {content.format.phase2Rules.map((rule) => (
                       <li key={rule}>{rule}</li>
@@ -249,12 +284,16 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
           {!content.categories && content.importantInfoParagraphs && (
             <section className="call-body-section">
               <h2>{content.importantInfoTitle}</h2>
-              <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle) => (
-                <span key={inlineKey(subtitle)}>{renderInline(subtitle)}</span>
-              ))}</p>
+              <p className="call-important-info-subtitle">
+                {content.importantInfoSubtitle?.map((subtitle) => (
+                  <span key={inlineKey(subtitle)}>
+                    {renderInline(subtitle)}
+                  </span>
+                ))}
+              </p>
               <ul className="call-rules">
                 {content.importantInfoParagraphs.map((info) => (
-                   <li key={inlineKey(info)}>{renderInline(info)}</li>
+                  <li key={inlineKey(info)}>{renderInline(info)}</li>
                 ))}
               </ul>
             </section>
@@ -266,9 +305,14 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
               {content.review.paragraphs.map((paragraph, index) =>
                 renderParagraph(paragraph, index),
               )}
-              <div className={`call-criteria-grid${criteriaBullets ? " call-criteria-grid--bullets" : ""}`}>
+              <div
+                className={`call-criteria-grid${criteriaBullets ? " call-criteria-grid--bullets" : ""}`}
+              >
                 {content.review.criteria.map((criterion) => (
-                  <div key={inlineKey(criterion)} className="call-criterion-card">
+                  <div
+                    key={inlineKey(criterion)}
+                    className="call-criterion-card"
+                  >
                     {renderInline(criterion)}
                   </div>
                 ))}
@@ -290,29 +334,40 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
                   <li key={requirement}>{requirement}</li>
                 ))}
               </ul>
-              <p className="call-publication-note">{content.publication.closing}</p>
+              <p className="call-publication-note">
+                {content.publication.closing}
+              </p>
             </section>
           )}
 
-          {content.categories && (content.importantInfoParagraph || content.importantInfoParagraphs) && (
-            <section id="orientacao-adicional" className="call-body-section">
-              <h2>{content.importantInfoTitle}</h2>
-              {content.importantInfoParagraph ? (
-                renderParagraph(content.importantInfoParagraph, "important-info")
-              ) : (
-                <>
-                  <p className="call-important-info-subtitle">{content.importantInfoSubtitle?.map((subtitle) => (
-                    <span key={inlineKey(subtitle)}>{renderInline(subtitle)}</span>
-                  ))}</p>
-                  <ul className="call-rules">
-                    {content.importantInfoParagraphs?.map((info) => (
-                       <li key={inlineKey(info)}>{renderInline(info)}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </section>
-          )}
+          {content.categories &&
+            (content.importantInfoParagraph ||
+              content.importantInfoParagraphs) && (
+              <section id="orientacao-adicional" className="call-body-section">
+                <h2>{content.importantInfoTitle}</h2>
+                {content.importantInfoParagraph ? (
+                  renderParagraph(
+                    content.importantInfoParagraph,
+                    "important-info",
+                  )
+                ) : (
+                  <>
+                    <p className="call-important-info-subtitle">
+                      {content.importantInfoSubtitle?.map((subtitle) => (
+                        <span key={inlineKey(subtitle)}>
+                          {renderInline(subtitle)}
+                        </span>
+                      ))}
+                    </p>
+                    <ul className="call-rules">
+                      {content.importantInfoParagraphs?.map((info) => (
+                        <li key={inlineKey(info)}>{renderInline(info)}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </section>
+            )}
 
           {content.tpcTitle && (
             <section className="call-body-section">
@@ -330,7 +385,11 @@ export function CallPageLayout({ id, content, links, criteriaBullets }: CallPage
 
           <section id="coordenacao" className="call-body-section">
             <h2>{content.coordinationTitle}</h2>
-            {content.coordinationKicker && <p className="call-coordination-kicker">{content.coordinationKicker}</p>}
+            {content.coordinationKicker && (
+              <p className="call-coordination-kicker">
+                {content.coordinationKicker}
+              </p>
+            )}
             <div className="call-coordinator-grid">
               {content.coordinators.map((coordinator) => (
                 <div key={coordinator.name} className="call-coordinator-card">

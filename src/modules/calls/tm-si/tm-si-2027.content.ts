@@ -5,9 +5,11 @@ export const tmSi2027Links: Record<string, string> = {
   sbc: "https://www.sbc.org.br/",
   jems: "https://jems3.sbc.org.br/",
   submission: "https://jems3.sbc.org.br/events/694",
-  modeloCapitulos: "https://www.sbc.org.br/documentosinstitucionais/#publicacoes",
-  templateArtigos: "https://www.sbc.org.br/documentos-da-sbc/summary/169-templates-para-artigos-e-capitulos-de-livros/878-modelosparapublicaodeartigos",
-  ata: "http://www2.sbc.org.br/ce-si/arquivos/atas_reunioes_cesi/2019.pdf"
+  modeloCapitulos:
+    "https://www.sbc.org.br/documentosinstitucionais/#publicacoes",
+  templateArtigos:
+    "https://www.sbc.org.br/documentos-da-sbc/summary/169-templates-para-artigos-e-capitulos-de-livros/878-modelosparapublicaodeartigos",
+  ata: "http://www2.sbc.org.br/ce-si/arquivos/atas_reunioes_cesi/2019.pdf",
 };
 
 const link = (name: string, text: string): CallInline => ({
@@ -45,9 +47,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     ],
     submissionTitle: "Submissão de propostas",
     submission: {
-      paragraphs: [
-        ["As submissões dos minicursos ocorrerão em duas fases:"],
-      ],
+      paragraphs: [["As submissões dos minicursos ocorrerão em duas fases:"]],
       phases: [
         {
           paragraphs: [
@@ -72,40 +72,44 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
               link("submission", "JEMS 3 da SBC"),
               ".",
             ],
-          ]
-        }
+          ],
+        },
       ],
     },
     importantInfoTitle: "Informações importantes",
-     importantInfoSubtitle: [
+    importantInfoSubtitle: [
       [
         "Na Reunião da Comissão Especial de Sistemas de Informação (CESI) com a comunidade durante o SBSI 2019 em Aracaju, conforme consta em ",
-      link("ata","ata aprovada"),
-      " foram promulgadas mudanças relativas aos minicursos, quais sejam:",
-    ]
-  ],
-      importantInfoParagraphs: [
-        [
-          "Os minicursos serão mantidos no evento e com submissão de propostas pela comunidade;",
-        ],
-        [
-          "Um capítulo de livro deverá ser produzido e será avaliado como resultado do aceite de uma proposta de minicurso;",
-        ],
-        [
-          "Os minicursos serão ",
-          strong("gratuitos para os participantes do SBSI"),
-            ", de modo que não haverá cobrança extra;",
-        ],
-        [
-          "A organização do SBSI ", strong("não se responsabilizará pelo apoio financeiro"), " para viabilizar a ida do(a) ministrante, de modo que, assim como autores de artigos completos aceitos, os autores de minicursos deverão arcar com as despesas da viagem para apresentação;",
-        ],
-        [
-          "Autores de minicursos deverão também se inscrever no evento, assim como pagar a taxa de publicação, uma vez que a publicação gera DOI e, consequentemente, custos para a organização;",
-        ],
-        [
-          "A comunidade decidiu por limitar a quantidade a ", strong("DOIS"), " minicursos por edição do SBSI.",
-        ],
+        link("ata", "ata aprovada"),
+        " foram promulgadas mudanças relativas aos minicursos, quais sejam:",
       ],
+    ],
+    importantInfoParagraphs: [
+      [
+        "Os minicursos serão mantidos no evento e com submissão de propostas pela comunidade;",
+      ],
+      [
+        "Um capítulo de livro deverá ser produzido e será avaliado como resultado do aceite de uma proposta de minicurso;",
+      ],
+      [
+        "Os minicursos serão ",
+        strong("gratuitos para os participantes do SBSI"),
+        ", de modo que não haverá cobrança extra;",
+      ],
+      [
+        "A organização do SBSI ",
+        strong("não se responsabilizará pelo apoio financeiro"),
+        " para viabilizar a ida do(a) ministrante, de modo que, assim como autores de artigos completos aceitos, os autores de minicursos deverão arcar com as despesas da viagem para apresentação;",
+      ],
+      [
+        "Autores de minicursos deverão também se inscrever no evento, assim como pagar a taxa de publicação, uma vez que a publicação gera DOI e, consequentemente, custos para a organização;",
+      ],
+      [
+        "A comunidade decidiu por limitar a quantidade a ",
+        strong("DOIS"),
+        " minicursos por edição do SBSI.",
+      ],
+    ],
     topicsTitle: "Tópicos de interesse",
     topics: [
       "Aspectos e impactos tecnológicos, sociais, econômicos e ambientais de sistemas de informação",
@@ -147,16 +151,8 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
         "1ª etapa de avaliação",
         "(Proposta) - Notificação aos autores",
       ],
-      [
-        "01/12/2026",
-        "Submissão do texto completo",
-        "(Capítulo)",
-      ],
-      [
-        "15/02/2027",
-        "Entrega da Versão Final do capítulo de livro",
-        "",
-      ],
+      ["01/12/2026", "Submissão do texto completo", "(Capítulo)"],
+      ["15/02/2027", "Entrega da Versão Final do capítulo de livro", ""],
     ],
     reviewTitle: "Formato",
     review: {
@@ -186,7 +182,10 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       publication: [
         [
           "Cada minicurso selecionado deverá ter como versão final um texto no mesmo idioma da proposta e apresentação. O texto será publicado como capítulo de um livro on-line, conforme ",
-          link("modeloCapitulos", "modelo para publicação de capítulos de livros da SBC"),
+          link(
+            "modeloCapitulos",
+            "modelo para publicação de capítulos de livros da SBC",
+          ),
           ", de 20 a 30 páginas. Capítulos em português também devem conter título e resumo em inglês. Os autores deverão autorizar a publicação do resumo do minicurso no website do evento.",
         ],
       ],
@@ -196,8 +195,8 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     coordinationTitle: "Coordenação da TM-SI 2027",
     coordinationKicker: "Coordenação",
     coordinators: [
-      {name: "Davi Viana", institution: "UFMA"},
-      {name: "Paulo Malcher", institution: "UFRA"},
+      { name: "Davi Viana", institution: "UFMA" },
+      { name: "Paulo Malcher", institution: "UFRA" },
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
     tocTitle: "NESTA CHAMADA",
@@ -237,9 +236,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     ],
     submissionTitle: "Proposal submission",
     submission: {
-      paragraphs: [
-        ["Short course submissions will take place in two phases:"],
-      ],
+      paragraphs: [["Short course submissions will take place in two phases:"]],
       phases: [
         {
           paragraphs: [
@@ -265,43 +262,43 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
               ".",
             ],
           ],
-        }
+        },
       ],
     },
     importantInfoTitle: "Important Information",
     importantInfoSubtitle: [
       [
         "During the CESI meeting with the community at SBSI 2019 in Aracaju, as recorded in ",
-      link("ata","the approved minutes"),
-      " , changes regarding short courses were promulgated, as follows:",
-    ]
-  ],
-      importantInfoParagraphs: [
-        [
-          "Short courses will be maintained at the event with proposal submissions by the community;",
-        ],
-        [
-          "A book chapter must be produced and evaluated as a result of the acceptance of a short course proposal;",
-        ],
-        [
-          "Short courses will be ",
-          strong("free for SBSI participants"),
-          ", so there will be no extra charge;",
-        ],
-        [
-          "The SBSI organization ",
-          strong("will not be responsible for financial support"),
-          " to enable the instructor's attendance, so, like authors of accepted full papers, short course authors must cover their travel expenses for the presentation;",
-        ],
-        [
-          "Short course authors must also register for the event and pay the publication fee, as publication generates a DOI and, consequently, costs for the organization;",
-        ],
-        [
-          "The community decided to limit the quantity to ",
-          strong("TWO"),
-          " short courses per SBSI edition.",
-        ],
+        link("ata", "the approved minutes"),
+        " , changes regarding short courses were promulgated, as follows:",
       ],
+    ],
+    importantInfoParagraphs: [
+      [
+        "Short courses will be maintained at the event with proposal submissions by the community;",
+      ],
+      [
+        "A book chapter must be produced and evaluated as a result of the acceptance of a short course proposal;",
+      ],
+      [
+        "Short courses will be ",
+        strong("free for SBSI participants"),
+        ", so there will be no extra charge;",
+      ],
+      [
+        "The SBSI organization ",
+        strong("will not be responsible for financial support"),
+        " to enable the instructor's attendance, so, like authors of accepted full papers, short course authors must cover their travel expenses for the presentation;",
+      ],
+      [
+        "Short course authors must also register for the event and pay the publication fee, as publication generates a DOI and, consequently, costs for the organization;",
+      ],
+      [
+        "The community decided to limit the quantity to ",
+        strong("TWO"),
+        " short courses per SBSI edition.",
+      ],
+    ],
     topicsTitle: "Topics of interest",
     topics: [
       "Technological, social, economic, and environmental aspects and impacts of information systems",
@@ -343,16 +340,8 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
         "1st Review Phase",
         "(Proposal) - Notification to authors",
       ],
-      [
-        "01/12/2026",
-        "Full text submission",
-        "(Chapter)",
-      ],
-      [
-        "15/02/2027",
-        "Final version submission of the book chapter",
-        "",
-      ],
+      ["01/12/2026", "Full text submission", "(Chapter)"],
+      ["15/02/2027", "Final version submission of the book chapter", ""],
     ],
     reviewTitle: "Format",
     review: {
@@ -367,7 +356,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
         ["Title, author(s), and affiliation;"],
         ["Abstract with up to 200 words;"],
         [
-          'Description including goals and technical requirements (equipment and software), indicating scope (introductory or advanced);',
+          "Description including goals and technical requirements (equipment and software), indicating scope (introductory or advanced);",
         ],
         ["Didactic methodology/approach to be used;"],
         ["Estimated duration (maximum 4 hours);"],
@@ -390,8 +379,8 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     coordinationTitle: "SBSI 2027 IS Short Courses Track Chairs",
     coordinationKicker: "Chairs",
     coordinators: [
-      {name: "Davi Viana", institution: "UFMA"},
-      {name: "Paulo Malcher", institution: "UFRA"},
+      { name: "Davi Viana", institution: "UFMA" },
+      { name: "Paulo Malcher", institution: "UFRA" },
     ],
     sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
     tocTitle: "IN THIS CALL",

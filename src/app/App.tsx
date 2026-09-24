@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import AboutSection from "../modules/about/AboutSection";
-import TmSi2027Page from "../modules/calls/tm-si/TmSi2027Page";
 import Nire2027Page from "../modules/calls/nire/Nire2027Page";
+import TmSi2027Page from "../modules/calls/tm-si/TmSi2027Page";
 import TpSi2027Page from "../modules/calls/tp-si/TpSi2027Page";
 import HomeSection from "../modules/home/HomeSection";
 import LocationSection from "../modules/location/LocationSection";
 import TracksCallSection from "../modules/tracks-call/TracksCallSection";
-import { nirePath, tmSiPath, tpSiPath } from "../modules/tracks-call/tracks-call.content";
+import {
+  nirePath,
+  tmSiPath,
+  tpSiPath,
+} from "../modules/tracks-call/tracks-call.content";
 import { initGA, trackPageView } from "../shared/analytics/analytics";
 import { LocaleProvider } from "../shared/i18n/LocaleProvider";
 import SiteFooter from "../shared/layout/SiteFooter";

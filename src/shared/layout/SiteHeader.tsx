@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "../../shared/i18n/useLocale";
-import { siteHeaderContent } from "./site-header.content";
 import {
   trackLanguageChange,
   trackSectionNavigation,
 } from "../analytics/analytics";
+import { siteHeaderContent } from "./site-header.content";
 
 type NavItem = {
   labelKey: keyof typeof siteHeaderContent.pt.menu;
@@ -73,7 +73,10 @@ export default function SiteHeader() {
   }, []);
 
   function handleNavigation(targetId?: string) {
-    trackSectionNavigation(isMenuOpen ? "mobile_menu" : "header", targetId || "unknown");
+    trackSectionNavigation(
+      isMenuOpen ? "mobile_menu" : "header",
+      targetId || "unknown",
+    );
     setIsMenuOpen(false);
     if (!targetId) return;
 

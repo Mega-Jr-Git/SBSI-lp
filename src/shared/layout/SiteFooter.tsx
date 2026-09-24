@@ -1,9 +1,9 @@
 import { useLocale } from "../../shared/i18n/useLocale";
+import { trackSectionNavigation } from "../analytics/analytics";
 import {
   type SiteFooterContent,
   siteFooterContent,
 } from "./site-footer.content";
-import { trackSectionNavigation } from "../analytics/analytics";
 
 type NavLinkItem = {
   labelKey: keyof SiteFooterContent["nav"];

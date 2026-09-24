@@ -60,6 +60,7 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
     copyright:
       "© 2027 Brazilian Symposium on Information Systems. All rights reserved",
     devBy: "Developed by:",
-    analyticsNotice: "This site uses Google Analytics for anonymous traffic analysis.",
+    analyticsNotice:
+      "This site uses Google Analytics for anonymous traffic analysis.",
   },
 };
