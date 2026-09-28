@@ -346,7 +346,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       ],
       [
         "15/02/2027",
-        "Final version delivery",
+        "Final version submission",
         "Upload of the final version file in PDF format to JEMS3",
       ],
       ["17/05/2027 to 20/05/2027", "Holding of SBSI 2027", ""],
