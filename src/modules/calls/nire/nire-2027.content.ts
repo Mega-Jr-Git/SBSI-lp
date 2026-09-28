@@ -57,11 +57,9 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
     datesTitle: "Datas importantes",
     dates: [
       ["11/12/2026", "Registro de artigos", ""],
-      ["18/02/2027", "Submissão dos arquivos", ""],
-      ["22/02/2027", "Notificação:", ""],
-      ["a definir", "Entrega da versão final:", ""],
-      ["a definir", "Inscrição dos autores:", ""],
-      ["17 a 20/05/2027", "Realização do SBSI 2027:", ""],
+      ["18/12/2026", "Submissão dos arquivos", ""],
+      ["22/02/2027", "Notificação", ""],
+      ["17 a 20/05/2027", "Realização do SBSI 2027", ""],
     ],
     categoriesTitle: "Categorias da Trilha",
     categoriesIntro: [["Essa trilha é subdividida em duas categorias:"]],
@@ -211,7 +209,7 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
     introTitle: "Description",
     intro: [
       [
-        "The Organizing Committee of the 23rd Brazilian Symposium on Information Systems (SBSI 2027) invites researchers to submit papers to the New Ideas and Emerging Results Track (NIRE), held alongside the symposium and encompassing one or more areas of interest to the Information Systems community. SBSI 2027 will take place in person in Campo Grande, Mato Grosso do Sul. NIRE aims to provide an alternative forum to the main track for discussing reflections, provocations, and research designs. With a format distinct from the main track, it offers a less formal environment to intensify discussion and opportunities for cooperation, focusing on disseminating new topics or research and training new researchers.",
+        "The Organizing Committee of the 23rd Brazilian Symposium on Information Systems (SBSI 2027) invites researchers to submit papers to the New Ideas and Emerging Results Track (NIRE), held alongside the symposium and encompassing one or more areas of interest to the Information Systems community. SBSI 2027 will take place in person in Campo Grande, Mato Grosso do Sul. NIRE aims to provide an alternative forum to the main track, fostering discussion of reflections and provocations as well as research designs. This track follows a distinct format better suited to exploring new ideas and emerging results, providing a less formal environment that can intensify discussion and opportunities for cooperation. It focuses on disseminating new topics or research and training new researchers.",
       ],
     ],
     topicsTitle: "Topics of interest",
@@ -237,20 +235,10 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
     ],
     datesTitle: "Important dates",
     dates: [
-      [
-        "Dec 11, 2026",
-        "Paper registration",
-        "Deadline to register the paper in JEMS3",
-      ],
-      [
-        "Feb 18, 2027",
-        "File submission",
-        "Deadline to submit the paper files in JEMS3",
-      ],
-      ["Feb 22, 2027", "Notification", "Notification to authors"],
-      ["To be announced", "Final version delivery", "Date to be announced"],
-      ["To be announced", "Author registration", "Date to be announced"],
-      ["May 17–20, 2027", "SBSI 2027", ""],
+      ["Dec 11, 2026", "Paper registration", ""],
+      ["Dec 18, 2026", "File submission", ""],
+      ["Feb 22, 2027", "Notification", ""],
+      ["May 17–20, 2027", "SBSI 2027 dates", ""],
     ],
     categoriesTitle: "Track Categories",
     categoriesIntro: [["The track is divided into two categories:"]],
@@ -326,8 +314,7 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
         ],
       ],
       requirements: [
-        "Accepted work must be presented.",
-        "At least one author must register for the event in the relevant category and pay the publication fee (one fee per accepted paper). SBC members must be up to date with their membership dues to qualify for reduced rates.",
+        "Presentation of the accepted work requires at least one author to register for the event in the relevant category and pay the publication fee (one fee per accepted paper). SBC members must be up to date with their membership dues to qualify for reduced rates.",
         "Final versions of Reflections and Provocations papers must include author biographies of no more than 10 lines on an additional page.",
         "For Research Design papers, the Master's or PhD student author must attend the event in person to present and discuss their work.",
         "Publication of accepted papers in the NIRE categories in the SBSI Extended Proceedings volume in SBC OpenLib is conditional on in-person presentation at the event.",

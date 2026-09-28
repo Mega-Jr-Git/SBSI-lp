@@ -141,7 +141,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     datesTitle: "Datas Importantes",
     dates: [
       [
-        "28/09/2026 (HARD)",
+        "30/09/2026 (HARD)",
         "Submissão de proposta",
         "(Artigo de 4 páginas)",
         "14/09/2026",
@@ -330,7 +330,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
     datesTitle: "Important Dates",
     dates: [
       [
-        "28/09/2026 (HARD)",
+        "30/09/2026 (HARD)",
         "Proposal submission",
         "(4-page paper)",
         "14/09/2026",

@@ -86,7 +86,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         "08/09/2026",
       ],
       [
-        "28/09/2026 (HARD)",
+        "30/09/2026 (HARD)",
         "Submissão do artigo",
         "Upload do arquivo do artigo em PDF no JEMS3",
         "14/09/2026",
@@ -324,7 +324,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         "08/09/2026",
       ],
       [
-        "28/09/2026 (HARD)",
+        "30/09/2026 (HARD)",
         "Paper submission",
         "Upload of the paper file in PDF format to JEMS3",
         "14/09/2026",
