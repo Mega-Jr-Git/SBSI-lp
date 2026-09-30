@@ -4,6 +4,7 @@ import Nire2027Page from "../modules/calls/nire/Nire2027Page";
 import TmSi2027Page from "../modules/calls/tm-si/TmSi2027Page";
 import TpSi2027Page from "../modules/calls/tp-si/TpSi2027Page";
 import HomeSection from "../modules/home/HomeSection";
+import OrganizationSection from "../modules/organization/OrganizationSection";
 import LocationSection from "../modules/location/LocationSection";
 import TracksCallSection from "../modules/tracks-call/TracksCallSection";
 import {
@@ -71,6 +72,7 @@ function AppContent() {
         <HomeSection />
         <AboutSection />
         <TracksCallSection />
+        <OrganizationSection />
         <LocationSection />
       </main>
     );

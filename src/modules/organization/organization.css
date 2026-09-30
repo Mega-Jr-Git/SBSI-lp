@@ -1,0 +1,105 @@
+.organization-section {
+	padding: 4rem 2.3rem;
+	background-color: var(--sbsi-black);
+	color: var(--sbsi-white);
+}
+
+.organization-section__title {
+	font-family: var(--font-display);
+	font-size: var(--font-size-accent);
+	font-weight: 700;
+	text-align: center;
+}
+
+.organization-section__highlight {
+	color: var(--sbsi-orange);
+}
+
+.organization-section__group {
+	margin-top: 3rem;
+}
+
+.organization-section__group-title {
+	font-family: var(--font-inter);
+	font-size: var(--font-size-subtitle);
+	font-weight: 500;
+	border-bottom: 1px solid rgba(var(--sbsi-white-rgb), 0.3);
+	padding-bottom: 0.75rem;
+	margin-bottom: 2rem;
+}
+
+.organization-section__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.organization-section-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 0.5rem;
+	padding: 0 2rem 2rem;
+	border-left: 1px solid rgba(var(--sbsi-white-rgb), 0.3);
+}
+
+.organization-section-card:nth-child(3n + 1) {
+	border-left: none;
+}
+
+.organization-section-card__photo {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	object-fit: cover;
+	background-color: var(--color-text-gray);
+}
+
+.organization-section-card__photo--placeholder {
+	background-color: var(--color-text-gray);
+}
+
+.organization-section-card__name {
+	font-family: var(--font-inter);
+	font-weight: 600;
+	font-size: var(--font-size-body);
+	margin-top: 0.75rem;
+}
+
+.organization-section-card__role {
+	font-family: var(--font-inter);
+	color: var(--sbsi-orange);
+	font-weight: 500;
+	font-size: var(--font-size-label);
+}
+
+.organization-section-card__institution {
+	font-family: var(--font-inter);
+	color: var(--sbsi-orange);
+	font-weight: 500;
+	font-size: var(--font-size-label);
+}
+
+@media (max-width: 768px) {
+	.organization-section__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.organization-section-card {
+		border-left: none;
+	}
+
+	.organization-section-card:nth-child(2n) {
+		border-left: 1px solid rgba(var(--sbsi-white-rgb), 0.3);
+	}
+}
+
+@media (max-width: 480px) {
+	.organization-section__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.organization-section-card {
+		border-left: none !important;
+	}
+}
