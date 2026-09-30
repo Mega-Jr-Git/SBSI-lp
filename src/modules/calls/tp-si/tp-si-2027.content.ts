@@ -135,7 +135,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         [
           "Os artigos completos DEVEM seguir o ",
           link("template", "modelo de artigos da SBC"),
-          ", com limite de 15 a 20 páginas, incluindo referências, apêndices, figuras e tabelas, e DEVEM ser submetidos exclusivamente no formato PDF. Os artigos completos devem ser escritos em português ou em inglês, mas DEVEM apresentar título, resumo estruturado e palavras-chave exclusivamente EM INGLÊS no formulário do JEMS3 e no arquivo PDF, mesmo que o restante do texto esteja escrito em português.",
+          ", com limite de 15 a 20 páginas, incluindo referências, apêndices, figuras e tabelas, e DEVEM ser submetidos exclusivamente no formato PDF. Os artigos completos devem ser escritos em português ou em inglês, mas DEVEM apresentar título e resumo estruturado exclusivamente EM INGLÊS no formulário do JEMS3 e no arquivo PDF, mesmo que o restante do texto esteja escrito em português.",
         ],
         [
           "O resumo estruturado DEVERÁ conter os nomes dos campos (labels) das seções exigidas, e isso deverá ser propagado no texto do artigo completo para manter a coesão do trabalho, além de ser preenchido no formulário de submissão do JEMS3, em até 300 PALAVRAS. Os campos das seções do resumo estruturado devem ser: 1) Research Context, 2) Scientific and/or Practical Problem, 3) Proposed Solution and/or Analysis, 4) Related IS Theory, 5) Research Method, 6) Summary of Results, and 7) Contributions and Impact to IS area. Para apoiar o preenchimento do campo “Related IS Theory”, acesse o portal ",
@@ -373,7 +373,7 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         [
           "Full papers MUST follow the ",
           link("template", "SBC paper template"),
-          ", with a limit of 15 to 20 pages, including references, appendices, figures, and tables, and MUST be submitted exclusively in PDF format. Full papers may be written in Portuguese or English, but MUST present the title, structured abstract, and keywords exclusively IN ENGLISH in the JEMS3 submission form and in the PDF file, even when the rest of the text is written in Portuguese.",
+          ", with a limit of 15 to 20 pages, including references, appendices, figures, and tables, and MUST be submitted exclusively in PDF format. Full papers may be written in Portuguese or English, but MUST present the title and structured abstract exclusively IN ENGLISH in the JEMS3 submission form and in the PDF file, even when the rest of the text is written in Portuguese.",
         ],
         [
           "The structured abstract MUST contain the field names (labels) of the required sections, and these must be carried into the full paper text to maintain the work's coherence, in addition to being completed in the JEMS3 submission form, in up to 300 WORDS. The structured abstract section fields must be: 1) Research Context, 2) Scientific and/or Practical Problem, 3) Proposed Solution and/or Analysis, 4) Related IS Theory, 5) Research Method, 6) Summary of Results, and 7) Contributions and Impact to IS area. To help complete the “Related IS Theory” field, access the ",
