@@ -9,6 +9,7 @@ export interface CallSubmissionPhase {
   title?: string;
   paragraphs?: CallParagraph[];
   rules?: CallParagraph[];
+  list?: string[];
 }
 
 export type CallPageData = {
@@ -23,10 +24,11 @@ export type CallPageData = {
   };
   introTitle: string;
   intro: CallParagraph[];
+  introList?: string[];
   targetAudienceTitle?: string;
   targetAudience?: CallParagraph[];
-  topicsTitle: string;
-  topics: string[];
+  topicsTitle?: string;
+  topics?: string[];
   topicsNote?: string;
   datesTitle: string;
   dates: [

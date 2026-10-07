@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AboutSection from "../modules/about/AboutSection";
 import Nire2027Page from "../modules/calls/nire/Nire2027Page";
+import TiiSi2027Page from "../modules/calls/tii-si/TiiSi2027Page";
 import TmSi2027Page from "../modules/calls/tm-si/TmSi2027Page";
 import TpSi2027Page from "../modules/calls/tp-si/TpSi2027Page";
 import HomeSection from "../modules/home/HomeSection";
@@ -8,6 +9,7 @@ import LocationSection from "../modules/location/LocationSection";
 import TracksCallSection from "../modules/tracks-call/TracksCallSection";
 import {
   nirePath,
+  tiiSiPath,
   tmSiPath,
   tpSiPath,
 } from "../modules/tracks-call/tracks-call.content";
@@ -60,6 +62,10 @@ function AppContent() {
 
     if (currentPath === tmSiPath) {
       return <TmSi2027Page />;
+    }
+
+    if (currentPath === tiiSiPath) {
+      return <TiiSi2027Page />;
     }
 
     if (currentPath === nirePath) {

@@ -119,6 +119,13 @@ export function CallPageLayout({
             {content.intro.map((paragraph, index) =>
               renderParagraph(paragraph, index),
             )}
+            {content.introList && (
+              <ul className="call-publication-cards">
+                {content.introList.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            )}
           </section>
 
           {content.targetAudience && (
@@ -130,17 +137,19 @@ export function CallPageLayout({
             </section>
           )}
 
-          <section id="topicos" className="call-body-section">
-            <h2>{content.topicsTitle}</h2>
-            <ul className="call-topics">
-              {content.topics.map((topic) => (
-                <li key={topic}>{topic}</li>
-              ))}
-            </ul>
-            {content.topicsNote && (
-              <p className="call-topics-note">{content.topicsNote}</p>
-            )}
-          </section>
+          {content.topics && (
+            <section id="topicos" className="call-body-section">
+              <h2>{content.topicsTitle}</h2>
+              <ul className="call-topics">
+                {content.topics.map((topic) => (
+                  <li key={topic}>{topic}</li>
+                ))}
+              </ul>
+              {content.topicsNote && (
+                <p className="call-topics-note">{content.topicsNote}</p>
+              )}
+            </section>
+          )}
 
           <section id="datas" className="call-body-section">
             <h2>{content.datesTitle}</h2>
@@ -235,6 +244,13 @@ export function CallPageLayout({
                           <li key={inlineKey(rule)}>{renderInline(rule)}</li>
                         ))}
                       </ol>
+                    )}
+                    {phase.list && (
+                      <ul className="call-publication-cards">
+                        {phase.list.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
                     )}
                   </div>
                 ))}
