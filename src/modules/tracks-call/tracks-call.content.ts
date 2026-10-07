@@ -7,6 +7,8 @@ export type Track = {
 const basePath = import.meta.env.BASE_URL.replace(/\/+$/, "");
 export const tpSiPath = `${basePath}/chamadas/chamada-pesquisa`;
 export const tmSiPath = `${basePath}/chamadas/chamada-minicursos`;
+export const nirePath = `${basePath}/chamadas/chamada-nire`;
+export const tiiSiPath = `${basePath}/chamadas/chamada-industria-inovacao`;
 
 export const tracksContent = {
   pt: {
@@ -21,19 +23,23 @@ export const tracksContent = {
     tracks: [
       {
         title: "Pesquisa em SI",
-        date: "08/09/2026 – 14/09/2026",
+        date: "21/09/2026 – 30/09/2026",
         link: tpSiPath,
       },
       {
         title: "Minicursos em SI",
-        date: "14/09/2026",
+        date: "30/09/2026",
         link: tmSiPath,
       },
-      { title: "Indústria e Inovação", date: "Em breve", link: "" },
+      {
+        title: "Indústria e Inovação em SI",
+        date: "11/12/2026",
+        link: tiiSiPath,
+      },
       {
         title: "Novas Ideias e Resultados Emergentes em SI",
-        date: "Em breve",
-        link: "",
+        date: "11/12/2026 – 18/02/2027",
+        link: nirePath,
       },
       {
         title: "Grandes Desafios em Sistemas de Informação no Brasil",
@@ -59,19 +65,23 @@ export const tracksContent = {
     tracks: [
       {
         title: "Research in IS",
-        date: "Sep 8 – Sep 14, 2026",
+        date: "Sep 21 – Sep 30, 2026",
         link: tpSiPath,
       },
       {
         title: "Short Courses in IS",
-        date: "Sep 14, 2026",
+        date: "Sep 30, 2026",
         link: tmSiPath,
       },
-      { title: "Industry and Innovation", date: "Coming soon", link: "" },
+      {
+        title: "Industry and Innovation in IS",
+        date: "Dec 11, 2026",
+        link: tiiSiPath,
+      },
       {
         title: "New Ideas and Emerging Results in IS",
-        date: "Coming soon",
-        link: "",
+        date: "Dec 11, 2026 – Feb 18, 2027",
+        link: nirePath,
       },
       {
         title: "Grand Challenges in Information Systems in Brazil",

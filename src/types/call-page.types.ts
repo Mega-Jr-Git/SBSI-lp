@@ -9,24 +9,37 @@ export interface CallSubmissionPhase {
   title?: string;
   paragraphs?: CallParagraph[];
   rules?: CallParagraph[];
+  list?: string[];
 }
 
 export type CallPageData = {
   hero: {
-    kicker: string;
     title: string;
     submit: string;
-    about: string;
+    badges: {
+      date: string;
+      location: string;
+      format: string;
+    };
   };
   introTitle: string;
   intro: CallParagraph[];
+  introList?: string[];
   targetAudienceTitle?: string;
   targetAudience?: CallParagraph[];
-  topicsTitle: string;
-  topics: string[];
+  topicsTitle?: string;
+  topics?: string[];
   topicsNote?: string;
   datesTitle: string;
-  dates: [date: string, label: string, description?: string][];
+  dates: [
+    date: string,
+    label: string,
+    description?: string,
+    oldDate?: string,
+  ][];
+  categoriesTitle?: string;
+  categoriesIntro?: CallParagraph[];
+  categories?: CallSubmissionPhase[];
   submissionTitle: string;
   submission: {
     paragraphs: CallParagraph[];
@@ -37,9 +50,11 @@ export type CallPageData = {
     diversity?: CallParagraph;
   };
   importantInfoTitle?: string;
+  importantInfoParagraph?: CallParagraph;
   importantInfoSubtitle?: CallParagraph[];
   importantInfoParagraphs?: CallParagraph[];
   formatTitle?: string;
+  formatParagraphs?: CallParagraph[];
   format?: {
     phase1Title: string;
     phase1Rules: string[];
@@ -60,7 +75,7 @@ export type CallPageData = {
   };
   coordinationTitle: string;
   coordinationKicker: string;
-  coordinators: {name: string; institution: string}[];
+  coordinators: { name: string; institution: string }[];
   tpcTitle?: string;
   tpcStatus?: string;
   tpcMembers?: string[];
@@ -70,5 +85,5 @@ export type CallPageData = {
     jems: string;
   };
   tocTitle?: string;
-  toc?: {id: string, title: string}[];
+  toc?: { id: string; title: string }[];
 };

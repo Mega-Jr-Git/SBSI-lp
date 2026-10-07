@@ -1,5 +1,5 @@
-import { useLocale } from "../../../shared/i18n/useLocale";
 import { CallPageLayout } from "../../../shared/components/call-page/CallPageLayout";
+import { useLocale } from "../../../shared/i18n/useLocale";
 import { tmSi2027Content, tmSi2027Links } from "./tm-si-2027.content";
 
 export default function TmSi2027Page() {
