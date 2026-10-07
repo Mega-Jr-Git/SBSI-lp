@@ -11,7 +11,12 @@ export type SiteHeaderContent = {
 
 export const siteHeaderContent: Record<"pt" | "en", SiteHeaderContent> = {
   pt: {
-    menu: { sobre: "Sobre", trilhas: "Trilhas", organizacao: "Organização", local: "Local" },
+    menu: {
+      sobre: "Sobre",
+      trilhas: "Trilhas",
+      organizacao: "Organização",
+      local: "Local",
+    },
     submeter: "Submeta seu trabalho",
     inscrever: "Inscreva-se",
     ariaLang: "Mudar idioma. Atual: Português",
@@ -21,7 +26,12 @@ export const siteHeaderContent: Record<"pt" | "en", SiteHeaderContent> = {
     menuClose: "Fechar menu",
   },
   en: {
-    menu: { sobre: "About", trilhas: "Tracks", organizacao: "Organization", local: "Venue" },
+    menu: {
+      sobre: "About",
+      trilhas: "Tracks",
+      organizacao: "Organization",
+      local: "Venue",
+    },
     submeter: "Submit your paper",
     inscrever: "Register",
     ariaLang: "Change language. Current: English",
