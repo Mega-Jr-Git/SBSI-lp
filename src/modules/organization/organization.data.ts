@@ -246,6 +246,7 @@ export const organizationMembers: OrganizationMember[] = [
     role: { pt: "", en: "" },
     institution: { pt: "", en: "" },
     group: "volunteer-team",
+    photoUrl: "organization/marcus-augusto.jpg",
   },
   {
     id: "julio-dalpiaz",
