@@ -29,8 +29,10 @@
 }
 
 .organization-section__grid {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2.5rem 2rem;
 }
 
 .organization-section-card {
@@ -38,32 +40,37 @@
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	gap: 0.5rem;
-	padding: 0 2rem 2rem;
-	border-left: 1px solid rgba(var(--sbsi-white-rgb), 0.3);
-}
-
-.organization-section-card:nth-child(3n + 1) {
-	border-left: none;
+	gap: 0.125rem;
+	width: 13rem;
 }
 
 .organization-section-card__photo {
-	width: 96px;
-	height: 96px;
+	width: 128px;
+	height: 128px;
 	border-radius: 50%;
 	object-fit: cover;
 	background-color: var(--color-text-gray);
+	margin-bottom: 0.5rem;
 }
 
 .organization-section-card__photo--placeholder {
-	background-color: var(--color-text-gray);
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	overflow: hidden;
+	background-color: rgba(var(--sbsi-white-rgb), 0.12);
+	color: rgba(var(--sbsi-white-rgb), 0.45);
+}
+
+.organization-section-card__photo--placeholder svg {
+	width: 80%;
+	height: 80%;
 }
 
 .organization-section-card__name {
 	font-family: var(--font-inter);
 	font-weight: 600;
 	font-size: var(--font-size-body);
-	margin-top: 0.75rem;
 }
 
 .organization-section-card__role {
@@ -80,26 +87,23 @@
 	font-size: var(--font-size-label);
 }
 
-@media (max-width: 768px) {
-	.organization-section__grid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
+.organization-section-card__email {
+	font-family: var(--font-inter);
+	font-size: var(--font-size-label);
+	color: var(--sbsi-white);
+	overflow-wrap: anywhere;
+}
 
-	.organization-section-card {
-		border-left: none;
-	}
-
-	.organization-section-card:nth-child(2n) {
-		border-left: 1px solid rgba(var(--sbsi-white-rgb), 0.3);
-	}
+.organization-section-card__email:hover {
+	color: var(--sbsi-orange);
 }
 
 @media (max-width: 480px) {
 	.organization-section__grid {
-		grid-template-columns: 1fr;
+		column-gap: 1rem;
 	}
 
 	.organization-section-card {
-		border-left: none !important;
+		width: calc(50% - 0.5rem);
 	}
 }

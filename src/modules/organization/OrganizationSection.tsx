@@ -31,14 +31,21 @@ function MemberCard({ member, locale, photoAlt }: MemberCardProps) {
 			{member.photoUrl ? (
 				<img
 					className="organization-section-card__photo"
-					src={member.photoUrl}
+					src={`${import.meta.env.BASE_URL}${member.photoUrl}`}
 					alt={photoAlt(member.name)}
+					loading="lazy"
+					decoding="async"
 				/>
 			) : (
 				<div
 					className="organization-section-card__photo organization-section-card__photo--placeholder"
 					aria-hidden="true"
-				/>
+				>
+					<svg viewBox="0 0 24 24" fill="currentColor">
+						<circle cx="12" cy="8.5" r="4.5" />
+						<path d="M3 24c0-5.5 4-9 9-9s9 3.5 9 9z" />
+					</svg>
+				</div>
 			)}
 
 			<p className="organization-section-card__name">{member.name}</p>
@@ -47,6 +54,15 @@ function MemberCard({ member, locale, photoAlt }: MemberCardProps) {
 
 			{institution ? (
 				<p className="organization-section-card__institution">{institution}</p>
+			) : null}
+
+			{member.email ? (
+				<a
+					className="organization-section-card__email"
+					href={`mailto:${member.email}`}
+				>
+					{member.email}
+				</a>
 			) : null}
 		</div>
 	);
@@ -108,6 +124,55 @@ export default function OrganizationSection({}: OrganizationSectionProps) {
 			<MemberGroup
 				title={content.generalCoordination}
 				members={generalCoordination}
+				locale={locale}
+				photoAlt={content.photoAlt}
+			/>
+
+			<MemberGroup
+				title={content.localOrganization}
+				members={membersByGroup(organizationMembers, "local-organization")}
+				locale={locale}
+				photoAlt={content.photoAlt}
+			/>
+
+			<MemberGroup
+				title={content.publicationsPublicity}
+				members={membersByGroup(organizationMembers, "publications-publicity")}
+				locale={locale}
+				photoAlt={content.photoAlt}
+			/>
+
+			<MemberGroup
+				title={content.tpSiCoordination}
+				members={membersByGroup(organizationMembers, "tp-si-coordination")}
+				locale={locale}
+				photoAlt={content.photoAlt}
+			/>
+
+			<MemberGroup
+				title={content.tmSiCoordination}
+				members={membersByGroup(organizationMembers, "tm-si-coordination")}
+				locale={locale}
+				photoAlt={content.photoAlt}
+			/>
+
+			<MemberGroup
+				title={content.nireCoordination}
+				members={membersByGroup(organizationMembers, "nire-coordination")}
+				locale={locale}
+				photoAlt={content.photoAlt}
+			/>
+
+			<MemberGroup
+				title={content.tiiSiCoordination}
+				members={membersByGroup(organizationMembers, "tii-si-coordination")}
+				locale={locale}
+				photoAlt={content.photoAlt}
+			/>
+
+			<MemberGroup
+				title={content.ctdgSiCoordination}
+				members={membersByGroup(organizationMembers, "ctdg-si-coordination")}
 				locale={locale}
 				photoAlt={content.photoAlt}
 			/>
