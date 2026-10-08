@@ -6,6 +6,7 @@ export type SiteFooterContent = {
     inicio: string;
     sobre: string;
     trilhas: string;
+    organizacao: string;
     onde: string;
     inscricao: string;
   };
@@ -28,6 +29,7 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
       inicio: "Início",
       sobre: "Sobre",
       trilhas: "Trilhas",
+      organizacao: "Organização",
       onde: "Onde",
       inscricao: "Inscrição",
     },
@@ -50,6 +52,7 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
       inicio: "Home",
       sobre: "About",
       trilhas: "Tracks",
+      organizacao: "Organization",
       onde: "Venue",
       inscricao: "Registration",
     },

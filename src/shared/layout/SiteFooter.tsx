@@ -21,6 +21,7 @@ const navLinks: NavLinkItem[] = [
   { labelKey: "inicio", targetId: "home" },
   { labelKey: "sobre", targetId: "sobre" },
   { labelKey: "trilhas", targetId: "chamada-trilhas" },
+  { labelKey: "organizacao", targetId: "organizacao" },
   { labelKey: "onde", targetId: "local" },
   { labelKey: "inscricao", targetId: "inscricao" },
 ];
