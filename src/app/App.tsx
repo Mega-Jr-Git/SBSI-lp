@@ -56,6 +56,11 @@ function AppContent() {
     };
   }, []);
 
+  useEffect(() => {
+    const targetId = decodeURIComponent(window.location.hash.slice(1));
+    if (targetId) document.getElementById(targetId)?.scrollIntoView();
+  }, []);
+
   const renderContent = () => {
     if (currentPath === tpSiPath) {
       return <TpSi2027Page />;
