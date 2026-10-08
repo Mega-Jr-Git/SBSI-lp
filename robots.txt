@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sbsi.sbc.org.br/2027/sitemap.xml
