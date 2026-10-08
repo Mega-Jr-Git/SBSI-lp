@@ -225,6 +225,7 @@ export const organizationMembers: OrganizationMember[] = [
     role: { pt: "", en: "" },
     institution: { pt: "", en: "" },
     group: "volunteer-team",
+    photoUrl: "organization/isabele-firmino.jpg",
   },
   {
     id: "maria-eduarda-moretto",
@@ -232,6 +233,7 @@ export const organizationMembers: OrganizationMember[] = [
     role: { pt: "", en: "" },
     institution: { pt: "", en: "" },
     group: "volunteer-team",
+    photoUrl: "organization/maria-eduarda-moretto.jpg",
   },
   {
     id: "edilson-enzo",
@@ -239,6 +241,7 @@ export const organizationMembers: OrganizationMember[] = [
     role: { pt: "", en: "" },
     institution: { pt: "", en: "" },
     group: "volunteer-team",
+    photoUrl: "organization/edilson-enzo.jpg",
   },
   {
     id: "marcus-augusto",
@@ -248,13 +251,13 @@ export const organizationMembers: OrganizationMember[] = [
     group: "volunteer-team",
     photoUrl: "organization/marcus-augusto.jpg",
   },
-  {
-    id: "julio-dalpiaz",
-    name: "Julio Dalpiaz",
-    role: { pt: "", en: "" },
-    institution: { pt: "", en: "" },
-    group: "volunteer-team",
-  },
+  // {
+  //   id: "julio-dalpiaz",
+  //   name: "Julio Dalpiaz",
+  //   role: { pt: "", en: "" },
+  //   institution: { pt: "", en: "" },
+  //   group: "volunteer-team",
+  // },
   {
     id: "jhonathan-soares",
     name: "Jhonathan Soares",
