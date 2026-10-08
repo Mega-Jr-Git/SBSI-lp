@@ -251,13 +251,14 @@ export const organizationMembers: OrganizationMember[] = [
     group: "volunteer-team",
     photoUrl: "organization/marcus-augusto.jpg",
   },
-  // {
-  //   id: "julio-dalpiaz",
-  //   name: "Julio Dalpiaz",
-  //   role: { pt: "", en: "" },
-  //   institution: { pt: "", en: "" },
-  //   group: "volunteer-team",
-  // },
+  {
+    id: "julio-dalpiaz",
+    name: "Julio Dalpiaz",
+    role: { pt: "", en: "" },
+    institution: { pt: "", en: "" },
+    group: "volunteer-team",
+    photoUrl: "organization/julio-dalpiaz.jpg",
+  },
   {
     id: "jhonathan-soares",
     name: "Jhonathan Soares",
