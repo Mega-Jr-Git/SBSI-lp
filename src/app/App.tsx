@@ -6,6 +6,7 @@ import TmSi2027Page from "../modules/calls/tm-si/TmSi2027Page";
 import TpSi2027Page from "../modules/calls/tp-si/TpSi2027Page";
 import HomeSection from "../modules/home/HomeSection";
 import LocationSection from "../modules/location/LocationSection";
+import OrganizationSection from "../modules/organization/OrganizationSection";
 import TracksCallSection from "../modules/tracks-call/TracksCallSection";
 import {
   nirePath,
@@ -55,6 +56,11 @@ function AppContent() {
     };
   }, []);
 
+  useEffect(() => {
+    const targetId = decodeURIComponent(window.location.hash.slice(1));
+    if (targetId) document.getElementById(targetId)?.scrollIntoView();
+  }, []);
+
   const renderContent = () => {
     if (currentPath === tpSiPath) {
       return <TpSi2027Page />;
@@ -77,6 +83,7 @@ function AppContent() {
         <HomeSection />
         <AboutSection />
         <TracksCallSection />
+        <OrganizationSection />
         <LocationSection />
       </main>
     );
