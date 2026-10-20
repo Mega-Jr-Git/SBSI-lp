@@ -68,14 +68,6 @@ export const organizationMembers: OrganizationMember[] = [
     photoUrl: "organization/jucele-vasconcellos.jpg",
   },
   {
-    id: "liana-garanhani",
-    name: "Liana Garanhani",
-    role: { pt: "", en: "" },
-    institution: { pt: "UFMS", en: "UFMS" },
-    group: "local-organization",
-    photoUrl: "organization/liana-garanhani.jpg",
-  },
-  {
     id: "luciano-gonda",
     name: "Luciano Gonda",
     role: { pt: "", en: "" },
