@@ -1,5 +1,9 @@
-import { siteFooterContent, SiteFooterContent } from "./site-footer.content";
 import { useLocale } from "../../shared/i18n/useLocale";
+import { trackSectionNavigation } from "../analytics/analytics";
+import {
+  type SiteFooterContent,
+  siteFooterContent,
+} from "./site-footer.content";
 
 type NavLinkItem = {
   labelKey: keyof SiteFooterContent["nav"];
@@ -17,6 +21,7 @@ const navLinks: NavLinkItem[] = [
   { labelKey: "inicio", targetId: "home" },
   { labelKey: "sobre", targetId: "sobre" },
   { labelKey: "trilhas", targetId: "chamada-trilhas" },
+  { labelKey: "organizacao", targetId: "organizacao" },
   { labelKey: "onde", targetId: "local" },
   { labelKey: "inscricao", targetId: "inscricao" },
 ];
@@ -32,6 +37,8 @@ export default function SiteFooter() {
 
   function handleNavigation(targetId?: string) {
     if (!targetId) return;
+
+    trackSectionNavigation("footer", targetId);
 
     const target = document.getElementById(targetId);
     if (!target) return;
@@ -89,6 +96,10 @@ export default function SiteFooter() {
               </ul>
             </div>
           </div>
+        </div>
+
+        <div className="site-footer__analytics">
+          <p className="site-footer__analytics-text">{t.analyticsNotice}</p>
         </div>
 
         <div className="site-footer__bottom">

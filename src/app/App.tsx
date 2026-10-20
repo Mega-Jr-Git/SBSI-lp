@@ -1,26 +1,107 @@
-import { LocaleProvider } from "../shared/i18n/LocaleProvider";
-import SiteHeader from "../shared/layout/SiteHeader";
-import HomeSection from "../modules/home/HomeSection";
+import { useEffect, useState } from "react";
 import AboutSection from "../modules/about/AboutSection";
+import Nire2027Page from "../modules/calls/nire/Nire2027Page";
+import TiiSi2027Page from "../modules/calls/tii-si/TiiSi2027Page";
+import TmSi2027Page from "../modules/calls/tm-si/TmSi2027Page";
+import TpSi2027Page from "../modules/calls/tp-si/TpSi2027Page";
+import HomeSection from "../modules/home/HomeSection";
 import LocationSection from "../modules/location/LocationSection";
+import OrganizationSection from "../modules/organization/OrganizationSection";
 import TracksCallSection from "../modules/tracks-call/TracksCallSection";
+import {
+  nirePath,
+  tiiSiPath,
+  tmSiPath,
+  tpSiPath,
+} from "../modules/tracks-call/tracks-call.content";
+import { initGA, trackPageView } from "../shared/analytics/analytics";
+import { LocaleProvider } from "../shared/i18n/LocaleProvider";
 import SiteFooter from "../shared/layout/SiteFooter";
+import SiteHeader from "../shared/layout/SiteHeader";
 
-export default function App() {
-  return (
-    <LocaleProvider>
-      <div className="page-shell">
-        <SiteHeader />
+function AppContent() {
+  const [currentPath, setCurrentPath] = useState(
+    () => window.location.pathname,
+  );
 
+  useEffect(() => {
+    initGA();
+
+    const handlePopState = () => {
+      setTimeout(trackPageView, 150);
+      setCurrentPath(window.location.pathname);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+
+    history.pushState = function (...args) {
+      originalPushState.apply(this, args);
+      setTimeout(trackPageView, 150);
+      setCurrentPath(window.location.pathname);
+    };
+
+    history.replaceState = function (...args) {
+      originalReplaceState.apply(this, args);
+      setTimeout(trackPageView, 150);
+      setCurrentPath(window.location.pathname);
+    };
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      history.pushState = originalPushState;
+      history.replaceState = originalReplaceState;
+    };
+  }, []);
+
+  useEffect(() => {
+    const targetId = decodeURIComponent(window.location.hash.slice(1));
+    if (targetId) document.getElementById(targetId)?.scrollIntoView();
+  }, []);
+
+  const renderContent = () => {
+    if (currentPath === tpSiPath) {
+      return <TpSi2027Page />;
+    }
+
+    if (currentPath === tmSiPath) {
+      return <TmSi2027Page />;
+    }
+
+    if (currentPath === tiiSiPath) {
+      return <TiiSi2027Page />;
+    }
+
+    if (currentPath === nirePath) {
+      return <Nire2027Page />;
+    }
+
+    return (
       <main className="page-content">
         <HomeSection />
         <AboutSection />
         <TracksCallSection />
+        <OrganizationSection />
         <LocationSection />
       </main>
+    );
+  };
 
-        <SiteFooter />
-      </div>
+  return (
+    <div className="page-shell">
+      <SiteHeader />
+      {renderContent()}
+      <SiteFooter />
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LocaleProvider>
+      <AppContent />
     </LocaleProvider>
   );
 }

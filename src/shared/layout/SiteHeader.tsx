@@ -1,5 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale } from "../../shared/i18n/useLocale";
+import {
+  trackLanguageChange,
+  trackSectionNavigation,
+} from "../analytics/analytics";
 import { siteHeaderContent } from "./site-header.content";
 
 type NavItem = {
@@ -19,6 +23,7 @@ const publicUrl = import.meta.env.BASE_URL;
 const navItems: NavItem[] = [
   { labelKey: "sobre", targetId: "sobre" },
   { labelKey: "trilhas", targetId: "chamada-trilhas" },
+  { labelKey: "organizacao", targetId: "organizacao" },
   { labelKey: "local", targetId: "local" },
 ];
 
@@ -69,17 +74,25 @@ export default function SiteHeader() {
   }, []);
 
   function handleNavigation(targetId?: string) {
+    trackSectionNavigation(
+      isMenuOpen ? "mobile_menu" : "header",
+      targetId || "unknown",
+    );
     setIsMenuOpen(false);
     if (!targetId) return;
 
     const target = document.getElementById(targetId);
-    if (!target) return;
+    if (!target) {
+      window.location.assign(`${publicUrl}#${targetId}`);
+      return;
+    }
 
     window.history.pushState(null, "", `#${targetId}`);
     target.scrollIntoView({ behavior: "smooth" });
   }
 
   function handleLanguageChange(code: "pt" | "en") {
+    trackLanguageChange(code);
     setLocale(code);
     setIsLangOpen(false);
   }
@@ -95,7 +108,11 @@ export default function SiteHeader() {
           aria-label="SBSI"
           onClick={() => handleNavigation("home")}
         >
-          <img src={`${publicUrl}SBSI_branco.svg`} alt="SBSI" className="site-header__logo-img" />
+          <img
+            src={`${publicUrl}SBSI_branco.svg`}
+            alt="SBSI"
+            className="site-header__logo-img"
+          />
         </button>
 
         <nav aria-label={t.navAria} className="site-header__nav">
@@ -148,6 +165,7 @@ export default function SiteHeader() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
@@ -200,10 +218,7 @@ export default function SiteHeader() {
         id="site-mobile-menu"
         className={`site-header__mobile-menu ${isMenuOpen ? "site-header__mobile-menu--open" : ""}`}
       >
-        <nav
-          aria-label={t.mobileNavAria}
-          className="site-header__mobile-nav"
-        >
+        <nav aria-label={t.mobileNavAria} className="site-header__mobile-nav">
           {navItems.map((item) => (
             <button
               key={item.labelKey}

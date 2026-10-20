@@ -1,6 +1,10 @@
 # Tracks Call
 
-Módulo responsável pela seção de chamada para as trilhas da landing page.
+Módulo responsável exclusivamente pelo hero e pela listagem de chamadas para
+as trilhas da landing page.
+
+As páginas detalhadas de cada chamada ficam em `src/modules/calls/`, uma
+subpasta por trilha.
 
 ## Arquivo principal
 
@@ -18,7 +22,8 @@ incluindo:
 ## Estrutura
 
 A seção utiliza um grid responsivo com cards, cada card representando uma trilha.
-Cada card exibe o título, período de submissão e um botão "Ver mais" com link externo.
+Cada card exibe o título, período de submissão e um botão "Ver mais" com link
+para a chamada ou recurso correspondente.
 
 ## Onde a seção aparece
 

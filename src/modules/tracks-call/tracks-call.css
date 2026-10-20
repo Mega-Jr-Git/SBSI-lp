@@ -73,7 +73,8 @@
   white-space: nowrap;
 }
 
-.tracks-call-card__button, .tracks-call-card__coming-soon {
+.tracks-call-card__button,
+.tracks-call-card__coming-soon {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;

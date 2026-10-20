@@ -1,0 +1,89 @@
+export type CallInline =
+  | string
+  | { link: string; text: string }
+  | { strong: string };
+
+export type CallParagraph = CallInline[];
+
+export interface CallSubmissionPhase {
+  title?: string;
+  paragraphs?: CallParagraph[];
+  rules?: CallParagraph[];
+  list?: string[];
+}
+
+export type CallPageData = {
+  hero: {
+    title: string;
+    submit: string;
+    badges: {
+      date: string;
+      location: string;
+      format: string;
+    };
+  };
+  introTitle: string;
+  intro: CallParagraph[];
+  introList?: string[];
+  targetAudienceTitle?: string;
+  targetAudience?: CallParagraph[];
+  topicsTitle?: string;
+  topics?: string[];
+  topicsNote?: string;
+  datesTitle: string;
+  dates: [
+    date: string,
+    label: string,
+    description?: string,
+    oldDate?: string,
+  ][];
+  categoriesTitle?: string;
+  categoriesIntro?: CallParagraph[];
+  categories?: CallSubmissionPhase[];
+  submissionTitle: string;
+  submission: {
+    paragraphs: CallParagraph[];
+    rulesIntro?: CallParagraph;
+    phases?: CallSubmissionPhase[];
+    rules?: CallParagraph[];
+    openScience?: CallParagraph;
+    diversity?: CallParagraph;
+  };
+  importantInfoTitle?: string;
+  importantInfoParagraph?: CallParagraph;
+  importantInfoSubtitle?: CallParagraph[];
+  importantInfoParagraphs?: CallParagraph[];
+  formatTitle?: string;
+  formatParagraphs?: CallParagraph[];
+  format?: {
+    phase1Title: string;
+    phase1Rules: string[];
+    phase2Title: string;
+    phase2Rules: string[];
+  };
+  reviewTitle: string;
+  review: {
+    paragraphs: CallParagraph[];
+    criteria: CallParagraph[];
+    publication?: CallParagraph[];
+  };
+  publicationTitle?: string;
+  publication?: {
+    paragraphs: CallParagraph[];
+    requirements: string[];
+    closing: string;
+  };
+  coordinationTitle: string;
+  coordinationKicker: string;
+  coordinators: { name: string; institution: string }[];
+  tpcTitle?: string;
+  tpcStatus?: string;
+  tpcMembers?: string[];
+  sideLinks: {
+    cesi: string;
+    sbc: string;
+    jems: string;
+  };
+  tocTitle?: string;
+  toc?: { id: string; title: string }[];
+};

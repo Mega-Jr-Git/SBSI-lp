@@ -2,7 +2,13 @@ export type Track = {
   title: string;
   date?: string;
   link?: string;
-}
+};
+
+const basePath = import.meta.env.BASE_URL.replace(/\/+$/, "");
+export const tpSiPath = `${basePath}/chamadas/chamada-pesquisa`;
+export const tmSiPath = `${basePath}/chamadas/chamada-minicursos`;
+export const nirePath = `${basePath}/chamadas/chamada-nire`;
+export const tiiSiPath = `${basePath}/chamadas/chamada-industria-inovacao`;
 
 export const tracksContent = {
   pt: {
@@ -10,17 +16,41 @@ export const tracksContent = {
     title_highlight: "trilhas",
     iconAlt: "Ícone representando a trilha",
     p1: "As chamadas para as trilhas estão abertas. Clique em uma das seções para obter mais informações",
-    p2: "Registro e Submissão de Artigo: ",
+    p2: "Submissão de Proposta: ",
     soon: "Em breve",
     link: "Ver mais",
 
     tracks: [
-      { title: "Pesquisa em SI", date: "Em breve", link: "" },
-      { title: "Indústria e Inovação", date: "Em breve", link: "" },
-      { title: "Minicursos em SI", date: "Em breve", link: "" },
-      { title: "Novas Ideias e Resultados Emergentes em SI", date: "Em breve", link: "" },
-      { title: "Grandes Desafios em Sistemas de Informação no Brasil", date: "Em breve", link: "" },
-      { title: "Concurso de Teses, Dissertações e TCCs em SI", date: "Em breve", link: "" },
+      {
+        title: "Pesquisa em SI",
+        date: "21/09/2026 – 30/09/2026",
+        link: tpSiPath,
+      },
+      {
+        title: "Minicursos em SI",
+        date: "30/09/2026",
+        link: tmSiPath,
+      },
+      {
+        title: "Indústria e Inovação em SI",
+        date: "11/12/2026",
+        link: tiiSiPath,
+      },
+      {
+        title: "Novas Ideias e Resultados Emergentes em SI",
+        date: "11/12/2026 – 18/02/2027",
+        link: nirePath,
+      },
+      {
+        title: "Grandes Desafios em Sistemas de Informação no Brasil",
+        date: "Em breve",
+        link: "",
+      },
+      {
+        title: "Concurso de Teses, Dissertações e TCCs em SI",
+        date: "Em breve",
+        link: "",
+      },
     ],
   },
   en: {
@@ -28,17 +58,41 @@ export const tracksContent = {
     title_highlight: "tracks",
     iconAlt: "Icon representing the track",
     p1: "The calls for tracks are open. Click on one of the sections for more information",
-    p2: "Registration and Article Submission: ",
+    p2: "Proposal Submission: ",
     soon: "Coming soon",
     link: "See more",
 
     tracks: [
-      { title: "Research in IS", date: "Coming soon", link: "" },
-      { title: "Industry and Innovation", date: "Coming soon", link: "" },
-      { title: "Short Courses in IS", date: "Coming soon", link: "" },
-      { title: "New Ideas and Emerging Results in IS", date: "Coming soon", link: "" },
-      { title: "Grand Challenges in Information Systems in Brazil", date: "Coming soon", link: "" },
-      { title: "Thesis, Dissertation, and TCC Competition in IS", date: "Coming soon", link: "" },
+      {
+        title: "Research in IS",
+        date: "Sep 21 – Sep 30, 2026",
+        link: tpSiPath,
+      },
+      {
+        title: "Short Courses in IS",
+        date: "Sep 30, 2026",
+        link: tmSiPath,
+      },
+      {
+        title: "Industry and Innovation in IS",
+        date: "Dec 11, 2026",
+        link: tiiSiPath,
+      },
+      {
+        title: "New Ideas and Emerging Results in IS",
+        date: "Dec 11, 2026 – Feb 18, 2027",
+        link: nirePath,
+      },
+      {
+        title: "Grand Challenges in Information Systems in Brazil",
+        date: "Coming soon",
+        link: "",
+      },
+      {
+        title: "Thesis, Dissertation, and TCC Competition in IS",
+        date: "Coming soon",
+        link: "",
+      },
     ],
   },
-}
+};
