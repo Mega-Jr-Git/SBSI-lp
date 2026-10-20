@@ -4,16 +4,15 @@
 
 Este documento define regras basicas de organizacao do repositorio para facilitar colaboracao, revisao e evolucao do frontend da SBSI.
 
-## Branches principais
+## Branch principal
 
-O projeto tera duas branches principais:
+O projeto segue o GitHub Flow, com uma unica branch permanente:
 
-- `main`: contem versoes estaveis do projeto.
-- `develop`: contem a integracao do trabalho em andamento do time.
+- `main`: deve estar sempre estavel e pronta para deploy. Todo push nela publica o site.
 
 ## Branches de tarefa
 
-Toda nova implementacao, ajuste ou correcao deve sair da branch `develop`.
+Toda nova implementacao, ajuste ou correcao deve sair da branch `main` e voltar para ela via Pull Request, com revisao e CI aprovados. Apos o merge, a branch de tarefa deve ser apagada.
 
 Padrao recomendado:
 
