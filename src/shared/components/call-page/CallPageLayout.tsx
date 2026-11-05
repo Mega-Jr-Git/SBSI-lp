@@ -129,7 +129,7 @@ export function CallPageLayout({
           </section>
 
           {content.targetAudience && (
-            <section className="call-body-section">
+            <section id="publico-alvo" className="call-body-section">
               <h2>{content.targetAudienceTitle || "Público-Alvo"}</h2>
               {content.targetAudience.map((paragraph, index) =>
                 renderParagraph(paragraph, `target-${index}`),
@@ -298,7 +298,7 @@ export function CallPageLayout({
           )}
 
           {!content.categories && content.importantInfoParagraphs && (
-            <section className="call-body-section">
+            <section id="informacoes-importantes" className="call-body-section">
               <h2>{content.importantInfoTitle}</h2>
               <p className="call-important-info-subtitle">
                 {content.importantInfoSubtitle?.map((subtitle) => (
@@ -386,7 +386,7 @@ export function CallPageLayout({
             )}
 
           {content.tpcTitle && (
-            <section className="call-body-section">
+            <section id="tpc" className="call-body-section">
               <h2>{content.tpcTitle}</h2>
               {content.tpcStatus && <p>{content.tpcStatus}</p>}
               {content.tpcMembers && content.tpcMembers.length > 0 && (
