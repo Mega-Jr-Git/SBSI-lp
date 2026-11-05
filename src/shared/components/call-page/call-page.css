@@ -464,6 +464,14 @@
   padding-left: 0.35rem;
 }
 
+.call-tpc-list li {
+  font-family: var(--font-inter);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text-dark-gray);
+  margin: 0.5rem 0;
+}
+
 .call-subtitle-spaced {
   margin-top: 1.5rem;
 }

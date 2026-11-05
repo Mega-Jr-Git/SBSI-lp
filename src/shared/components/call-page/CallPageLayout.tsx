@@ -390,7 +390,7 @@ export function CallPageLayout({
               <h2>{content.tpcTitle}</h2>
               {content.tpcStatus && <p>{content.tpcStatus}</p>}
               {content.tpcMembers && content.tpcMembers.length > 0 && (
-                <ul className="call-publication-requirements">
+                <ul className="call-publication-requirements call-tpc-list">
                   {content.tpcMembers.map((member) => (
                     <li key={member}>{member}</li>
                   ))}
