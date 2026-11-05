@@ -19,6 +19,21 @@ const link = (name: string, text: string): CallInline => ({
 
 const strong = (text: string): CallInline => ({ strong: text });
 
+const tmSi2027TpcMembers = [
+  "Alessandro de Almeida Castro Cerqueira – Univeritas/RJ",
+  "Allysson Allex Araújo – Universidade Federal do Cariri",
+  "Arlino Henrique Magalhães – Universidade Federal do Piauí",
+  "Awdren de Lima Fontão – Universidade Federal de Mato Grosso do Sul",
+  "Cristiano da Silveira Colombo – Instituto Federal do Espírito Santo",
+  "Flavia Maria Santoro – Instituto de Tecnologia e Liderança",
+  "Glauco Carneiro – Universidade Federal do Sergipe",
+  "José Augusto de Sena Quaresma – Universidade Federal Rural da Amazônia",
+  "Leila Bergamasco – Centro Universitário FEI",
+  "Maria Istela Cagnin – Universidade Federal de Mato Grosso do Sul",
+  "Morganna Carmem Diniz – Universidade Federal do Estado do Rio de Janeiro",
+  "Victor Stroele – Universidade Federal de Juiz de Fora",
+];
+
 export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
   pt: {
     hero: {
@@ -191,8 +206,8 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
         ],
       ],
     },
-    tpcTitle: "TPC da TM-SI do SBSI 2027 ",
-    tpcStatus: "Em formação",
+    tpcTitle: "TPC da TM-SI do SBSI 2027",
+    tpcMembers: tmSi2027TpcMembers,
     coordinationTitle: "Coordenação da TM-SI 2027",
     coordinationKicker: "Coordenação",
     coordinators: [
@@ -377,7 +392,7 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       ],
     },
     tpcTitle: "TM-SI TPC of SBSI 2027",
-    tpcStatus: "In formation",
+    tpcMembers: tmSi2027TpcMembers,
     coordinationTitle: "SBSI 2027 IS Short Courses Track Chairs",
     coordinationKicker: "Chairs",
     coordinators: [
