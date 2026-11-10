@@ -79,6 +79,8 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: var(--sbsi-orange);
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
 }
 
 .home-section__quote {

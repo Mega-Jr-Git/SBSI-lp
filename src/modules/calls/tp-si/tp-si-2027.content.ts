@@ -251,7 +251,6 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       { name: "Claudia Cappelli", institution: "UERJ" },
       { name: "Maria Claudia Emer", institution: "UTFPR" },
     ],
-    sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
     tocTitle: "NESTA CHAMADA",
     toc: [
       { id: "descricao", title: "Descrição" },
@@ -489,7 +488,6 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
       { name: "Claudia Cappelli", institution: "UERJ" },
       { name: "Maria Claudia Emer", institution: "UTFPR" },
     ],
-    sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
     tocTitle: "IN THIS CALL",
     toc: [
       { id: "descricao", title: "Description" },

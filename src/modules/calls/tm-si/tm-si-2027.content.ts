@@ -214,7 +214,6 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       { name: "Davi Viana", institution: "UFMA" },
       { name: "Paulo Malcher", institution: "UFRA" },
     ],
-    sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
     tocTitle: "NESTA CHAMADA",
     toc: [
       { id: "descricao", title: "Descrição" },
@@ -402,7 +401,6 @@ export const tmSi2027Content: Record<"pt" | "en", CallPageData> = {
       { name: "Davi Viana", institution: "UFMA" },
       { name: "Paulo Malcher", institution: "UFRA" },
     ],
-    sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS3 ↗" },
     tocTitle: "IN THIS CALL",
     toc: [
       { id: "descricao", title: "Description" },

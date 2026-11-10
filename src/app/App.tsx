@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { type ComponentType, useEffect, useState } from "react";
 import AboutSection from "../modules/about/AboutSection";
 import CtdgSi2027Page from "../modules/calls/ctdg-si/CtdgSi2027Page";
 import Nire2027Page from "../modules/calls/nire/Nire2027Page";
@@ -21,17 +21,26 @@ import { LocaleProvider } from "../shared/i18n/LocaleProvider";
 import SiteFooter from "../shared/layout/SiteFooter";
 import SiteHeader from "../shared/layout/SiteHeader";
 
+const callPages: Record<string, ComponentType> = {
+  [tpSiPath]: TpSi2027Page,
+  [tmSiPath]: TmSi2027Page,
+  [tiiSiPath]: TiiSi2027Page,
+  [nirePath]: Nire2027Page,
+  [ctdgSiPath]: CtdgSi2027Page,
+};
+
+// "/chamadas/x/" must match "/chamadas/x"; the root "/" stays as is.
+const readPath = () => window.location.pathname.replace(/(.)\/+$/, "$1");
+
 function AppContent() {
-  const [currentPath, setCurrentPath] = useState(
-    () => window.location.pathname,
-  );
+  const [currentPath, setCurrentPath] = useState(readPath);
 
   useEffect(() => {
     initGA();
 
     const handlePopState = () => {
       setTimeout(trackPageView, 150);
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(readPath());
     };
 
     window.addEventListener("popstate", handlePopState);
@@ -42,13 +51,13 @@ function AppContent() {
     history.pushState = function (...args) {
       originalPushState.apply(this, args);
       setTimeout(trackPageView, 150);
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(readPath());
     };
 
     history.replaceState = function (...args) {
       originalReplaceState.apply(this, args);
       setTimeout(trackPageView, 150);
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(readPath());
     };
 
     return () => {
@@ -63,42 +72,22 @@ function AppContent() {
     if (targetId) document.getElementById(targetId)?.scrollIntoView();
   }, []);
 
-  const renderContent = () => {
-    if (currentPath === tpSiPath) {
-      return <TpSi2027Page />;
-    }
-
-    if (currentPath === tmSiPath) {
-      return <TmSi2027Page />;
-    }
-
-    if (currentPath === tiiSiPath) {
-      return <TiiSi2027Page />;
-    }
-
-    if (currentPath === nirePath) {
-      return <Nire2027Page />;
-    }
-
-    if (currentPath === ctdgSiPath) {
-      return <CtdgSi2027Page />;
-    }
-
-    return (
-      <main className="page-content">
-        <HomeSection />
-        <AboutSection />
-        <TracksCallSection />
-        <OrganizationSection />
-        <LocationSection />
-      </main>
-    );
-  };
+  const CallPage = callPages[currentPath];
 
   return (
     <div className="page-shell">
       <SiteHeader />
-      {renderContent()}
+      {CallPage ? (
+        <CallPage />
+      ) : (
+        <main className="page-content">
+          <HomeSection />
+          <AboutSection />
+          <TracksCallSection />
+          <OrganizationSection />
+          <LocationSection />
+        </main>
+      )}
       <SiteFooter />
     </div>
   );

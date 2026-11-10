@@ -4,6 +4,7 @@ import {
   trackLanguageChange,
   trackSectionNavigation,
 } from "../analytics/analytics";
+import { navigateToSection } from "./navigateToSection";
 import { siteHeaderContent } from "./site-header.content";
 
 type NavItem = {
@@ -79,16 +80,7 @@ export default function SiteHeader() {
       targetId || "unknown",
     );
     setIsMenuOpen(false);
-    if (!targetId) return;
-
-    const target = document.getElementById(targetId);
-    if (!target) {
-      window.location.assign(`${publicUrl}#${targetId}`);
-      return;
-    }
-
-    window.history.pushState(null, "", `#${targetId}`);
-    target.scrollIntoView({ behavior: "smooth" });
+    if (targetId) navigateToSection(targetId);
   }
 
   function handleLanguageChange(code: "pt" | "en") {
@@ -139,9 +131,10 @@ export default function SiteHeader() {
           <button
             type="button"
             className="site-header__btn site-header__btn--filled"
-            onClick={() => handleNavigation("inscricao")}
+            disabled
           >
             {t.inscrever}
+            <span className="site-header__btn-badge">({t.soon})</span>
           </button>
 
           <div className="site-header__lang-wrapper" ref={langSelectorRef}>
@@ -242,9 +235,10 @@ export default function SiteHeader() {
           <button
             type="button"
             className="site-header__btn site-header__btn--filled"
-            onClick={() => handleNavigation("inscricao")}
+            disabled
           >
             {t.inscrever}
+            <span className="site-header__btn-badge">({t.soon})</span>
           </button>
 
           <div className="site-header__mobile-lang">

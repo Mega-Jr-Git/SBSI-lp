@@ -10,6 +10,7 @@ export type SiteFooterContent = {
     onde: string;
     inscricao: string;
   };
+  soon: string;
   inst: {
     sbc: string;
     edicoes: string;
@@ -33,6 +34,7 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
       onde: "Onde",
       inscricao: "Inscrição",
     },
+    soon: "Em breve",
     inst: {
       sbc: "SBC",
       edicoes: "Edições anteriores",
@@ -56,6 +58,7 @@ export const siteFooterContent: Record<"pt" | "en", SiteFooterContent> = {
       onde: "Venue",
       inscricao: "Registration",
     },
+    soon: "Soon",
     inst: {
       sbc: "SBC",
       edicoes: "Previous editions",

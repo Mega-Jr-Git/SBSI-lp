@@ -2,6 +2,7 @@ export type SiteHeaderContent = {
   menu: { sobre: string; trilhas: string; organizacao: string; local: string };
   submeter: string;
   inscrever: string;
+  soon: string;
   ariaLang: string;
   navAria: string;
   mobileNavAria: string;
@@ -19,6 +20,7 @@ export const siteHeaderContent: Record<"pt" | "en", SiteHeaderContent> = {
     },
     submeter: "Submeta seu trabalho",
     inscrever: "Inscreva-se",
+    soon: "Em breve",
     ariaLang: "Mudar idioma. Atual: Português",
     navAria: "Navegação principal",
     mobileNavAria: "Menu principal móvel",
@@ -34,6 +36,7 @@ export const siteHeaderContent: Record<"pt" | "en", SiteHeaderContent> = {
     },
     submeter: "Submit your paper",
     inscrever: "Register",
+    soon: "Soon",
     ariaLang: "Change language. Current: English",
     navAria: "Main navigation",
     mobileNavAria: "Main mobile menu",

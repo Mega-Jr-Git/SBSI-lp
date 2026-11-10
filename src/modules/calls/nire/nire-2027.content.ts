@@ -187,7 +187,6 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
       },
       { name: "José Maria David", institution: "UFJF · jose.david@ufjf.br" },
     ],
-    sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS ↗" },
     tocTitle: "NESTA CHAMADA",
     toc: [
       { id: "descricao", title: "Descrição" },
@@ -360,7 +359,6 @@ export const nire2027Content: Record<"pt" | "en", CallPageData> = {
       },
       { name: "José Maria David", institution: "UFJF · jose.david@ufjf.br" },
     ],
-    sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS ↗" },
     tocTitle: "IN THIS CALL",
     toc: [
       { id: "descricao", title: "Description" },
