@@ -87,3 +87,28 @@ export type CallPageData = {
   tocTitle?: string;
   toc?: { id: string; title: string }[];
 };
+
+export type CallListItem = { text: CallParagraph; items?: CallListItem[] };
+
+export type CallBlock =
+  | { heading: string }
+  | { paragraph: CallParagraph }
+  | { list: CallListItem[]; style?: "decimal" | "alpha" | "bullet" }
+  | { topics: string[] }
+  | { dates: true }
+  | { coordinators: { name: string; institution: string }[] };
+
+export type CallSection = {
+  id: string;
+  title: string;
+  tocTitle: string;
+  blocks: CallBlock[];
+};
+
+/** A call laid out as free-form sections, mirroring the original document. */
+export type CallSectionsPageData = Pick<
+  CallPageData,
+  "hero" | "datesTitle" | "dates" | "tocTitle"
+> & {
+  sections: CallSection[];
+};

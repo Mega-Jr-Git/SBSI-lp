@@ -407,6 +407,57 @@
   background: var(--sbsi-orange);
 }
 
+.call-body--sections h3 {
+  color: var(--color-text-dark-gray);
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+
+.call-body--sections .call-inline-dates {
+  margin-bottom: 1.35rem;
+}
+
+.call-list {
+  padding-left: 1.5rem;
+  margin: 0 0 1.35rem;
+  color: var(--color-text-dark-gray);
+  line-height: 1.7;
+}
+
+.call-list li {
+  margin: 0.35rem 0;
+  padding-left: 0.35rem;
+}
+
+.call-list li::marker {
+  color: var(--sbsi-orange);
+  font-weight: 600;
+}
+
+.call-list .call-list {
+  margin: 0.35rem 0 0;
+}
+
+.call-list.call-list--decimal {
+  list-style: decimal;
+}
+
+.call-list.call-list--alpha {
+  list-style: lower-alpha;
+}
+
+.call-list.call-list--bullet {
+  list-style: disc;
+}
+
+.call-list.call-list--level-2 {
+  list-style: circle;
+}
+
+.call-list.call-list--level-3 {
+  list-style: disc;
+}
+
 .call-publication-note {
   border-left: 2px solid var(--sbsi-orange);
   padding-left: 1rem;
