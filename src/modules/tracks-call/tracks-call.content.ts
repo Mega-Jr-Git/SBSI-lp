@@ -1,6 +1,7 @@
 export type Track = {
   title: string;
   date?: string;
+  label?: string;
   link?: string;
 };
 
@@ -49,6 +50,7 @@ export const tracksContent = {
       },
       {
         title: "Concurso de Teses, Dissertações e TCCs em SI",
+        label: "Submissão dos trabalhos:",
         date: "29/01/2027",
         link: ctdgSiPath,
       },
@@ -91,6 +93,7 @@ export const tracksContent = {
       },
       {
         title: "Thesis, Dissertation, and TCC Competition in IS",
+        label: "Work submission:",
         date: "Jan 29, 2027",
         link: ctdgSiPath,
       },

@@ -23,7 +23,7 @@ export default function TracksCallCard({ track }: Props) {
       />
       <h3 className="tracks-call-card__title">{track.title}</h3>
       <p className="tracks-call-card__description">
-        {content.p2}{" "}
+        {track.label ?? content.p2}{" "}
         {track.date ? (
           <span className="tracks-call-card__data">{track.date}</span>
         ) : (
