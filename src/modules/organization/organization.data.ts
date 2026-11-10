@@ -259,4 +259,20 @@ export const organizationMembers: OrganizationMember[] = [
     group: "volunteer-team",
     photoUrl: "organization/jhonathan-soares.jpg",
   },
+  {
+    id: "reinaldo-hashioka",
+    name: "Reinaldo Andrade Hashioka",
+    role: { pt: "", en: "" },
+    institution: { pt: "UFMS", en: "UFMS" },
+    group: "volunteer-team",
+    photoUrl: "organization/reinaldo-hashioka.jpg",
+  },
+  {
+    id: "jerfferson-felizardo",
+    name: "Jerfferson Jorge Felizardo Júnior",
+    role: { pt: "", en: "" },
+    institution: { pt: "UFMS", en: "UFMS" },
+    group: "volunteer-team",
+    photoUrl: "organization/jerfferson-felizardo.jpg",
+  },
 ];
