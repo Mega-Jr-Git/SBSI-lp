@@ -36,6 +36,7 @@ const sitemapPaths = [
   "chamadas/chamada-minicursos",
   "chamadas/chamada-nire",
   "chamadas/chamada-industria-inovacao",
+  "chamadas/chamada-ctdg",
 ];
 const escapeXml = (value) =>
   value.replace(

@@ -8,6 +8,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/+$/, "");
 export const tpSiPath = `${basePath}/chamadas/chamada-pesquisa`;
 export const tmSiPath = `${basePath}/chamadas/chamada-minicursos`;
 export const nirePath = `${basePath}/chamadas/chamada-nire`;
+export const ctdgSiPath = `${basePath}/chamadas/chamada-ctdg`;
 export const tiiSiPath = `${basePath}/chamadas/chamada-industria-inovacao`;
 
 export const tracksContent = {
@@ -48,8 +49,8 @@ export const tracksContent = {
       },
       {
         title: "Concurso de Teses, Dissertações e TCCs em SI",
-        date: "Em breve",
-        link: "",
+        date: "29/01/2027",
+        link: ctdgSiPath,
       },
     ],
   },
@@ -90,8 +91,8 @@ export const tracksContent = {
       },
       {
         title: "Thesis, Dissertation, and TCC Competition in IS",
-        date: "Coming soon",
-        link: "",
+        date: "Jan 29, 2027",
+        link: ctdgSiPath,
       },
     ],
   },
