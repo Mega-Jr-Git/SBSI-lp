@@ -134,7 +134,7 @@ export default function SiteHeader() {
             disabled
           >
             {t.inscrever}
-            <span className="site-header__btn-badge">{t.soon}</span>
+            <span className="site-header__btn-badge">({t.soon})</span>
           </button>
 
           <div className="site-header__lang-wrapper" ref={langSelectorRef}>
@@ -238,7 +238,7 @@ export default function SiteHeader() {
             disabled
           >
             {t.inscrever}
-            <span className="site-header__btn-badge">{t.soon}</span>
+            <span className="site-header__btn-badge">({t.soon})</span>
           </button>
 
           <div className="site-header__mobile-lang">
