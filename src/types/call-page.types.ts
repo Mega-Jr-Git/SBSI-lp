@@ -25,6 +25,7 @@ export type CallPageData = {
   introTitle: string;
   intro: CallParagraph[];
   introList?: string[];
+  introClosing?: CallParagraph[];
   targetAudienceTitle?: string;
   targetAudience?: CallParagraph[];
   topicsTitle?: string;

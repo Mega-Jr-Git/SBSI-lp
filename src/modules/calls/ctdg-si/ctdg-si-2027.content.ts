@@ -46,9 +46,6 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallPageData> = {
         ", realizada como trilha do XXIII Simpósio Brasileiro de Sistemas de Informação (SBSI 2027).",
       ],
       [
-        "Para participar do concurso, os trabalhos devem ser da área de Sistemas de Informação e ter sido concluídos (isto é, finalizados/defendidos e aprovados) em 2026. O concurso visa selecionar e premiar até três melhores trabalhos em cada categoria.",
-      ],
-      [
         "O CTDG-SI 2027 está organizado em três categorias, com quatro modalidades de premiação:",
       ],
     ],
@@ -56,6 +53,11 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallPageData> = {
       "Tese de Doutorado",
       "Dissertação de Mestrado",
       "Trabalho de Graduação, incluindo Trabalho de Conclusão de Curso (TCC) e Trabalho de Iniciação Científica ou Tecnológica (IC/IT)",
+    ],
+    introClosing: [
+      [
+        "Para participar do concurso, os trabalhos devem ser da área de Sistemas de Informação e ter sido concluídos (isto é, finalizados/defendidos e aprovados) em 2026. O concurso visa selecionar e premiar até três melhores trabalhos em cada categoria.",
+      ],
     ],
     topicsTitle: "Tópicos de interesse",
     topics: tpSi2027Content.pt.topics,
@@ -275,9 +277,6 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallPageData> = {
         ", held as a track of the 23rd Brazilian Symposium on Information Systems (SBSI 2027).",
       ],
       [
-        "To take part in the competition, works must belong to the Information Systems field and have been completed (that is, finished/defended and approved) in 2026. The competition aims to select and award up to the three best works in each category.",
-      ],
-      [
         "CTDG-SI 2027 is organized into three categories, with four award modalities:",
       ],
     ],
@@ -285,6 +284,11 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallPageData> = {
       "Doctoral Thesis",
       "Master's Dissertation",
       "Undergraduate Work, including Undergraduate Final Project (TCC) and Scientific or Technological Initiation Work (IC/IT)",
+    ],
+    introClosing: [
+      [
+        "To take part in the competition, works must belong to the Information Systems field and have been completed (that is, finished/defended and approved) in 2026. The competition aims to select and award up to the three best works in each category.",
+      ],
     ],
     topicsTitle: "Topics of Interest",
     topics: tpSi2027Content.en.topics,

@@ -126,6 +126,9 @@ export function CallPageLayout({
                 ))}
               </ul>
             )}
+            {content.introClosing?.map((paragraph, index) =>
+              renderParagraph(paragraph, `intro-closing-${index}`),
+            )}
           </section>
 
           {content.targetAudience && (
