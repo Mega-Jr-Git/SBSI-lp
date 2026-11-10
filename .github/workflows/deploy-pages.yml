@@ -37,6 +37,8 @@ jobs:
         run: |
           npm run build -- --base "/${{ github.event.repository.name }}/"
           touch dist/.nojekyll
+          # GitHub Pages has no .htaccess: serve the app for deep links like /chamadas/...
+          cp dist/index.html dist/404.html
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4

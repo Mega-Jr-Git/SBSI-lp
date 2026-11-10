@@ -79,11 +79,6 @@ export type CallPageData = {
   tpcTitle?: string;
   tpcStatus?: string;
   tpcMembers?: string[];
-  sideLinks: {
-    cesi: string;
-    sbc: string;
-    jems: string;
-  };
   tocTitle?: string;
   toc?: { id: string; title: string }[];
 };

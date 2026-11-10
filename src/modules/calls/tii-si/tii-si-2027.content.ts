@@ -128,7 +128,6 @@ export const tiiSi2027Content: Record<"pt" | "en", CallPageData> = {
         institution: "Instituto Kunumi · leonardo.azevedo@kunumi.com",
       },
     ],
-    sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS ↗" },
     tocTitle: "NESTA CHAMADA",
     toc: [
       { id: "descricao", title: "Descrição" },
@@ -251,7 +250,6 @@ export const tiiSi2027Content: Record<"pt" | "en", CallPageData> = {
         institution: "Instituto Kunumi · leonardo.azevedo@kunumi.com",
       },
     ],
-    sideLinks: { cesi: "CESI ↗", sbc: "SBC ↗", jems: "JEMS ↗" },
     tocTitle: "IN THIS CALL",
     toc: [
       { id: "descricao", title: "Description" },

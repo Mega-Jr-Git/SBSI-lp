@@ -1,5 +1,6 @@
 import { useLocale } from "../../shared/i18n/useLocale";
 import { trackSectionNavigation } from "../analytics/analytics";
+import { navigateToSection } from "./navigateToSection";
 import {
   type SiteFooterContent,
   siteFooterContent,
@@ -7,7 +8,7 @@ import {
 
 type NavLinkItem = {
   labelKey: keyof SiteFooterContent["nav"];
-  targetId: string;
+  targetId?: string;
 };
 
 type InstitutionalLinkItem = {
@@ -23,7 +24,7 @@ const navLinks: NavLinkItem[] = [
   { labelKey: "trilhas", targetId: "chamada-trilhas" },
   { labelKey: "organizacao", targetId: "organizacao" },
   { labelKey: "onde", targetId: "local" },
-  { labelKey: "inscricao", targetId: "inscricao" },
+  { labelKey: "inscricao" },
 ];
 
 const institutionalLinks: InstitutionalLinkItem[] = [
@@ -35,16 +36,9 @@ export default function SiteFooter() {
   const { locale } = useLocale();
   const t = siteFooterContent[locale];
 
-  function handleNavigation(targetId?: string) {
-    if (!targetId) return;
-
+  function handleNavigation(targetId: string) {
     trackSectionNavigation("footer", targetId);
-
-    const target = document.getElementById(targetId);
-    if (!target) return;
-
-    window.history.pushState(null, "", `#${targetId}`);
-    target.scrollIntoView({ behavior: "smooth" });
+    navigateToSection(targetId);
   }
 
   return (
@@ -64,14 +58,16 @@ export default function SiteFooter() {
             <div className="site-footer__col">
               <h3 className="site-footer__col-title">{t.navTitle}</h3>
               <ul className="site-footer__list">
-                {navLinks.map((item) => (
-                  <li key={item.labelKey}>
+                {navLinks.map(({ labelKey, targetId }) => (
+                  <li key={labelKey}>
                     <button
                       type="button"
                       className="site-footer__link"
-                      onClick={() => handleNavigation(item.targetId)}
+                      disabled={!targetId}
+                      onClick={() => targetId && handleNavigation(targetId)}
                     >
-                      {t.nav[item.labelKey]}
+                      {t.nav[labelKey]}
+                      {!targetId && ` (${t.soon})`}
                     </button>
                   </li>
                 ))}

@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect } from "react";
+import { Fragment, type ReactNode, useEffect } from "react";
 import type {
   CallBlock,
   CallInline,
@@ -143,6 +143,19 @@ export function CallPageLayout({
     );
   }
 
+  function renderCoordinators(coordinators: CallPageData["coordinators"]) {
+    return (
+      <div className="call-coordinator-grid">
+        {coordinators.map((coordinator) => (
+          <div key={coordinator.name} className="call-coordinator-card">
+            <strong>{coordinator.name}</strong>
+            <span>{coordinator.institution}</span>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   function renderBlock(block: CallBlock, key: string): ReactNode {
     if ("heading" in block) return <h3 key={key}>{block.heading}</h3>;
     if ("paragraph" in block) return renderParagraph(block.paragraph, key);
@@ -158,14 +171,7 @@ export function CallPageLayout({
       );
     if ("dates" in block) return <div key={key}>{renderDates()}</div>;
     return (
-      <div key={key} className="call-coordinator-grid">
-        {block.coordinators.map((coordinator) => (
-          <div key={coordinator.name} className="call-coordinator-card">
-            <strong>{coordinator.name}</strong>
-            <span>{coordinator.institution}</span>
-          </div>
-        ))}
-      </div>
+      <Fragment key={key}>{renderCoordinators(block.coordinators)}</Fragment>
     );
   }
 
@@ -253,30 +259,7 @@ export function CallPageLayout({
 
             <section id="datas" className="call-body-section">
               <h2>{content.datesTitle}</h2>
-              <ul className="call-inline-dates">
-                {content.dates.map(([date, label, description, oldDate]) => (
-                  <li key={date}>
-                    <div className="call-inline-dates-date">
-                      <span className="call-inline-dates-calendar">
-                        <CalendarIcon />
-                      </span>
-                      <span className="call-inline-dates-span">
-                        {oldDate && (
-                          <>
-                            <s className="call-date-old">{oldDate}</s>
-                            <br />
-                          </>
-                        )}
-                        {date}
-                      </span>
-                    </div>
-                    <div className="call-inline-dates-info">
-                      <div className="call-inline-label">{label}</div>
-                      <p>{description && ` ${description}.`}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              {renderDates()}
             </section>
 
             {content.categories && (
@@ -512,14 +495,7 @@ export function CallPageLayout({
                   {content.coordinationKicker}
                 </p>
               )}
-              <div className="call-coordinator-grid">
-                {content.coordinators.map((coordinator) => (
-                  <div key={coordinator.name} className="call-coordinator-card">
-                    <strong>{coordinator.name}</strong>
-                    <span>{coordinator.institution}</span>
-                  </div>
-                ))}
-              </div>
+              {renderCoordinators(content.coordinators)}
             </section>
           </article>
         )}

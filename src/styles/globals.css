@@ -191,6 +191,27 @@ section[id] {
   border-color: var(--sbsi-orange-light);
 }
 
+.site-header__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.site-header__btn--filled:disabled:hover {
+  background: var(--sbsi-orange);
+  border-color: var(--sbsi-orange);
+}
+
+.site-header__btn-badge {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
 .site-header__arrow-icon {
   width: 0.656rem;
   height: 0.656rem;
@@ -424,6 +445,12 @@ section[id] {
 
 .site-footer__link:hover {
   color: var(--sbsi-orange);
+}
+
+.site-footer__link:disabled {
+  color: var(--sbsi-white);
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .site-footer__bottom {
