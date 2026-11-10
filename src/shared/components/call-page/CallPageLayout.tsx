@@ -118,7 +118,7 @@ export function CallPageLayout({
     return (
       <ul className="call-inline-dates">
         {content?.dates.map(([date, label, description, oldDate]) => (
-          <li key={date}>
+          <li key={`${date}-${label}`}>
             <div className="call-inline-dates-date">
               <span className="call-inline-dates-calendar">
                 <CalendarIcon />
@@ -205,7 +205,7 @@ export function CallPageLayout({
                 id={section.id}
                 className="call-body-section"
               >
-                {section.title && <h2>{section.title}</h2>}
+                <h2>{section.title}</h2>
                 {section.blocks.map((block, index) =>
                   renderBlock(block, `${section.id}-${index}`),
                 )}

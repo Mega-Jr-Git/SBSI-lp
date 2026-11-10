@@ -16,7 +16,7 @@ export const ctdgSi2027Links: Record<string, string> = {
   estendidos: "https://sol.sbc.org.br/index.php/sbsi_estendido/",
   isys: "https://journals-sol.sbc.org.br/index.php/isys/",
   reic: "https://journals-sol.sbc.org.br/index.php/reic",
-} as const;
+};
 
 const link = (name: string, text: string): CallInline => ({
   link: name,
@@ -66,6 +66,7 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallSectionsPageData> = {
     sections: [
       {
         id: "descricao",
+        title: "Descrição",
         tocTitle: "Descrição",
         blocks: [
           {
@@ -110,7 +111,7 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallSectionsPageData> = {
           {
             paragraph: [
               "Link de submissão no JEMS3: ",
-              link("submission", "https://jems3.sbc.org.br/ctdg-si2027"),
+              link("submission", ctdgSi2027Links.submission),
             ],
           },
         ],
@@ -519,6 +520,7 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallSectionsPageData> = {
     sections: [
       {
         id: "descricao",
+        title: "Description",
         tocTitle: "Description",
         blocks: [
           {
@@ -563,7 +565,7 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallSectionsPageData> = {
           {
             paragraph: [
               "Submission link in JEMS3: ",
-              link("submission", "https://jems3.sbc.org.br/ctdg-si2027"),
+              link("submission", ctdgSi2027Links.submission),
             ],
           },
         ],

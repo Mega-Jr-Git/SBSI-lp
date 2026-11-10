@@ -100,7 +100,7 @@ export type CallBlock =
 
 export type CallSection = {
   id: string;
-  title?: string;
+  title: string;
   tocTitle: string;
   blocks: CallBlock[];
 };
