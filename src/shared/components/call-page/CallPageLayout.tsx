@@ -1,8 +1,11 @@
 import { type ReactNode, useEffect } from "react";
 import type {
+  CallBlock,
   CallInline,
+  CallListItem,
   CallPageData,
   CallParagraph,
+  CallSectionsPageData,
 } from "../../../types/call-page.types";
 import "./call-page.css";
 import { ArrowIcon } from "./assets/Arrow";
@@ -10,7 +13,7 @@ import { CalendarIcon } from "./assets/Calendar";
 
 type CallPageLayoutProps = {
   id: string;
-  content?: CallPageData;
+  content?: CallPageData | CallSectionsPageData;
   links: Record<string, string>;
   criteriaBullets?: boolean;
 };
@@ -90,6 +93,87 @@ export function CallPageLayout({
       .join("");
   }
 
+  // Nested levels follow the original calls: a./1. first, then ○, then ●.
+  function renderList(
+    items: CallListItem[],
+    style: "decimal" | "alpha" | "bullet" = "bullet",
+    level = 1,
+  ): ReactNode {
+    const List = style === "bullet" ? "ul" : "ol";
+    return (
+      <List
+        className={`call-list call-list--${style} call-list--level-${level}`}
+      >
+        {items.map((item) => (
+          <li key={inlineKey(item.text)}>
+            {renderInline(item.text)}
+            {item.items && renderList(item.items, "bullet", level + 1)}
+          </li>
+        ))}
+      </List>
+    );
+  }
+
+  function renderDates() {
+    return (
+      <ul className="call-inline-dates">
+        {content?.dates.map(([date, label, description, oldDate]) => (
+          <li key={date}>
+            <div className="call-inline-dates-date">
+              <span className="call-inline-dates-calendar">
+                <CalendarIcon />
+              </span>
+              <span className="call-inline-dates-span">
+                {oldDate && (
+                  <>
+                    <s className="call-date-old">{oldDate}</s>
+                    <br />
+                  </>
+                )}
+                {date}
+              </span>
+            </div>
+            <div className="call-inline-dates-info">
+              <div className="call-inline-label">{label}</div>
+              <p>{description && ` ${description}.`}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  function renderBlock(block: CallBlock, key: string): ReactNode {
+    if ("heading" in block) return <h3 key={key}>{block.heading}</h3>;
+    if ("paragraph" in block) return renderParagraph(block.paragraph, key);
+    if ("list" in block)
+      return <div key={key}>{renderList(block.list, block.style)}</div>;
+    if ("topics" in block)
+      return (
+        <ul key={key} className="call-topics">
+          {block.topics.map((topic) => (
+            <li key={topic}>{topic}</li>
+          ))}
+        </ul>
+      );
+    if ("dates" in block) return <div key={key}>{renderDates()}</div>;
+    return (
+      <div key={key} className="call-coordinator-grid">
+        {block.coordinators.map((coordinator) => (
+          <div key={coordinator.name} className="call-coordinator-card">
+            <strong>{coordinator.name}</strong>
+            <span>{coordinator.institution}</span>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  const toc =
+    "sections" in content
+      ? content.sections.map(({ id, tocTitle }) => ({ id, title: tocTitle }))
+      : content.toc;
+
   return (
     <main id={id} className="call-page">
       <header className="call-hero">
@@ -113,274 +197,199 @@ export function CallPageLayout({
       </header>
 
       <div className="call-layout">
-        <article className="call-body">
-          <section id="descricao" className="call-body-section">
-            <h2>{content.introTitle}</h2>
-            {content.intro.map((paragraph, index) =>
-              renderParagraph(paragraph, index),
-            )}
-            {content.introList && (
-              <ul className="call-publication-cards">
-                {content.introList.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            )}
-            {content.introClosing?.map((paragraph, index) =>
-              renderParagraph(paragraph, `intro-closing-${index}`),
-            )}
-          </section>
-
-          {content.targetAudience && (
-            <section id="publico-alvo" className="call-body-section">
-              <h2>{content.targetAudienceTitle || "Público-Alvo"}</h2>
-              {content.targetAudience.map((paragraph, index) =>
-                renderParagraph(paragraph, `target-${index}`),
-              )}
-            </section>
-          )}
-
-          {content.topics && (
-            <section id="topicos" className="call-body-section">
-              <h2>{content.topicsTitle}</h2>
-              <ul className="call-topics">
-                {content.topics.map((topic) => (
-                  <li key={topic}>{topic}</li>
-                ))}
-              </ul>
-              {content.topicsNote && (
-                <p className="call-topics-note">{content.topicsNote}</p>
-              )}
-            </section>
-          )}
-
-          <section id="datas" className="call-body-section">
-            <h2>{content.datesTitle}</h2>
-            <ul className="call-inline-dates">
-              {content.dates.map(([date, label, description, oldDate]) => (
-                <li key={date}>
-                  <div className="call-inline-dates-date">
-                    <span className="call-inline-dates-calendar">
-                      <CalendarIcon />
-                    </span>
-                    <span className="call-inline-dates-span">
-                      {oldDate && (
-                        <>
-                          <s className="call-date-old">{oldDate}</s>
-                          <br />
-                        </>
-                      )}
-                      {date}
-                    </span>
-                  </div>
-                  <div className="call-inline-dates-info">
-                    <div className="call-inline-label">{label}</div>
-                    <p>{description && ` ${description}.`}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          {content.categories && (
-            <section id="categorias" className="call-body-section">
-              <h2>{content.categoriesTitle}</h2>
-              {content.categoriesIntro?.map((paragraph, index) =>
-                renderParagraph(paragraph, `categories-intro-${index}`),
-              )}
-              <div className="call-submission-phases">
-                {content.categories.map((category) => (
-                  <div key={category.title} className="call-phase-item">
-                    {category.title && <h3>{category.title}</h3>}
-                    {category.paragraphs?.map((paragraph) =>
-                      renderParagraph(paragraph, inlineKey(paragraph)),
-                    )}
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          <section
-            id={content.categories ? "submissoes" : "instrucoes"}
-            className="call-body-section"
-          >
-            <h2>{content.submissionTitle}</h2>
-            {content.submission.paragraphs.map((paragraph, index) =>
-              renderParagraph(paragraph, index),
-            )}
-
-            {content.submission.rules && (
-              <div className="call-submission-rules-box">
-                {content.submission.rulesIntro &&
-                  renderParagraph(
-                    content.submission.rulesIntro,
-                    "submission-rules-intro",
-                  )}
-                <ol className="call-rules">
-                  {content.submission.rules.map((rule) => (
-                    <li key={inlineKey(rule)}>{renderInline(rule)}</li>
-                  ))}
-                </ol>
-              </div>
-            )}
-
-            {content.submission.phases && (
-              <div className="call-submission-phases">
-                {content.submission.phases.map((phase) => (
-                  <div
-                    key={
-                      phase.title ||
-                      (phase.paragraphs?.[0]
-                        ? inlineKey(phase.paragraphs[0])
-                        : "phase")
-                    }
-                    className="call-phase-item"
-                  >
-                    {phase.title && <h3>{phase.title}</h3>}
-                    {phase.paragraphs?.map((p) =>
-                      renderParagraph(p, inlineKey(p)),
-                    )}
-                    {phase.rules && (
-                      <ol className="call-rules">
-                        {phase.rules.map((rule) => (
-                          <li key={inlineKey(rule)}>{renderInline(rule)}</li>
-                        ))}
-                      </ol>
-                    )}
-                    {phase.list && (
-                      <ul className="call-publication-cards">
-                        {phase.list.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {content.submission.openScience &&
-              renderParagraph(content.submission.openScience, "open-science")}
-            {content.submission.diversity &&
-              renderParagraph(content.submission.diversity, "diversity")}
-          </section>
-
-          {content.format && (
-            <section
-              id={content.categories ? "formato" : undefined}
-              className={content.categories ? "call-body-section" : undefined}
-            >
-              <h2>
-                {content.formatTitle || "Formato da Proposta e do Capítulo"}
-              </h2>
-              {content.formatParagraphs ? (
-                content.formatParagraphs.map((paragraph, index) =>
-                  renderParagraph(paragraph, `format-${index}`),
-                )
-              ) : (
-                <>
-                  <h3>{content.format.phase1Title}</h3>
-                  <ul className="call-publication-requirements">
-                    {content.format.phase1Rules.map((rule) => (
-                      <li key={rule}>{rule}</li>
-                    ))}
-                  </ul>
-
-                  <h3 className="call-subtitle-spaced">
-                    {content.format.phase2Title}
-                  </h3>
-                  <ul className="call-publication-requirements">
-                    {content.format.phase2Rules.map((rule) => (
-                      <li key={rule}>{rule}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </section>
-          )}
-
-          {!content.categories && content.importantInfoParagraphs && (
-            <section id="informacoes-importantes" className="call-body-section">
-              <h2>{content.importantInfoTitle}</h2>
-              <p className="call-important-info-subtitle">
-                {content.importantInfoSubtitle?.map((subtitle) => (
-                  <span key={inlineKey(subtitle)}>
-                    {renderInline(subtitle)}
-                  </span>
-                ))}
-              </p>
-              <ul className="call-rules">
-                {content.importantInfoParagraphs.map((info) => (
-                  <li key={inlineKey(info)}>{renderInline(info)}</li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {content.review && (
-            <section id="revisao" className="call-body-section">
-              <h2>{content.reviewTitle}</h2>
-              {content.review.paragraphs.map((paragraph, index) =>
-                renderParagraph(paragraph, index),
-              )}
-              <div
-                className={`call-criteria-grid${criteriaBullets ? " call-criteria-grid--bullets" : ""}`}
+        {"sections" in content ? (
+          <article className="call-body call-body--sections">
+            {content.sections.map((section) => (
+              <section
+                key={section.id}
+                id={section.id}
+                className="call-body-section"
               >
-                {content.review.criteria.map((criterion) => (
-                  <div
-                    key={inlineKey(criterion)}
-                    className="call-criterion-card"
-                  >
-                    {renderInline(criterion)}
-                  </div>
-                ))}
-              </div>
-              {content.review.publication?.map((paragraph) =>
-                renderParagraph(paragraph, inlineKey(paragraph)),
-              )}
-            </section>
-          )}
-
-          {content.publication && (
-            <section id="publicacao" className="call-body-section">
-              <h2>{content.publicationTitle}</h2>
-              {content.publication.paragraphs.map((paragraph, index) =>
+                {section.title && <h2>{section.title}</h2>}
+                {section.blocks.map((block, index) =>
+                  renderBlock(block, `${section.id}-${index}`),
+                )}
+              </section>
+            ))}
+          </article>
+        ) : (
+          <article className="call-body">
+            <section id="descricao" className="call-body-section">
+              <h2>{content.introTitle}</h2>
+              {content.intro.map((paragraph, index) =>
                 renderParagraph(paragraph, index),
               )}
-              <ul className="call-publication-cards">
-                {content.publication.requirements.map((requirement) => (
-                  <li key={requirement}>{requirement}</li>
+              {content.introList && (
+                <ul className="call-publication-cards">
+                  {content.introList.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </section>
+
+            {content.targetAudience && (
+              <section id="publico-alvo" className="call-body-section">
+                <h2>{content.targetAudienceTitle || "Público-Alvo"}</h2>
+                {content.targetAudience.map((paragraph, index) =>
+                  renderParagraph(paragraph, `target-${index}`),
+                )}
+              </section>
+            )}
+
+            {content.topics && (
+              <section id="topicos" className="call-body-section">
+                <h2>{content.topicsTitle}</h2>
+                <ul className="call-topics">
+                  {content.topics.map((topic) => (
+                    <li key={topic}>{topic}</li>
+                  ))}
+                </ul>
+                {content.topicsNote && (
+                  <p className="call-topics-note">{content.topicsNote}</p>
+                )}
+              </section>
+            )}
+
+            <section id="datas" className="call-body-section">
+              <h2>{content.datesTitle}</h2>
+              <ul className="call-inline-dates">
+                {content.dates.map(([date, label, description, oldDate]) => (
+                  <li key={date}>
+                    <div className="call-inline-dates-date">
+                      <span className="call-inline-dates-calendar">
+                        <CalendarIcon />
+                      </span>
+                      <span className="call-inline-dates-span">
+                        {oldDate && (
+                          <>
+                            <s className="call-date-old">{oldDate}</s>
+                            <br />
+                          </>
+                        )}
+                        {date}
+                      </span>
+                    </div>
+                    <div className="call-inline-dates-info">
+                      <div className="call-inline-label">{label}</div>
+                      <p>{description && ` ${description}.`}</p>
+                    </div>
+                  </li>
                 ))}
               </ul>
-              <p className="call-publication-note">
-                {content.publication.closing}
-              </p>
             </section>
-          )}
 
-          {content.categories &&
-            (content.importantInfoParagraph ||
-              content.importantInfoParagraphs) && (
-              <section id="orientacao-adicional" className="call-body-section">
-                <h2>{content.importantInfoTitle}</h2>
-                {content.importantInfoParagraph ? (
-                  renderParagraph(
-                    content.importantInfoParagraph,
-                    "important-info",
+            {content.categories && (
+              <section id="categorias" className="call-body-section">
+                <h2>{content.categoriesTitle}</h2>
+                {content.categoriesIntro?.map((paragraph, index) =>
+                  renderParagraph(paragraph, `categories-intro-${index}`),
+                )}
+                <div className="call-submission-phases">
+                  {content.categories.map((category) => (
+                    <div key={category.title} className="call-phase-item">
+                      {category.title && <h3>{category.title}</h3>}
+                      {category.paragraphs?.map((paragraph) =>
+                        renderParagraph(paragraph, inlineKey(paragraph)),
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            <section
+              id={content.categories ? "submissoes" : "instrucoes"}
+              className="call-body-section"
+            >
+              <h2>{content.submissionTitle}</h2>
+              {content.submission.paragraphs.map((paragraph, index) =>
+                renderParagraph(paragraph, index),
+              )}
+
+              {content.submission.rules && (
+                <div className="call-submission-rules-box">
+                  {content.submission.rulesIntro &&
+                    renderParagraph(
+                      content.submission.rulesIntro,
+                      "submission-rules-intro",
+                    )}
+                  <ol className="call-rules">
+                    {content.submission.rules.map((rule) => (
+                      <li key={inlineKey(rule)}>{renderInline(rule)}</li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+
+              {content.submission.phases && (
+                <div className="call-submission-phases">
+                  {content.submission.phases.map((phase) => (
+                    <div
+                      key={
+                        phase.title ||
+                        (phase.paragraphs?.[0]
+                          ? inlineKey(phase.paragraphs[0])
+                          : "phase")
+                      }
+                      className="call-phase-item"
+                    >
+                      {phase.title && <h3>{phase.title}</h3>}
+                      {phase.paragraphs?.map((p) =>
+                        renderParagraph(p, inlineKey(p)),
+                      )}
+                      {phase.rules && (
+                        <ol className="call-rules">
+                          {phase.rules.map((rule) => (
+                            <li key={inlineKey(rule)}>{renderInline(rule)}</li>
+                          ))}
+                        </ol>
+                      )}
+                      {phase.list && (
+                        <ul className="call-publication-cards">
+                          {phase.list.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {content.submission.openScience &&
+                renderParagraph(content.submission.openScience, "open-science")}
+              {content.submission.diversity &&
+                renderParagraph(content.submission.diversity, "diversity")}
+            </section>
+
+            {content.format && (
+              <section
+                id={content.categories ? "formato" : undefined}
+                className={content.categories ? "call-body-section" : undefined}
+              >
+                <h2>
+                  {content.formatTitle || "Formato da Proposta e do Capítulo"}
+                </h2>
+                {content.formatParagraphs ? (
+                  content.formatParagraphs.map((paragraph, index) =>
+                    renderParagraph(paragraph, `format-${index}`),
                   )
                 ) : (
                   <>
-                    <p className="call-important-info-subtitle">
-                      {content.importantInfoSubtitle?.map((subtitle) => (
-                        <span key={inlineKey(subtitle)}>
-                          {renderInline(subtitle)}
-                        </span>
+                    <h3>{content.format.phase1Title}</h3>
+                    <ul className="call-publication-requirements">
+                      {content.format.phase1Rules.map((rule) => (
+                        <li key={rule}>{rule}</li>
                       ))}
-                    </p>
-                    <ul className="call-rules">
-                      {content.importantInfoParagraphs?.map((info) => (
-                        <li key={inlineKey(info)}>{renderInline(info)}</li>
+                    </ul>
+
+                    <h3 className="call-subtitle-spaced">
+                      {content.format.phase2Title}
+                    </h3>
+                    <ul className="call-publication-requirements">
+                      {content.format.phase2Rules.map((rule) => (
+                        <li key={rule}>{rule}</li>
                       ))}
                     </ul>
                   </>
@@ -388,37 +397,132 @@ export function CallPageLayout({
               </section>
             )}
 
-          {content.tpcTitle && (
-            <section id="tpc" className="call-body-section">
-              <h2>{content.tpcTitle}</h2>
-              {content.tpcStatus && <p>{content.tpcStatus}</p>}
-              {content.tpcMembers && content.tpcMembers.length > 0 && (
-                <ul className="call-publication-requirements call-tpc-list">
-                  {content.tpcMembers.map((member) => (
-                    <li key={member}>{member}</li>
+            {!content.categories && content.importantInfoParagraphs && (
+              <section
+                id="informacoes-importantes"
+                className="call-body-section"
+              >
+                <h2>{content.importantInfoTitle}</h2>
+                <p className="call-important-info-subtitle">
+                  {content.importantInfoSubtitle?.map((subtitle) => (
+                    <span key={inlineKey(subtitle)}>
+                      {renderInline(subtitle)}
+                    </span>
+                  ))}
+                </p>
+                <ul className="call-rules">
+                  {content.importantInfoParagraphs.map((info) => (
+                    <li key={inlineKey(info)}>{renderInline(info)}</li>
                   ))}
                 </ul>
-              )}
-            </section>
-          )}
-
-          <section id="coordenacao" className="call-body-section">
-            <h2>{content.coordinationTitle}</h2>
-            {content.coordinationKicker && (
-              <p className="call-coordination-kicker">
-                {content.coordinationKicker}
-              </p>
+              </section>
             )}
-            <div className="call-coordinator-grid">
-              {content.coordinators.map((coordinator) => (
-                <div key={coordinator.name} className="call-coordinator-card">
-                  <strong>{coordinator.name}</strong>
-                  <span>{coordinator.institution}</span>
+
+            {content.review && (
+              <section id="revisao" className="call-body-section">
+                <h2>{content.reviewTitle}</h2>
+                {content.review.paragraphs.map((paragraph, index) =>
+                  renderParagraph(paragraph, index),
+                )}
+                <div
+                  className={`call-criteria-grid${criteriaBullets ? " call-criteria-grid--bullets" : ""}`}
+                >
+                  {content.review.criteria.map((criterion) => (
+                    <div
+                      key={inlineKey(criterion)}
+                      className="call-criterion-card"
+                    >
+                      {renderInline(criterion)}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </section>
-        </article>
+                {content.review.publication?.map((paragraph) =>
+                  renderParagraph(paragraph, inlineKey(paragraph)),
+                )}
+              </section>
+            )}
+
+            {content.publication && (
+              <section id="publicacao" className="call-body-section">
+                <h2>{content.publicationTitle}</h2>
+                {content.publication.paragraphs.map((paragraph, index) =>
+                  renderParagraph(paragraph, index),
+                )}
+                <ul className="call-publication-cards">
+                  {content.publication.requirements.map((requirement) => (
+                    <li key={requirement}>{requirement}</li>
+                  ))}
+                </ul>
+                <p className="call-publication-note">
+                  {content.publication.closing}
+                </p>
+              </section>
+            )}
+
+            {content.categories &&
+              (content.importantInfoParagraph ||
+                content.importantInfoParagraphs) && (
+                <section
+                  id="orientacao-adicional"
+                  className="call-body-section"
+                >
+                  <h2>{content.importantInfoTitle}</h2>
+                  {content.importantInfoParagraph ? (
+                    renderParagraph(
+                      content.importantInfoParagraph,
+                      "important-info",
+                    )
+                  ) : (
+                    <>
+                      <p className="call-important-info-subtitle">
+                        {content.importantInfoSubtitle?.map((subtitle) => (
+                          <span key={inlineKey(subtitle)}>
+                            {renderInline(subtitle)}
+                          </span>
+                        ))}
+                      </p>
+                      <ul className="call-rules">
+                        {content.importantInfoParagraphs?.map((info) => (
+                          <li key={inlineKey(info)}>{renderInline(info)}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </section>
+              )}
+
+            {content.tpcTitle && (
+              <section id="tpc" className="call-body-section">
+                <h2>{content.tpcTitle}</h2>
+                {content.tpcStatus && <p>{content.tpcStatus}</p>}
+                {content.tpcMembers && content.tpcMembers.length > 0 && (
+                  <ul className="call-publication-requirements call-tpc-list">
+                    {content.tpcMembers.map((member) => (
+                      <li key={member}>{member}</li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            )}
+
+            <section id="coordenacao" className="call-body-section">
+              <h2>{content.coordinationTitle}</h2>
+              {content.coordinationKicker && (
+                <p className="call-coordination-kicker">
+                  {content.coordinationKicker}
+                </p>
+              )}
+              <div className="call-coordinator-grid">
+                {content.coordinators.map((coordinator) => (
+                  <div key={coordinator.name} className="call-coordinator-card">
+                    <strong>{coordinator.name}</strong>
+                    <span>{coordinator.institution}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </article>
+        )}
 
         <aside className="call-aside">
           <div className="call-date-card">
@@ -451,11 +555,11 @@ export function CallPageLayout({
             )}
           </div>
 
-          {content.toc && (
+          {toc && (
             <div className="call-in-this-call">
               <h2>{content.tocTitle}</h2>
               <ol className="call-toc">
-                {content.toc.map((item, i) => (
+                {toc.map((item, i) => (
                   <li key={item.id}>
                     <a href={`#${item.id}`}>
                       <span>{String(i + 1).padStart(2, "0")}</span>
