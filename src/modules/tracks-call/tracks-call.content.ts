@@ -25,6 +25,7 @@ export const tracksContent = {
     tracks: [
       {
         title: "Pesquisa em SI",
+        label: "Registro e Submissão de Artigo: ",
         date: "21/09/2026 – 30/09/2026",
         link: tpSiPath,
       },
@@ -40,11 +41,13 @@ export const tracksContent = {
       },
       {
         title: "Novas Ideias e Resultados Emergentes em SI",
+        label: "Registro do Artigo: ",
         date: "11/12/2026 – 18/02/2027",
         link: nirePath,
       },
       {
         title: "Grandes Desafios em Sistemas de Informação no Brasil",
+        label: "Registro de Projetos: ",
         date: "Em breve",
         link: "",
       },
@@ -68,6 +71,7 @@ export const tracksContent = {
     tracks: [
       {
         title: "Research in IS",
+        label: "Paper Registration and Submission: ",
         date: "Sep 21 – Sep 30, 2026",
         link: tpSiPath,
       },
@@ -83,11 +87,13 @@ export const tracksContent = {
       },
       {
         title: "New Ideas and Emerging Results in IS",
+        label: "Paper Registration: ",
         date: "Dec 11, 2026 – Feb 18, 2027",
         link: nirePath,
       },
       {
         title: "Grand Challenges in Information Systems in Brazil",
+        label: "Project Registration: ",
         date: "Coming soon",
         link: "",
       },
