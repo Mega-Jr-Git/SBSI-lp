@@ -269,7 +269,7 @@ export const organizationMembers: OrganizationMember[] = [
   },
   {
     id: "jerfferson-felizardo",
-    name: "Jerfferson Jorge Felizardo Júnior",
+    name: "Jerfferson Felizardo Júnior",
     role: { pt: "", en: "" },
     institution: { pt: "UFMS", en: "UFMS" },
     group: "volunteer-team",
