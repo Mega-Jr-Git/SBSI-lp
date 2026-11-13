@@ -4,6 +4,10 @@
   background-color: var(--color-background-base);
 }
 
+.about-section--warm {
+  background-color: var(--color-background-warm);
+}
+
 .about-section__inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -53,9 +57,23 @@
   margin: 0;
 }
 
+.about-section--warm .about-section__title {
+  text-align: center;
+}
+
 .about-section__text {
   font-size: var(--font-size-body);
   line-height: 1.6;
   color: var(--color-text-dark);
   margin: 0;
+}
+
+.about-section__text a {
+  color: var(--sbsi-orange);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.about-section__text a:hover {
+  color: var(--sbsi-orange-dark);
 }
