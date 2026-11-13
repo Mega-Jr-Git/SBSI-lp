@@ -12,10 +12,9 @@ export default function AboutSbcSection() {
           <h2 className="about-section__title">Sobre a SBC</h2>
           <p className="about-section__text">
             A <strong>Sociedade Brasileira de Computação - SBC</strong> é uma
-            Sociedade
-            Científica sem fins lucrativos, fundada em julho de 1978, que reúne
-            estudantes, professores, profissionais, pesquisadores e entusiastas
-            da área da Computação e Informática de todo o país.
+            Sociedade Científica sem fins lucrativos, fundada em julho de 1978,
+            que reúne estudantes, professores, profissionais, pesquisadores e
+            entusiastas da área da Computação e Informática de todo o país.
           </p>
           <p className="about-section__text">
             A SBC tem como função fomentar o acesso à informação e cultura por
@@ -33,9 +32,10 @@ export default function AboutSbcSection() {
           </p>
           <p className="about-section__text">
             Aqui, você está acessando o site do evento de uma das{" "}
-            <strong>Comissões Especiais (CE) da SBC</strong>, que representa um grupo de associados da SBC
-            que compartilham dos interesses e valores em determinada área da
-            Computação. Associados vigentes podem se inscrever nas{" "}
+            <strong>Comissões Especiais (CE) da SBC</strong>, que representa um
+            grupo de associados da SBC que compartilham dos interesses e valores
+            em determinada área da Computação. Associados vigentes podem se
+            inscrever nas{" "}
             <a href={ceUrl} target="_blank" rel="noopener noreferrer">
               listas de e-mail das Comissões Especiais (CE)
             </a>{" "}
