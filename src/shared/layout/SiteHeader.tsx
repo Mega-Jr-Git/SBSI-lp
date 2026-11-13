@@ -62,7 +62,7 @@ export default function SiteHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Same as cbsoft.sbc.org.br: the SBC bar shows when the user scrolls up at the top of the page.
+  // Same as cbsoft.sbc.org.br: the SBC logo shows when the user scrolls up at the top of the page.
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
       if (window.scrollY === 0 && event.deltaY < 0) setIsSbcVisible(true);
