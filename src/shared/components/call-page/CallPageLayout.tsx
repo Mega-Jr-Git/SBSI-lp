@@ -27,12 +27,12 @@ export function CallPageLayout({
   useEffect(() => {
     window.scrollTo({ top: 0 });
 
-    const baseTitle = "SBSI";
     const suffix = content?.hero?.title;
     if (suffix) {
-      document.title = `${baseTitle} | ${suffix}`;
+      const homeTitle = document.title;
+      document.title = `SBSI 2027 | ${suffix}`;
       return () => {
-        document.title = baseTitle;
+        document.title = homeTitle;
       };
     }
   }, [content?.hero?.title]);
