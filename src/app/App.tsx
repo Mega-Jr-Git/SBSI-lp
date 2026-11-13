@@ -1,5 +1,6 @@
 import { type ComponentType, useEffect, useState } from "react";
 import AboutSection from "../modules/about/AboutSection";
+import AboutSbcSection from "../modules/about-sbc/AboutSbcSection";
 import CtdgSi2027Page from "../modules/calls/ctdg-si/CtdgSi2027Page";
 import Nire2027Page from "../modules/calls/nire/Nire2027Page";
 import TiiSi2027Page from "../modules/calls/tii-si/TiiSi2027Page";
@@ -86,6 +87,7 @@ function AppContent() {
           <TracksCallSection />
           <OrganizationSection />
           <LocationSection />
+          <AboutSbcSection />
         </main>
       )}
       <SiteFooter />
