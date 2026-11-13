@@ -30,7 +30,7 @@ export function CallPageLayout({
     const suffix = content?.hero?.title;
     if (suffix) {
       const homeTitle = document.title;
-      document.title = `SBSI 2027 | ${suffix}`;
+      document.title = `SBSI 2027 | ${suffix} | SBC`;
       return () => {
         document.title = homeTitle;
       };
