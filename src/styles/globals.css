@@ -90,6 +90,41 @@ body {
   background: rgba(var(--sbsi-brown-rgb), 0.98);
 }
 
+.site-header__brand-group {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__sbc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--sbsi-white);
+  font-size: 0.65rem;
+  text-decoration: none;
+  transition:
+    max-width 0.4s ease,
+    padding 0.4s ease,
+    margin 0.4s ease;
+}
+
+.site-header__sbc--visible,
+.site-header__sbc:focus-visible {
+  max-width: 8rem;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  border-right: 0.5px solid rgba(136, 136, 136, 1);
+}
+
+.site-header__sbc img {
+  height: 3.4rem;
+  width: auto;
+}
+
 .site-header__inner {
   display: flex;
   align-items: center;

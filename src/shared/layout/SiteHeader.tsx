@@ -47,6 +47,7 @@ export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isSbcVisible, setIsSbcVisible] = useState(false);
   const { locale, setLocale } = useLocale();
 
   const langSelectorRef = useRef<HTMLDivElement>(null);
@@ -59,6 +60,16 @@ export default function SiteHeader() {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Same as cbsoft.sbc.org.br: the SBC bar shows when the user scrolls up at the top of the page.
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      if (window.scrollY === 0 && event.deltaY < 0) setIsSbcVisible(true);
+      if (event.deltaY > 0) setIsSbcVisible(false);
+    };
+    window.addEventListener("wheel", handleWheel, { passive: true });
+    return () => window.removeEventListener("wheel", handleWheel);
   }, []);
 
   useEffect(() => {
@@ -94,18 +105,29 @@ export default function SiteHeader() {
       className={`site-header ${isScrolled ? "site-header--scrolled" : ""} ${isMenuOpen ? "site-header--open" : ""}`}
     >
       <div className="site-header__inner">
-        <button
-          type="button"
-          className="site-header__brand"
-          aria-label="SBSI"
-          onClick={() => handleNavigation("home")}
-        >
-          <img
-            src={`${publicUrl}SBSI_branco.svg`}
-            alt="SBSI"
-            className="site-header__logo-img"
-          />
-        </button>
+        <div className="site-header__brand-group">
+          <a
+            className={`site-header__sbc ${isSbcVisible ? "site-header__sbc--visible" : ""}`}
+            href="https://www.sbc.org.br"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.realizacao}
+            <img src={`${publicUrl}sbc-logo.svg`} alt="SBC" />
+          </a>
+          <button
+            type="button"
+            className="site-header__brand"
+            aria-label="SBSI"
+            onClick={() => handleNavigation("home")}
+          >
+            <img
+              src={`${publicUrl}SBSI_branco.svg`}
+              alt="SBSI"
+              className="site-header__logo-img"
+            />
+          </button>
+        </div>
 
         <nav aria-label={t.navAria} className="site-header__nav">
           {navItems.map((item) => (

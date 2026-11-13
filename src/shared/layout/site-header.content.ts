@@ -8,6 +8,7 @@ export type SiteHeaderContent = {
   mobileNavAria: string;
   menuOpen: string;
   menuClose: string;
+  realizacao: string;
 };
 
 export const siteHeaderContent: Record<"pt" | "en", SiteHeaderContent> = {
@@ -26,6 +27,7 @@ export const siteHeaderContent: Record<"pt" | "en", SiteHeaderContent> = {
     mobileNavAria: "Menu principal móvel",
     menuOpen: "Abrir menu",
     menuClose: "Fechar menu",
+    realizacao: "Realização:",
   },
   en: {
     menu: {
@@ -42,5 +44,6 @@ export const siteHeaderContent: Record<"pt" | "en", SiteHeaderContent> = {
     mobileNavAria: "Main mobile menu",
     menuOpen: "Open menu",
     menuClose: "Close menu",
+    realizacao: "Organized by:",
   },
 };
