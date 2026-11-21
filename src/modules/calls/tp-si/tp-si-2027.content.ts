@@ -92,19 +92,22 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         "14/09/2026",
       ],
       [
-        "25/11/2026",
+        "30/11/2026",
         "1ª Notificação",
         "Notificação às pessoas autoras com aceite, rejeição ou rebuttal",
+        "25/11/2026",
       ],
       [
-        "02/12/2026",
+        "07/12/2026",
         "Submissão do rebuttal",
         "Data limite para envio do rebuttal no JEMS3",
+        "02/12/2026",
       ],
       [
-        "14/12/2026",
+        "15/12/2026",
         "2ª Notificação",
         "Notificação às pessoas autoras com aceite ou rejeição após o rebuttal",
+        "14/12/2026",
       ],
       [
         "15/02/2027",
@@ -329,19 +332,22 @@ export const tpSi2027Content: Record<"pt" | "en", CallPageData> = {
         "14/09/2026",
       ],
       [
-        "25/11/2026",
+        "30/11/2026",
         "1st Notification",
         "Notification to authors of acceptance, rejection, or rebuttal",
+        "25/11/2026",
       ],
       [
-        "02/12/2026",
+        "07/12/2026",
         "Rebuttal submission",
         "Deadline for sending the rebuttal in JEMS3",
+        "02/12/2026",
       ],
       [
-        "14/12/2026",
+        "15/12/2026",
         "2nd Notification",
         "Notification to authors of acceptance or rejection after the rebuttal",
+        "14/12/2026",
       ],
       [
         "15/02/2027",
