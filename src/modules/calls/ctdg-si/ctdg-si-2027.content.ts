@@ -16,6 +16,7 @@ export const ctdgSi2027Links: Record<string, string> = {
   estendidos: "https://sol.sbc.org.br/index.php/sbsi_estendido/",
   isys: "https://journals-sol.sbc.org.br/index.php/isys/",
   reic: "https://journals-sol.sbc.org.br/index.php/reic",
+  submissionForm: `${import.meta.env.BASE_URL}files/ctdg-si-2027-ficha-de-submissao.docx`,
 };
 
 const link = (name: string, text: string): CallInline => ({
@@ -192,7 +193,8 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallSectionsPageData> = {
                 "Diploma, declaração (carta) de conclusão do curso, ou ata de defesa do trabalho, constando obrigatoriamente: Nome do candidato e nome do orientador; Instituição e curso; Título do trabalho; Data da defesa e resultado (aprovação); Nome do coordenador ou secretário do curso, data e assinatura.",
               ),
               item(
-                "Ficha de submissão que destaca os principais aspectos do trabalho, em português, respeitando o limite de três páginas.",
+                link("submissionForm", "Ficha de submissão"),
+                " que destaca os principais aspectos do trabalho, em português, respeitando o limite de três páginas.",
               ),
               item(
                 "Carta do(a) orientador(a), assinada digitalmente com certificação (ex.: ",
@@ -646,7 +648,8 @@ export const ctdgSi2027Content: Record<"pt" | "en", CallSectionsPageData> = {
                 "Diploma, course completion statement (letter), or defense minutes, mandatorily stating: Candidate's name and advisor's name; Institution and program; Title of the work; Defense date and result (approval); Name of the program coordinator or secretary, date, and signature.",
               ),
               item(
-                "Submission form highlighting the main aspects of the work, in Portuguese, within a limit of three pages.",
+                link("submissionForm", "Submission form"),
+                " highlighting the main aspects of the work, in Portuguese, within a limit of three pages.",
               ),
               item(
                 "Letter from the advisor, digitally signed with certification (e.g., ",
